@@ -12,15 +12,21 @@
     <header>
         <center>  <h2>Clickea el Rojo</h2></center>
     </header>
-    <div id="puntaje">
-       
-        <button class="inicio punajeElemento ">  </button>
-       
-        <div>Puntos: <h4 class="puntos punajeElemento"></h4> </div>
-        <div> Tiempo <h4 class="cronometro punajeElemento "></h4></div>
-        <div >NumeroDiv: <h3 class="numero punajeElemento"></h3> </div>
+    
+    <div class="newCont" >
+        <div id="puntaje">
         
+            <div id="puntaje">
+                <div>Puntos: <h4 class="puntos punajeElemento"></h4> </div>
+                <div> Tiempo <h4 class="cronometro punajeElemento "></h4></div>
+                <div >NumeroDiv: <h3 class="numero punajeElemento"></h3> </div>
+            </div>
+            
         </div>
+        <div class="">
+            <button class="inicio punajeElemento ">  </button>
+        </div>
+        <br>
     <div id="container">
         
         <div class="a item-container"> </div>  
@@ -33,15 +39,15 @@
     
 
     <div class="contenedorBarra">
-                <div class="colorBarra" ></div>
+                
         
-                <div class="numeros" ></div>
+                <div class="numeros"><div class="colorBarra"></div></div>
     </div>
         
  
 
 
-    <div id="puntaje">
+    <div id="puntaje" class="margin">
         <div id="divColor">
             <div style="background: #FF4436;"><input type="radio" name="color" checked id="inputColorRojo" ></div>
             <div style="background: #0C4;"><input type="radio" name="color"  id="inputColorVerde"></div>
@@ -49,7 +55,7 @@
             <div style="background: #AA03EA;"><input type="radio" name="color"  id="inputColorAmarillo" ></div>
             <input type="number" value="10" id="numeroGanar" class="punajeElemento inputColor"> 
             </div>
-
+        </div>
     
     <script src="juego.js"></script>
 

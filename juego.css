@@ -1,7 +1,7 @@
 *{
     margin: auto;
     padding: 0;
-    background:#fa0;
+    background:#108991;
     
 }
 #container{
@@ -29,17 +29,28 @@
 } 
 
  #puntaje{
-    width:90vw;
+    width:90%;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
-    margin-top: 2rem;
-    color: #468;
+    justify-content: center;
+    border-radius: 10px;
+    padding-left: 5rem;
+   
+    color: #dce;
     font-weight: 700;
    
+  
+        
+        margin-top: 0.3rem;
+        margin-bottom: 0.6rem;
+    
 } 
+.margin{
+    margin-left: -1rem;
+}
 #divColor{
     display: flex;    
+    
     margin:auto;
     padding: 0.4rem 1rem;
     /* background: rgba(255, 255, 255, 0.9); */
@@ -52,18 +63,15 @@
 #divColor div{
     border-radius: 50%;
     margin:0.3rem;
-    padding: 0.8rem;
+    padding: 1rem;
     box-shadow: 3px 5px 20px #000;
 }
-
-
-#puntaje{
-    display: flex;
-    margin: 1rem;
-
-    
-
+.punajeElemento{
+    color: #fff;
+    font-weight: 600;
 }
+
+
 .punajeElemento{
     width: 20vw;
     height: 5vh;    
@@ -95,7 +103,7 @@
     padding: 1rem;
     padding-bottom: 2.5rem;
     font-weight: 600;
-    border-radius: 10%;
+    border-radius: 10px;
     /* box-shadow: 0px 3px 10px#ccc; */
     
    
@@ -148,6 +156,8 @@ h1{
 h2{
     font-size: 2rem;
     margin-top: 1rem;
+    color: #e44;
+    text-shadow:1px 0px 2px #fff;
     
 }
 h4{
@@ -174,6 +184,12 @@ h3{
         border-radius: 1REM;
        align-content: space-around;
        background: black;
+    }
+    .margin{
+        margin: 1rem;
+    }
+    #puntaje{
+        padding: 0;
     }
     .a, .b, .c, .d{
         margin: 0.5vw;
@@ -219,6 +235,7 @@ h3{
         max-width: 90vw;
       margin: auto;
     }
+    
 }
 
 .contenedorBarra{
@@ -231,9 +248,9 @@ h3{
 .colorBarra{
     
     margin:0.7rem 1rem;
-    border-radius:10% ;
+    border-radius:10px;
     height: 1.5rem;
-    width: 0 ;
+    width: 0px ;
     transition: all 0.5s linear;
     
     position:absolute   ;
@@ -243,9 +260,10 @@ h3{
    
 }
 
+
 .numeros{
     height: 3rem;
-    width: 99vw;
+    width: 70%;
   
    
     border-radius: 10rem;
@@ -257,9 +275,15 @@ h3{
     /* mix-blend-mode:screen; */
     display: flex;
     font-weight: bold;
-    justify-content: center;
-    align-items: center;
+   
     
+    
+}
+
+.newCont{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .red{
