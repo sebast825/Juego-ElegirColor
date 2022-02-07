@@ -2,13 +2,17 @@ body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	background-color: black;
 }
 
 .container{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+
+	gap: 4vh;
 }
 
 .containerTablero{
@@ -23,6 +27,19 @@ body{
 	
 }
 
-.btn{
+/* .btn{
 	background-color: red;	
+} */
+
+.red{
+	background-color: red;
+}
+.blue{
+	background-color: blue;
+}
+.yellow{
+	background-color: yellow;
+}
+.orange{
+	background-color: orange;
 }

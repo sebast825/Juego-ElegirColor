@@ -1,0 +1,18 @@
+.menu{
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	background-color: red;
+	width: 100vw;
+	height: 100vh;
+}
+
+.menu_btn{
+	background-color: lightblue;
+	padding: 0.5rem;
+	min-width: 30vw;
+	max-width: 30vw;
+	box-shadow: none;
+}

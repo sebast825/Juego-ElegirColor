@@ -1,0 +1,8 @@
+.containerBarra{
+	width: 30vw;
+	height: 10vh;
+	background-color: aqua;
+
+	display: flex;
+	align-content: center;
+}
