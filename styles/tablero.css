@@ -27,9 +27,9 @@ body{
 	
 }
 
-/* .btn{
-	background-color: red;	
-} */
+.btn{
+	transition: all .1s ease-in;	
+} 
 
 .red{
 	background-color: red;
