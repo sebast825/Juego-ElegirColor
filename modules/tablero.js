@@ -9,6 +9,7 @@ export class Tablero{
 			const btn = document.createElement('button');
 			btn.classList.add('btn');
 			btn.classList.add(`btn-${i}`)
+			//al tirar renueva los colores
 			btn.addEventListener('click',()=> {
 				
 				this.numArray()
