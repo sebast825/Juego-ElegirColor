@@ -1,19 +1,26 @@
+import { Puntos } from "./Puntos.js";
+
 const tablero = document.querySelector('.containerTablero');
 
 export class Tablero{
 
 	array = []
+	
 	//pone los botones en el tablero
 	createTablero(){
+		const clase = new Puntos();
+		
 		for(let i = 0; i < 4 ; i++){
 			const btn = document.createElement('button');
 			btn.classList.add('btn');
 			btn.classList.add(`btn-${i}`)
 			//al tirar renueva los colores
 			btn.addEventListener('click',()=> {
-				
+				clase.puntitos(btn.classList)
+				console.log(btn.classList)
 				this.numArray()
 				this.setColor()
+				
 			})
 			tablero.appendChild (btn);
 		}
@@ -27,7 +34,7 @@ export class Tablero{
 			if(!this.array.includes(mat)){
 				this.array.push(mat)
 			}
-			console.log(this.array)
+			// console.log(this.array)
 		}
 		
 	}
