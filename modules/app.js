@@ -1,6 +1,8 @@
 
-const menu = document.querySelector('.menu');
+
 const infoPlay = document.querySelector('.infoPlay')
+const menuBtn = document.querySelectorAll('.menu_btn')
+const infoMenu = document.querySelector('.infoMenu')
 
 
 import { Contador } from "./Contador.js";
@@ -26,3 +28,13 @@ export function main(){
 infoPlay.addEventListener('click',()=>setTimeout(() => {
 	 main()
 }, 1));
+
+
+//menu
+menuBtn.forEach(elem=>{
+	elem.addEventListener('click',()=>{
+		new Menu().hideMenu()
+	})
+})
+
+ infoMenu.addEventListener('click',()=>{new Menu().hideMenu()})

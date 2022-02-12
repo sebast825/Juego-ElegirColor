@@ -1,5 +1,5 @@
 .menu{
-	display: none;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -7,9 +7,11 @@
 	background-color: red;
 	width: 100vw;
 	height: 100vh;
+	transition: 1s all ease-in;
 }
 
 .menu_btn{
+	
 	background-color: lightblue;
 	padding: 0.5rem;
 	min-width: 30vw;
