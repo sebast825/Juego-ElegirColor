@@ -5,7 +5,7 @@ const menuBtn = document.querySelectorAll('.menu_btn')
 const infoMenu = document.querySelector('.infoMenu')
 
 
-import { Contador } from "./Contador.js";
+import { Cronometro } from "./Cronomoetro.js";
 import { Menu } from "./Menu.js";
 import { Quiz } from "./Quiz.js";
 import { Tablero } from "./Tablero.js"
@@ -19,8 +19,8 @@ export function main(){
 	tablero.numArray();
 	tablero.setColor();
 
-	const contador = new Contador();
-	contador.iniciarContador()
+	const cronometro = new Cronometro();
+	cronometro.iniciarContador()
 
 }
 

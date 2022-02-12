@@ -3,7 +3,7 @@ import { Menu } from "./Menu.js";
 
 const contador = document.querySelector('.contador')
 
-export class Contador extends Menu{
+export class Cronometro extends Menu{
 	
 	time = 0;
 

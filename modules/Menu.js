@@ -16,6 +16,7 @@ export class Menu{
 					elem.style.display = "block"		
 				})
 		})
+		
 		}else{
 			menu.style.display = "none"
 			menuBtn.forEach(elem=>{
