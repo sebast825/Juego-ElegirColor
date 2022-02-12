@@ -9,15 +9,16 @@ export class Tablero{
 	//pone los botones en el tablero
 	createTablero(){
 		const clase = new Puntos();
-		
+		tablero.innerHTML =''
 		for(let i = 0; i < 4 ; i++){
 			const btn = document.createElement('button');
 			btn.classList.add('btn');
 			btn.classList.add(`btn-${i}`)
 			//al tirar renueva los colores
 			btn.addEventListener('click',()=> {
-				clase.puntitos(btn.classList)
-				console.log(btn.classList)
+				clase.showPuntos()
+				clase.modificarPuntos(btn.classList)
+				console.log(btn.classList)				
 				this.numArray()
 				this.setColor()
 				

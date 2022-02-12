@@ -1,11 +1,12 @@
+const puntos = document.querySelector('.puntos')
+
 export class Puntos{
 	parametro = 'yellow'
 	puntos = 0;
-	puntitos(clases){
+	modificarPuntos(clases){
 		if(clases[2] === this.parametro){
-			
-			this.puntos +=1;
 
+			this.puntos +=1;
 		}
 		else{
 			
@@ -13,6 +14,9 @@ export class Puntos{
 		}
 		console.log(clases[2])
 		console.log(this.puntos)
-		
+				
+	}
+	showPuntos(){
+		puntos.innerHTML = this.puntos
 	}
 }
