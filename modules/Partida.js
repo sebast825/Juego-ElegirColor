@@ -19,32 +19,13 @@ export class Partida{
 	}
 
 
-	hideMenu(asd ){
+	
 
-		this.gameTipe = ( asd);
-		console.log(this.gameTipe,)
-		
-		if(menu.style.display == "none"){
-			menu.style.display = "flex"
-			menuBtn.forEach(elem=>{
-				elem.addEventListener('click',()=>{
-					elem.style.display = "block"		
-				})
-			})
-		}else{
-			menu.style.display = "none"
-			menuBtn.forEach(elem=>{
-				elem.addEventListener('click',()=>{
-					elem.style.display = "none"		
-				})
-			})
-		}
-
-
-	}
 
 	
-	elegirJuego(){
+	
+	elegirJuego(nameGame){
+		this.gameTipe = nameGame
 		if(this.gameTipeAll[0] == this.gameTipe){
 			return new Jcomun()
 			 
@@ -64,14 +45,15 @@ export class Partida{
 	array = []
 	tipoJueo = {}
 
-	activarTablero(){
-		this.createTablero();
+	activarTablero(nameGame){
+		this.createTablero(nameGame);
 		this.numArray();
 		this.setColor();
 	}
 	//pone los botones en el tablero
-	createTablero(){
-		let clase = this.elegirJuego()
+	createTablero(nameGame){
+		let clase = this.elegirJuego(nameGame)
+		clase.iniciarContador()
 		tablero.innerHTML =''
 		for(let i = 0; i < 4 ; i++){
 			const btn = document.createElement('button');
@@ -81,6 +63,7 @@ export class Partida{
 			btn.addEventListener('click',()=> {
 				 clase.atr()
 				 clase.modificarPuntos(btn.classList)
+				
 				//  console.log(btn.classList)				
 				this.numArray()
 				this.setColor()

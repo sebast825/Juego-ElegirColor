@@ -7,15 +7,16 @@ const infoMenu = document.querySelector('.infoMenu')
 
 // import { Cronometro } from "./Cronomoetro.js";
 import { Partida ,Tablero} from "./Partida.js";
+import {hideMenu} from './Menu.js'
 // import { Quiz } from "./Quiz.js";
 // import { Tablero } from "./Tablero.js"
 
 
-let asd = ''
-export function main(asd){
+let nameGame = ''
+export function main(nameGame){
 	let par = 	new Partida()
-	par.hideMenu(asd)
-	par.activarTablero()
+	// par.hideMenu(asd)
+	par.activarTablero(nameGame)
 
 
 
@@ -24,7 +25,7 @@ export function main(asd){
 
 
 infoPlay.addEventListener('click',()=>setTimeout(() => {
-	//  main()
+	main(nameGame)
 }, 1));
 
 
@@ -32,7 +33,9 @@ infoPlay.addEventListener('click',()=>setTimeout(() => {
 menuBtn.forEach(elem=>{
 	elem.addEventListener('click',()=>{
 		// console.log(elem.c)
-		main(elem.innerHTML)
+		let nameGame=elem.innerHTML
+		
+		hideMenu(nameGame)
 	})
 })
 //SIMPORTANTEEEEEEEEEEEE

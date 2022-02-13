@@ -1,4 +1,5 @@
  const puntos = document.querySelector('.puntos')
+ const contador = document.querySelector('.contador')
 
 
  export class Jcomun{
@@ -17,12 +18,23 @@
 
  			this.puntos--;
  		}
- 		console.log(clases[2])
- 		console.log(this.puntos)
+ 		puntos.innerHTML = this.puntos
 				
  	}
- 	showPuntos(){
- 		puntos.innerHTML = this.puntos
+ 	
+	 time = 0;
+
+ 	iniciarContador(){
+		
+ 		setInterval(()=>{			
+ 			this.contador();
+ 			contador.innerHTML = (this.time.toFixed(2));
+ 		},70);
+		
+ 	};
+
+ 	contador(){
+ 		this.time += 0.11;		
  	}
 }
 
