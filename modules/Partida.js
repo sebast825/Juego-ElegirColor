@@ -46,12 +46,15 @@ export class Partida{
 	
 	elegirJuego(){
 		if(this.gameTipeAll[0] == this.gameTipe){
-			let ar =  new Jcomun().atr()
+			return new Jcomun()
+			 
 		}
 		else{
-			let ar = new  Jcomun().atr()
+			return new  Jcomun()
+			
 		}
 		console.log('elegirJuego',this.gameTipeAll , this.gameTipe)
+		// return ar
 		
 	}
 
@@ -76,8 +79,9 @@ export class Partida{
 			btn.classList.add(`btn-${i}`)
 			//al tirar renueva los colores
 			btn.addEventListener('click',()=> {
-				clase.atr()
-				console.log(btn.classList)				
+				 clase.atr()
+				 clase.modificarPuntos(btn.classList)
+				//  console.log(btn.classList)				
 				this.numArray()
 				this.setColor()
 				
