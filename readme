@@ -1,0 +1,4 @@
+inicia el juego- clase partida
+pasa el parametro del tipo de juego que se va a hacer -- hideMenu
+crea tablero, selecciona el tipo de juego, crea la clase para contar puntos -- activarJuego
+
