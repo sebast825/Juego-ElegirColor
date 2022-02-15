@@ -1,16 +1,21 @@
  const puntos = document.querySelector('.puntos')
  const contador = document.querySelector('.contador')
+ const infoMenu = document.querySelector('.infoMenu')
 
 
  export class Jcomun{
  	parametro = 'yellow'
- 	puntos = 0;
  	time = 0;
-	
+	puntos = 0;
+	terminar = false
+	// finalizarContador = true
+
 	atr(){
-		console.log('llegamso hasta aca :v')
+		console.log('llegamso hasta aca :v')		
 	}
+
  	modificarPuntos(clases){
+		if(this.terminar ) return
  		if(clases[2] === this.parametro){
  			this.puntos +=1;
  		}
@@ -22,21 +27,41 @@
 				
  	}
  	
-	 time = 0;
 
- 	iniciarContador(){
+ 	
+	iniciarContador(){
 		
- 		setInterval(()=>{			
- 			this.contador();
- 			contador.innerHTML = (this.time.toFixed(2));
- 		},70);
-		
- 	};
+		let interval = setInterval(()=>{
+			infoMenu.addEventListener('click',()=>{
+				this.terminar = true
+			})
 
- 	contador(){
- 		this.time += 0.11;		
- 	}
+			if(this.terminar){
+				clearInterval(interval)
+				this.reiniciarEstadisticas()
+				
+			}
+
+			contador.innerHTML = this.time
+			this.contador()			
+
+		},100)
+	}
+
+	contador(){
+		this.time ++
+		
+	}
+
+
+
+	reiniciarEstadisticas(){
+		this.time = 0;
+		this.puntos = 0;
+		puntos.innerHTML = this.puntos
+	}
 }
+
 
 // 	iniciarContador(){
 		

@@ -8,35 +8,42 @@ const infoMenu = document.querySelector('.infoMenu')
 // import { Cronometro } from "./Cronomoetro.js";
 import { Partida ,Tablero} from "./Partida.js";
 import {hideMenu} from './Menu.js'
+import { Jcomun } from "./Quiz.js";
 // import { Quiz } from "./Quiz.js";
 // import { Tablero } from "./Tablero.js"
 
 
 let nameGame = ''
+
+let par = null;
+
 export function main(nameGame){
+	console.log('asd')
 	let par = 	new Partida()
 	// par.hideMenu(asd)
 	par.activarTablero(nameGame)
-
-
-
 
 }
 
 
 infoPlay.addEventListener('click',()=>setTimeout(() => {
-	main(nameGame)
+	par = 	new Partida()
+		// par.hideMenu(asd)
+		par.activarTablero(nameGame)
 }, 1));
 
 
 //menu
 menuBtn.forEach(elem=>{
 	elem.addEventListener('click',()=>{
-		// console.log(elem.c)
-		let nameGame=elem.innerHTML
+		// new Jcomun().finalizarContador = false
 		
+		
+		let nameGame=elem.innerHTML		
 		hideMenu(nameGame)
+		
+		
+		
 	})
 })
 //SIMPORTANTEEEEEEEEEEEE
-//  infoMenu.addEventListener('click',()=>{new Menu().hideMenu(this.value)})

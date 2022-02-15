@@ -1,7 +1,7 @@
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
 
-export function hideMenu(asd ){
+export function hideMenu(asd = 'none'){
 
 	// this.gameTipe = ( asd);
 	// console.log(this.gameTipe,)

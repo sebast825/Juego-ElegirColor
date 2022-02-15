@@ -10,6 +10,7 @@ const contador = document.querySelector('.contador')
 const puntos = document.querySelector('.puntos')
 
 
+
 export class Partida{
 	
 	gameTipe = '';
@@ -17,30 +18,13 @@ export class Partida{
 	gameTipeAll = {
 		0: 'Clasico'
 	}
-
-
-	
-
-
-	
 	
 	elegirJuego(nameGame){
-		this.gameTipe = nameGame
-		if(this.gameTipeAll[0] == this.gameTipe){
-			return new Jcomun()
-			 
-		}
-		else{
-			return new  Jcomun()
-			
-		}
-		console.log('elegirJuego',this.gameTipeAll , this.gameTipe)
-		// return ar
-		
+		this.gameTipe = nameGame;
+		let clase = new Jcomun();
+				
+		return clase;
 	}
-
-
-
 
 	array = []
 	tipoJueo = {}
@@ -52,18 +36,22 @@ export class Partida{
 	}
 	//pone los botones en el tablero
 	createTablero(nameGame){
-		let clase = this.elegirJuego(nameGame)
-		clase.iniciarContador()
-		tablero.innerHTML =''
+		let tipoJuego = this.elegirJuego(nameGame)
+		 tipoJuego.iniciarContador()
+
+		 infoMenu.addEventListener('click',()=>{	
+			tipoJuego.endGame()				
+		  })
+
+		// tablero.innerHTML =''
 		for(let i = 0; i < 4 ; i++){
 			const btn = document.createElement('button');
 			btn.classList.add('btn');
 			btn.classList.add(`btn-${i}`)
 			//al tirar renueva los colores
 			btn.addEventListener('click',()=> {
-				 clase.atr()
-				 clase.modificarPuntos(btn.classList)
-				
+				  tipoJuego.atr()
+				  tipoJuego.modificarPuntos(btn.classList)				
 				//  console.log(btn.classList)				
 				this.numArray()
 				this.setColor()
@@ -71,6 +59,14 @@ export class Partida{
 			})
 			tablero.appendChild (btn);
 		}
+	}
+
+	borarBotones(){
+		 for(let i = 0; i < 4 ; i++){
+		 	tablero.childNodes.removeChild(tablero[i])
+		 }
+		 
+		tablero.remove.childNodes
 	}
 	//genera un numero apra que despues cada boton tenga un color
 	numArray(){
@@ -93,7 +89,7 @@ export class Partida{
 		this.colores(num,elem);
 		num++})
 	}
-	//agrega la clase con el color
+	//agrega la tipoJuego con el color
 	colores(num,elem){
 		elem.classList.remove('red','blue','yellow','orange')
 		if(this.array[num] === 0){
