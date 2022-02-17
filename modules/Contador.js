@@ -3,7 +3,7 @@
  const infoMenu = document.querySelector('.infoMenu')
 
 
- export class Jcomun{
+ export class Contador{
  	parametro = 'yellow'
  	time = 0;
 	puntos = 0;
@@ -58,7 +58,7 @@
 	reiniciarEstadisticas(){
 		this.time = 0;
 		this.puntos = 0;
-		puntos.innerHTML = this.puntos
+		puntos.innerHTML = this.puntos;
 	}
 }
 
