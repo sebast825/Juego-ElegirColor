@@ -56,9 +56,22 @@
 
 
 	reiniciarEstadisticas(){
-		this.time = 0;
-		this.puntos = 0;
-		puntos.innerHTML = this.puntos;
+		if(this.terminar == true){
+			this.time = 0;
+			this.puntos = 0;
+			puntos.innerHTML = this.puntos;
+		
+		}else{
+			this.terminar = false;
+		}		
+	}
+
+	
+	elegirJuego(nameGame){
+		this.gameTipe = nameGame;
+		let clase = new Contador();
+				
+		return clase;
 	}
 }
 

@@ -1,5 +1,5 @@
 import { main } from "./app.js"
-import { Jcomun } from "./Quiz.js"
+import { Contador } from "./Contador.js"
 
 const container = document.querySelector(".contianer")
 const menuBtn = document.querySelectorAll('.menu_btn')
@@ -19,12 +19,7 @@ export class Partida{
 		0: 'Clasico'
 	}
 	
-	elegirJuego(nameGame){
-		this.gameTipe = nameGame;
-		let clase = new Jcomun();
-				
-		return clase;
-	}
+	
 
 	array = []
 	tipoJueo = {}
@@ -36,8 +31,7 @@ export class Partida{
 	}
 	//pone los botones en el tablero
 	createTablero(nameGame){
-		let tipoJuego = this.elegirJuego(nameGame)
-		 tipoJuego.iniciarContador()
+		
 
 		 infoMenu.addEventListener('click',()=>{	
 			tipoJuego.endGame()				
@@ -50,8 +44,8 @@ export class Partida{
 			btn.classList.add(`btn-${i}`)
 			//al tirar renueva los colores
 			btn.addEventListener('click',()=> {
-				  tipoJuego.atr()
-				  tipoJuego.modificarPuntos(btn.classList)				
+				//   tipoJuego.atr()
+				//   tipoJuego.modificarPuntos(btn.classList)				
 				//  console.log(btn.classList)				
 				this.numArray()
 				this.setColor()

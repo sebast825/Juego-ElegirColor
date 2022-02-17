@@ -8,7 +8,7 @@ const infoMenu = document.querySelector('.infoMenu')
 // import { Cronometro } from "./Cronomoetro.js";
 import { Partida ,Tablero} from "./Partida.js";
 import {hideMenu} from './Menu.js'
-import { Jcomun } from "./Quiz.js";
+import { Contador } from "./Contador.js";
 // import { Quiz } from "./Quiz.js";
 // import { Tablero } from "./Tablero.js"
 
@@ -36,7 +36,7 @@ infoPlay.addEventListener('click',()=>setTimeout(() => {
 //menu
 menuBtn.forEach(elem=>{
 	elem.addEventListener('click',()=>{
-		// new Jcomun().finalizarContador = false
+		// new Contador().finalizarContador = false
 		
 		
 		let nameGame=elem.innerHTML		
