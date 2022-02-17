@@ -16,13 +16,16 @@
 
  	modificarPuntos(clases){
 		if(this.terminar ) return
+
  		if(clases[2] === this.parametro){
+
  			this.puntos +=1;
  		}
  		else{
 
  			this.puntos--;
  		}
+
  		puntos.innerHTML = this.puntos
 				
  	}
@@ -31,17 +34,13 @@
  	
 	iniciarContador(){
 		
+		
 		let interval = setInterval(()=>{
-			infoMenu.addEventListener('click',()=>{
-				this.terminar = true
-			})
-
-			if(this.terminar){
-				clearInterval(interval)
-				this.reiniciarEstadisticas()
-				
-			}
-
+			// infoMenu.addEventListener('click',()=>{
+			// 	this.terminar = true
+			// })
+	
+			
 			contador.innerHTML = this.time
 			this.contador()			
 
@@ -49,21 +48,26 @@
 	}
 
 	contador(){
-		this.time ++
+		
+		this.time += 1
 		
 	}
 
 
 
 	reiniciarEstadisticas(){
-		if(this.terminar == true){
+		
+			
 			this.time = 0;
 			this.puntos = 0;
 			puntos.innerHTML = this.puntos;
-		
-		}else{
-			this.terminar = false;
-		}		
+			
+			setInterval(()=>{
+				if(!this.terminar){
+				this.iniciarContador();
+				this.terminar = true;}
+			},300)
+			
 	}
 
 	
@@ -72,6 +76,10 @@
 		let clase = new Contador();
 				
 		return clase;
+	}
+
+	getTerminar(){
+		return this.terminar
 	}
 }
 

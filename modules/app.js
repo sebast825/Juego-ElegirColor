@@ -16,6 +16,7 @@ import { Contador } from "./Contador.js";
 let nameGame = ''
 
 let par = null;
+let contador =  new Contador();
 
 export function main(nameGame){
 	console.log('asd')
@@ -26,11 +27,16 @@ export function main(nameGame){
 }
 
 
-infoPlay.addEventListener('click',()=>setTimeout(() => {
-	par = 	new Partida()
-		// par.hideMenu(asd)
-		par.activarTablero(nameGame)
-}, 1));
+infoPlay.addEventListener('click',()=>
+
+	{contador.reiniciarEstadisticas()	
+
+
+});
+
+infoMenu.addEventListener('click',()=>{
+	contador.iniciarContador()
+})
 
 
 //menu
@@ -41,6 +47,9 @@ menuBtn.forEach(elem=>{
 		
 		let nameGame=elem.innerHTML		
 		hideMenu(nameGame)
+		contador.contador()
+		
+
 		
 		
 		
