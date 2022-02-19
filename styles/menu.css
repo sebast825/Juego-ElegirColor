@@ -18,3 +18,16 @@
 	max-width: 30vw;
 	box-shadow: none;
 }
+
+.endGame{
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	background-color: red;
+	width: 100vw;
+	height: 100vh;
+	transition: 1s all ease-in;
+	z-index: 10;
+}

@@ -2,6 +2,7 @@
  const contador = document.querySelector('.contador');
  const infoMenu = document.querySelector('.infoMenu');
  const infoPlay = document.querySelector('.infoPlay');
+ const endGame = document.querySelector('.endGame')
 
 
  export class Contador{
@@ -29,6 +30,9 @@
  		}
 
  		puntos.innerHTML = this.puntos
+		 if (this.puntos == 3){
+			 this.getTerminar()
+		 }
 				
  	}
  	
@@ -91,7 +95,8 @@
 	}
 
 	getTerminar(){
-		return this.terminar
+		endGame.style.display = 'flex';
+		endGame.innerHTML = `<h2>Terminaste en ${this.time} segundos?, hiciste${this.puntos} puntos </h2>`
 	}
 }
 
