@@ -5,12 +5,11 @@ const menuBtn = document.querySelectorAll('.menu_btn')
 const infoMenu = document.querySelector('.infoMenu')
 
 
-// import { Cronometro } from "./Cronomoetro.js";
+
 import { Partida ,Tablero} from "./Partida.js";
 import {hideMenu} from './Menu.js'
 import { Contador } from "./Contador.js";
-// import { Quiz } from "./Quiz.js";
-// import { Tablero } from "./Tablero.js"
+
 const btn = document.querySelectorAll('.btn')
 
 
@@ -19,43 +18,34 @@ let nameGame = ''
 let par = new Partida();
 let contador =  new Contador();
 
-export function main(nameGame){
-	console.log('asd')
-	let par = 	new Partida()
-	// par.hideMenu(asd)
-	par.activarTablero(nameGame)
-
-}
 
 
-infoPlay.addEventListener('click',()=>
+infoPlay.addEventListener('click',()=>{
 
-	{contador.reiniciarEstadisticas();
-		par.activarTablero()	
-
+	contador.reiniciarEstadisticas();
+	par.activarTablero();
 
 });
 
 infoMenu.addEventListener('click',()=>{
-	contador.iniciarContador()
+
+	contador.iniciarContador();
 })
 
 
 //menu
 menuBtn.forEach(elem=>{
-	elem.addEventListener('click',()=>{
-		// new Contador().finalizarContador = false
+	elem.addEventListener('click',()=>{		
 		
-		
-		let nameGame=elem.innerHTML		
-		hideMenu(nameGame)
+		let nameGame=elem.innerHTML;
+		hideMenu(nameGame);
 	})
 })
-//SIMPORTANTEEEEEEEEEEEE
+
 
 btn.forEach(elem =>{
 	elem.addEventListener('click',()=>{
+		
 		contador.modificarPuntos(elem.classList)
-
 	})
 })
