@@ -1,13 +1,14 @@
- const puntos = document.querySelector('.puntos')
- const contador = document.querySelector('.contador')
- const infoMenu = document.querySelector('.infoMenu')
+ const puntos = document.querySelector('.puntos');
+ const contador = document.querySelector('.contador');
+ const infoMenu = document.querySelector('.infoMenu');
+ const infoPlay = document.querySelector('.infoPlay');
 
 
  export class Contador{
- 	parametro = 'yellow'
+ 	parametro = 'yellow';
  	time = 0;
 	puntos = 0;
-	terminar = false
+	terminar = true;
 	// finalizarContador = true
 
 	atr(){
@@ -30,29 +31,31 @@
 				
  	}
  	
+	 delay(){
+		if(!this.terminar){
+			setTimeout(()=>{
+				this.iniciarContador()
+			},200)
+		}else{
+			this.iniciarContador()
+		}
+	 }
 
  	
 	iniciarContador(){
 		
-		
-		let interval = setInterval(()=>{
-			// infoMenu.addEventListener('click',()=>{
-			// 	this.terminar = true
-			// })
+		let interval = setInterval(()=>{			
 	
-			
-			contador.innerHTML = this.time
-			this.contador()			
+			if(this.terminar){
+				clearInterval(interval);
+				return
+			}
+
+			this.time += 1	
+			contador.innerHTML = this.time;				
 
 		},100)
 	}
-
-	contador(){
-		
-		this.time += 1
-		
-	}
-
 
 
 	reiniciarEstadisticas(){
@@ -62,11 +65,19 @@
 			this.puntos = 0;
 			puntos.innerHTML = this.puntos;
 			
-			setInterval(()=>{
-				if(!this.terminar){
-				this.iniciarContador();
-				this.terminar = true;}
-			},300)
+			if(this.terminar){
+				this.terminar = false;
+				infoPlay.innerHTML =` <i class="fa-solid fa-stop"></i>  `
+			
+				
+			}else{
+				this.terminar = true;
+				infoPlay.innerHTML = (`<i class="fas fa-play-circle"></i>`)
+				
+			}
+				this.delay();
+			
+			
 			
 	}
 
@@ -84,14 +95,4 @@
 }
 
 
-// 	iniciarContador(){
-		
-// 		setInterval(()=>{			
-// 			this.contador();
-// 			contador.innerHTML = (this.time.toFixed(2));
-// 		},70);
-		
-// 	};
 
-// 	contador(){
-// 		this.time += 0.11;		
