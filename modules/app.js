@@ -41,7 +41,9 @@ menuBtn.forEach(elem=>{
 		hideMenu(nameGame);
 	})
 })
-
+infoMenu.addEventListener('click',()=>{
+	hideMenu(nameGame);
+})
 
 btn.forEach(elem =>{
 	elem.addEventListener('click',()=>{

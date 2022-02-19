@@ -1,13 +1,4 @@
-import { main } from "./app.js"
-import { Contador } from "./Contador.js"
-
-const container = document.querySelector(".contianer")
-const menuBtn = document.querySelectorAll('.menu_btn')
 const infoMenu = document.querySelector('.infoMenu')
-const menu = document.querySelector('.menu');
-
-const contador = document.querySelector('.contador')
-const puntos = document.querySelector('.puntos')
 const btn = document.querySelectorAll('.btn')
 
 
@@ -23,9 +14,9 @@ export class Partida{
 		this.clickBtn();
 		this.numArray();
 		this.setColor();
-		infoMenu.addEventListener('click',()=>{	
-			tipoJuego.endGame()				
-		})
+		// infoMenu.addEventListener('click',()=>{	
+		// 	tipoJuego.endGame()				
+		//  })
 	}
 	//pone los botones en el tablero
 	clickBtn(){	

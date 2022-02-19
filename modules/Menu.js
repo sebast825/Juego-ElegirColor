@@ -14,11 +14,12 @@ export function hideMenu(asd = 'none'){
 			})
 		})
 	}else{
-		menu.style.display = "none"
+		menu.style.display = "none";
 		menuBtn.forEach(elem=>{
 			elem.addEventListener('click',()=>{
 				elem.style.display = "none"		
 			})
 		})
 	}
+	
 }
