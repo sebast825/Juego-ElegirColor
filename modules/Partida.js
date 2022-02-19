@@ -14,20 +14,13 @@ const btn = document.querySelectorAll('.btn')
 
 export class Partida{
 	
-	gameTipe = '';
 	
-	gameTipeAll = {
-		0: 'Clasico'
-	}
-	
-	
-
 	array = []
-	tipoJueo = {}
+	
 
 	//para btn play-- agregar clase que saque los botones de FE
-	activarTablero(nameGame){
-		this.clickBtn(nameGame);
+	activarTablero(){
+		this.clickBtn();
 		this.numArray();
 		this.setColor();
 		infoMenu.addEventListener('click',()=>{	
@@ -35,7 +28,7 @@ export class Partida{
 		})
 	}
 	//pone los botones en el tablero
-	clickBtn(nameGame){	
+	clickBtn(){	
 		btn.forEach(elem => {
 			elem.addEventListener('click',()=>{
 				this.numArray()
