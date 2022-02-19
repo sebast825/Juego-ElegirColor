@@ -29,6 +29,7 @@ body{
 
 .btn{
 	transition: all .17s ease-in;	
+	display: none;
 } 
 
 .red{
