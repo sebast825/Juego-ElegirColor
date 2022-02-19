@@ -4,19 +4,37 @@ const btn = document.querySelectorAll('.btn')
 
 
 export class Partida{
-	
+	terminar = false;
 	
 	array = []
 	
 
 	//para btn play-- agregar clase que saque los botones de FE
 	activarTablero(){
+		this.mostrarBotones()
 		this.clickBtn();
 		this.numArray();
 		this.setColor();
 		// infoMenu.addEventListener('click',()=>{	
 		// 	tipoJuego.endGame()				
 		//  })
+	}
+
+	mostrarBotones(){
+		if(!this.terminar){
+
+			btn.forEach(elem=>{
+				elem.style.display = 'flex';
+			})
+			this.terminar = true
+
+		}else{
+
+			btn.forEach(elem=>{
+				elem.style.display = 'none';
+			})			
+			this.terminar = false
+		}
 	}
 	//pone los botones en el tablero
 	clickBtn(){	
@@ -26,9 +44,6 @@ export class Partida{
 				this.setColor()
 			})
 		})
-
-
-		
 	}
 
 	borarBotones(){
