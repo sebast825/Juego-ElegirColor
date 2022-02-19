@@ -25,26 +25,25 @@ export class Partida{
 	array = []
 	tipoJueo = {}
 
+	//para btn play-- agregar clase que saque los botones de FE
 	activarTablero(nameGame){
-		this.createTablero(nameGame);
+		this.clickBtn(nameGame);
 		this.numArray();
 		this.setColor();
+		infoMenu.addEventListener('click',()=>{	
+			tipoJuego.endGame()				
+		})
 	}
 	//pone los botones en el tablero
-	createTablero(nameGame){
-		
-
-		 infoMenu.addEventListener('click',()=>{	
-			tipoJuego.endGame()				
-		  })
-
-		// tablero.innerHTML =''
+	clickBtn(nameGame){	
 		btn.forEach(elem => {
 			elem.addEventListener('click',()=>{
 				this.numArray()
 				this.setColor()
 			})
 		})
+
+
 		
 	}
 
@@ -71,7 +70,7 @@ export class Partida{
 		
 	// le da un color al boton en relacion al this.array
 	setColor(){
-		// let num = 0;
+		 let num = 0;
 		tablero.childNodes.forEach(elem =>{
 		this.colores(num,elem);
 		num++})

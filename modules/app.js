@@ -16,7 +16,7 @@ const btn = document.querySelectorAll('.btn')
 
 let nameGame = ''
 
-let par = null;
+let par = new Partida();
 let contador =  new Contador();
 
 export function main(nameGame){
@@ -30,7 +30,8 @@ export function main(nameGame){
 
 infoPlay.addEventListener('click',()=>
 
-	{contador.reiniciarEstadisticas()	
+	{contador.reiniciarEstadisticas();
+		par.activarTablero()	
 
 
 });
@@ -54,6 +55,7 @@ menuBtn.forEach(elem=>{
 
 btn.forEach(elem =>{
 	elem.addEventListener('click',()=>{
-		new Partida().activarTablero()
+		contador.modificarPuntos(elem.classList)
+
 	})
 })

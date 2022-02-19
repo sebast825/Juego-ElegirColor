@@ -16,7 +16,8 @@
 	}
 
  	modificarPuntos(clases){
-		if(this.terminar ) return
+		console.log(clases[1])
+		if(!this.terminar ) return
 
  		if(clases[2] === this.parametro){
 
