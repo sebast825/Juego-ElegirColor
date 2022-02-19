@@ -8,6 +8,7 @@ const menu = document.querySelector('.menu');
 
 const contador = document.querySelector('.contador')
 const puntos = document.querySelector('.puntos')
+const btn = document.querySelectorAll('.btn')
 
 
 
@@ -38,21 +39,13 @@ export class Partida{
 		  })
 
 		// tablero.innerHTML =''
-		for(let i = 0; i < 4 ; i++){
-			const btn = document.createElement('button');
-			btn.classList.add('btn');
-			btn.classList.add(`btn-${i}`)
-			//al tirar renueva los colores
-			btn.addEventListener('click',()=> {
-				//   tipoJuego.atr()
-				//   tipoJuego.modificarPuntos(btn.classList)				
-				//  console.log(btn.classList)				
+		btn.forEach(elem => {
+			elem.addEventListener('click',()=>{
 				this.numArray()
 				this.setColor()
-				
 			})
-			tablero.appendChild (btn);
-		}
+		})
+		
 	}
 
 	borarBotones(){
@@ -78,7 +71,7 @@ export class Partida{
 		
 	// le da un color al boton en relacion al this.array
 	setColor(){
-		let num = 0;
+		// let num = 0;
 		tablero.childNodes.forEach(elem =>{
 		this.colores(num,elem);
 		num++})

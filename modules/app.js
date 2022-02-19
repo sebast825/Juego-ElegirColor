@@ -11,6 +11,7 @@ import {hideMenu} from './Menu.js'
 import { Contador } from "./Contador.js";
 // import { Quiz } from "./Quiz.js";
 // import { Tablero } from "./Tablero.js"
+const btn = document.querySelectorAll('.btn')
 
 
 let nameGame = ''
@@ -47,12 +48,12 @@ menuBtn.forEach(elem=>{
 		
 		let nameGame=elem.innerHTML		
 		hideMenu(nameGame)
-		contador.contador()
-		
-
-		
-		
-		
 	})
 })
 //SIMPORTANTEEEEEEEEEEEE
+
+btn.forEach(elem =>{
+	elem.addEventListener('click',()=>{
+		new Partida().activarTablero()
+	})
+})
