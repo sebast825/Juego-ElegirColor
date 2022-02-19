@@ -48,10 +48,10 @@
 	
 			if(this.terminar){
 				clearInterval(interval);
-				return
+				
+			}else{
+				this.time += 1
 			}
-
-			this.time += 1	
 			contador.innerHTML = this.time;				
 
 		},100)
