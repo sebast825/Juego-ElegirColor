@@ -57,7 +57,10 @@
 			}else{
 				this.time += 1
 			}
-			contador.innerHTML = this.time;				
+			contador.innerHTML = this.time;	
+		if(this.time >= 7){
+			this.terminar = true
+			this.getTerminar()}			
 
 		},100)
 	}
@@ -81,9 +84,6 @@
 				
 			}
 				this.delay();
-			
-			
-			
 	}
 
 	
@@ -99,6 +99,9 @@
 		endGame.innerHTML = `<h2>Terminaste en ${this.time} segundos?, hiciste${this.puntos} puntos </h2>`
 	}
 }
+
+
+
 
 
 
