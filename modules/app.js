@@ -6,17 +6,18 @@ const infoMenu = document.querySelector('.infoMenu')
 
 
 
-import { Partida ,Tablero} from "./Partida.js";
+import { Partida} from "./Partida.js";
 import {hideMenu} from './Menu.js'
 import { Contador } from "./Contador.js";
 import { ContraReloj} from './ContraReloj.js'
+import {DeathMode} from './DeathMode.js'
 const btn = document.querySelectorAll('.btn')
 
 
 let nameGame = ''
 
 let par = new Partida();
-let contador =  new ContraReloj();
+let contador =  new DeathMode();
 
 
 

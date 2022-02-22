@@ -28,8 +28,8 @@ body{
 }
 
 .btn{
-	transition: all .17s ease-in;	
-	display: none;
+	transition: all .1s ease-in;	
+	display: none;	
 } 
 
 .red{
@@ -43,4 +43,9 @@ body{
 }
 .orange{
 	background-color: orange;
+}
+
+.black{
+	background-color: black;
+	z-index: 100;
 }

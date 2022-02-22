@@ -1,6 +1,7 @@
 const infoMenu = document.querySelector('.infoMenu')
 const btn = document.querySelectorAll('.btn')
 
+const tablero = document.querySelector('.containerTablero');
 
 
 export class Partida{
@@ -99,11 +100,4 @@ export class Partida{
 
  
 
-
-const tablero = document.querySelector('.containerTablero');
-
-export class Tablero extends Partida {
 	
-	
-		
-}
