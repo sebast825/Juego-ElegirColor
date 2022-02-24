@@ -25,36 +25,27 @@ export class DeathMode extends Contador{
 			contador.innerHTML = this.time;	
 		if(this.time == 0){
 			this.terminar = true;
-			this.getTerminar()}			
+			this.getTerminar('Te quedaste sin tiempo! ')}			
 
 		},100)
 	}
 	tiempo(parametro){
 		if(parametro){
-			// this.time -= 1;
+			this.time -= 1;
 		}else{
-			this.time += 10; 
+			this.time += 6.5; 
 		}		
 	}
 
 	modificarPuntos(clases){
-		console.log(clases[1])
-		
-		if(this.terminar ) return
-
- 		if(clases[1] === this.parametro){
-
- 			this.puntos +=1;
-			this.tiempo(false)
- 		}
- 		else{
-
- 			this.getTerminar()
- 		}
-
- 		puntos.innerHTML = this.puntos		 
-				
+		let supers = super.modificarPuntos(clases);
+		if (supers){
+			this.tiempo(false);
+		}else{
+			this.getTerminar('Te equivocaste!');
+		}	 				
  	}
+
 	 //pone el color distinto
 	 iniciarSnowMan(){
 		 setInterval(()=>{

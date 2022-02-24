@@ -17,19 +17,23 @@
 	}
 
  	modificarPuntos(clases){
-		console.log(clases[1])
+		console.log('usper')
 		if(this.terminar ) return
 
  		if(clases[1] === this.parametro){
 
  			this.puntos +=1;
+			 puntos.innerHTML = this.puntos;
+			 return true;
  		}
  		else{
 
  			this.puntos--;
+			 puntos.innerHTML = this.puntos;
+			 return false;
  		}
 
- 		puntos.innerHTML = this.puntos
+ 		
 		//  if (this.puntos == 3){
 		// 	 this.getTerminar()
 		//  }
@@ -94,9 +98,9 @@
 		return clase;
 	}
 
-	getTerminar(){
+	getTerminar(respuesta){
 		endGame.style.display = 'flex';
-		endGame.innerHTML = `<h2>Terminaste en ${this.time} segundos?, hiciste${this.puntos} puntos </h2>`
+		endGame.innerHTML = `<h2>${respuesta}Terminaste en ${this.time} segundos?, hiciste${this.puntos} puntos </h2>`
 	}
 }
 
