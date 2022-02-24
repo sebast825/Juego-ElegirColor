@@ -30,9 +30,9 @@
  		}
 
  		puntos.innerHTML = this.puntos
-		 if (this.puntos == 3){
-			 this.getTerminar()
-		 }
+		//  if (this.puntos == 3){
+		// 	 this.getTerminar()
+		//  }
 				
  	}
  	
@@ -58,7 +58,7 @@
 				this.time += 1
 			}
 			contador.innerHTML = this.time;	
-		if(this.time >= 7){
+		if(this.time >= 50){
 			this.terminar = true
 			this.getTerminar()}			
 

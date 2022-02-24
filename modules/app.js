@@ -7,7 +7,7 @@ const infoMenu = document.querySelector('.infoMenu')
 
 
 import { Partida} from "./Partida.js";
-import {hideMenu} from './Menu.js'
+import {hideMenu, selectGame} from './Menu.js'
 import { Contador } from "./Contador.js";
 import { ContraReloj} from './ContraReloj.js'
 import {DeathMode} from './DeathMode.js'
@@ -17,7 +17,7 @@ const btn = document.querySelectorAll('.btn')
 let nameGame = ''
 
 let par = new Partida();
-let contador =  new DeathMode();
+let contador = undefined;
 
 
 
@@ -35,12 +35,16 @@ infoMenu.addEventListener('click',()=>{
 
 
 //menu
+//oculta el menu - selecciona el tipo de juego
 menuBtn.forEach(elem=>{
 	elem.addEventListener('click',()=>{		
 		
-		let nameGame=elem.innerHTML;
+		let nameGame=elem.value;
 		hideMenu(nameGame);
+		contador =  selectGame(elem.value)
 	})
+
+	
 })
 infoMenu.addEventListener('click',()=>{
 	hideMenu(nameGame);

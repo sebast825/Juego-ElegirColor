@@ -12,6 +12,7 @@ export class DeathMode extends Contador{
 	array = [];
 
 	iniciarContador(){
+		this.iniciarSnowMan()
 		this.time = 10
 		let interval = setInterval(()=>{			
 	
@@ -38,8 +39,7 @@ export class DeathMode extends Contador{
 
 	modificarPuntos(clases){
 		console.log(clases[1])
-		this.numArray()
-		this.setColor()
+		
 		if(this.terminar ) return
 
  		if(clases[1] === this.parametro){
@@ -55,6 +55,14 @@ export class DeathMode extends Contador{
  		puntos.innerHTML = this.puntos		 
 				
  	}
+	 //pone el color distinto
+	 iniciarSnowMan(){
+		 setInterval(()=>{
+			 
+		this.numArray()
+		this.setColor()
+		 },500) 
+	 }
 
 	 snowMan(num,elem){
 		 elem.classList.remove('black')
@@ -67,13 +75,11 @@ export class DeathMode extends Contador{
 		this.array = [];
 		
 		while(this.array.length < 4){
-			let mat = Math.floor(Math.random(1)*4)
-			if(!this.array.includes(mat)){
-				this.array.push(mat)
-			}
-			// console.log(this.array)
+			let mat = Math.floor(Math.random(1)*4);			
+			this.array.push(mat);
+			
 		}
-		
+				
 	}
 	setColor(){
 		let num = 0;

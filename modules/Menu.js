@@ -1,6 +1,9 @@
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
-
+// import { contador } from "./app.js"
+import { Contador } from "./Contador.js"
+import { ContraReloj } from "./ContraReloj.js"
+import { DeathMode } from "./DeathMode.js"
 export function hideMenu(asd = 'none'){
 
 	// this.gameTipe = ( asd);
@@ -22,4 +25,17 @@ export function hideMenu(asd = 'none'){
 		})
 	}
 	
+}
+
+export function selectGame(parametro){
+	console.log(parametro)
+	if (parametro == 'DeathMode'){
+		return  new DeathMode();
+	}else if(parametro == 'Clasico'){
+		return  new Contador();
+	}else if(parametro == 'ContraReloj'){
+		return  new ContraReloj();
+	}else{
+		console.log('error select Game')
+	}
 }
