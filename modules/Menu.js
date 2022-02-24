@@ -1,5 +1,6 @@
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
+import { Clasico } from "./Clasico.js"
 // import { contador } from "./app.js"
 import { Contador } from "./Contador.js"
 import { ContraReloj } from "./ContraReloj.js"
@@ -32,7 +33,7 @@ export function selectGame(parametro){
 	if (parametro == 'DeathMode'){
 		return  new DeathMode();
 	}else if(parametro == 'Clasico'){
-		return  new Contador();
+		return  new Clasico();
 	}else if(parametro == 'ContraReloj'){
 		return  new ContraReloj();
 	}else{

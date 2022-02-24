@@ -32,11 +32,7 @@
 			 puntos.innerHTML = this.puntos;
 			 return false;
  		}
-
- 		
-		//  if (this.puntos == 3){
-		// 	 this.getTerminar()
-		//  }
+ 	
 				
  	}
  	
@@ -51,7 +47,7 @@
 	 }
 
  	
-	iniciarContador(){
+	iniciarContador(clasico){
 		
 		let interval = setInterval(()=>{			
 	
@@ -62,10 +58,11 @@
 				this.time += 1
 			}
 			contador.innerHTML = this.time;	
-		if(this.time >= 50){
-			this.terminar = true
-			this.getTerminar()}			
-
+			if(clasico && this.time >= 20){
+				this.terminar = true
+				this.getTerminar('Te quedaste sin tiempo! ')
+			}	
+					
 		},100)
 	}
 
@@ -98,7 +95,7 @@
 		return clase;
 	}
 
-	getTerminar(respuesta){
+	getTerminar(respuesta=''){
 		endGame.style.display = 'flex';
 		endGame.innerHTML = `<h2>${respuesta}Terminaste en ${this.time} segundos?, hiciste${this.puntos} puntos </h2>`
 	}

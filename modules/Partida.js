@@ -3,7 +3,7 @@ const btn = document.querySelectorAll('.btn')
 
 const tablero = document.querySelector('.containerTablero');
 
-
+//cambia los botones! malditos nombres de clases!
 export class Partida{
 	terminar = false;
 	
@@ -16,9 +16,7 @@ export class Partida{
 		this.clickBtn();
 		this.numArray();
 		this.setColor();
-		// infoMenu.addEventListener('click',()=>{	
-		// 	tipoJuego.endGame()				
-		//  })
+		
 	}
 
 	mostrarBotones(){

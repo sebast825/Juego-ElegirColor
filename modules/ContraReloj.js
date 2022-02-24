@@ -13,19 +13,19 @@ export class ContraReloj extends Contador{
 				clearInterval(interval);
 				
 			}else{
-				this.time -= 1
+				this.time -= 0.46
 			}
-			contador.innerHTML = this.time;	
+			contador.innerHTML = this.time.toFixed(1);	
 		if(this.time == 0){
 			this.terminar = true;
-			this.getTerminar()}			
+			this.getTerminar('Te quedaste sin tiempo! ')}			
 
 		},100)
 	}
 
-	getTerminar(){
+	getTerminar(respuesta){
 		endGame.style.display = 'flex';
-		endGame.innerHTML = `<h2>Hiciste${this.puntos} puntos </h2>`
+		endGame.innerHTML = `<h2>${respuesta}Hiciste${this.puntos} puntos </h2>`
 	}
 	}
 	
