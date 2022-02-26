@@ -2,7 +2,9 @@
  const contador = document.querySelector('.contador');
  const infoMenu = document.querySelector('.infoMenu');
  const infoPlay = document.querySelector('.infoPlay');
- const endGame = document.querySelector('.endGame')
+ const endGame = document.querySelector('.endGame');
+ const endGame_rsta = document.querySelector('.endGame_rsta');
+ const endGame_puntos = document.querySelector('.endGame_puntos');
 
 
  export class Contador{
@@ -95,9 +97,11 @@
 		return clase;
 	}
 
-	getTerminar(respuesta=''){
+	getTerminar(respuesta='',time = undefined){
 		endGame.style.display = 'flex';
-		endGame.innerHTML = `<h2>${respuesta}Terminaste en ${this.time} segundos?, hiciste${this.puntos} puntos </h2>`
+		endGame_puntos.innerHTML = this.puntos;
+		endGame_rsta.innerHTML = respuesta;  
+	
 	}
 }
 

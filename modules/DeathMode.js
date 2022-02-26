@@ -8,12 +8,13 @@ const btn = document.querySelectorAll('.btn');
 const tablero = document.querySelector('.containerTablero');
 
 export class DeathMode extends Contador{
-	
+
 	array = [];
 
 	iniciarContador(){
 		this.iniciarSnowMan()
 		this.time = 10
+
 		let interval = setInterval(()=>{			
 	
 			if(this.terminar ){
@@ -23,9 +24,9 @@ export class DeathMode extends Contador{
 				this.tiempo(true);
 			}
 			contador.innerHTML = this.time;	
-		if(this.time == 0){
+		if(this.time == 0 && this.terminar == false){
 			this.terminar = true;
-			this.getTerminar('Te quedaste sin tiempo! ')}			
+			this.getTerminar('Te quedaste sin tiempo! '}			
 
 		},100)
 	}
@@ -40,8 +41,10 @@ export class DeathMode extends Contador{
 	modificarPuntos(clases){
 		let supers = super.modificarPuntos(clases);
 		if (supers){
+
 			this.tiempo(false);
-		}else{
+		}else{					
+
 			this.getTerminar('Te equivocaste!');
 		}	 				
  	}
