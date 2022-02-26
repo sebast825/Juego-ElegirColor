@@ -58,7 +58,7 @@
 				this.time += 1
 			}
 			contador.innerHTML = this.time;	
-			if(clasico && this.time >= 20){
+			if(clasico && this.time >= 50){
 				this.terminar = true
 				this.getTerminar('Te quedaste sin tiempo! ')
 			}	
