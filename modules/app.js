@@ -11,48 +11,30 @@ import {hideMenu, selectGame} from './Menu.js'
 import { Contador } from "./Contador.js";
 import { ContraReloj} from './ContraReloj.js'
 import {DeathMode} from './DeathMode.js'
+import { Global } from "./Global.js";
 const btn = document.querySelectorAll('.btn')
 
+let gameTipe = undefined;
 
-let nameGame = ''
+function main(gameTipe){
+	let par = new Partida();
+	par.activarTablero();
+	let contador = selectGame(gameTipe);
+	contador.reiniciarEstadisticas()
+	// console.log(contador,'asd')
+}
 
-let par = new Partida();
-let contador = undefined;
 
+menuBtn.forEach(elem=>{
+	elem.addEventListener('click',()=>{
+		hideMenu();
+		gameTipe = elem.value;
+	})
+
+})
 
 
 infoPlay.addEventListener('click',()=>{
-
-	contador.reiniciarEstadisticas();
-	par.activarTablero();
-
-});
-
-infoMenu.addEventListener('click',()=>{
-
-	contador.iniciarContador();
-})
-
-
-//menu
-//oculta el menu - selecciona el tipo de juego
-menuBtn.forEach(elem=>{
-	elem.addEventListener('click',()=>{		
-		
-		let nameGame=elem.value;
-		hideMenu(nameGame);
-		contador =  selectGame(elem.value)
-	})
-
-	
-})
-infoMenu.addEventListener('click',()=>{
-	hideMenu(nameGame);
-})
-
-btn.forEach(elem =>{
-	elem.addEventListener('click',()=>{
-		
-		contador.modificarPuntos(elem.classList)
-	})
+	main(gameTipe)
+	// console.log(gameTipe,'infoplay')
 })

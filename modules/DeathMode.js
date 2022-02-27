@@ -26,7 +26,7 @@ export class DeathMode extends Contador{
 			contador.innerHTML = this.time;	
 		if(this.time == 0 && this.terminar == false){
 			this.terminar = true;
-			this.getTerminar('Te quedaste sin tiempo! '}			
+			this.getTerminar('Te quedaste sin tiempo! ')}			
 
 		},100)
 	}

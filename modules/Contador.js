@@ -42,14 +42,16 @@
 		if(!this.terminar){
 			setTimeout(()=>{
 				this.iniciarContador()
+				console.log('delay false')
 			},200)
 		}else{
 			this.iniciarContador()
+			console.log('delay true')
 		}
 	 }
 
  	
-	iniciarContador(clasico){
+	iniciarContador(){
 		
 		let interval = setInterval(()=>{			
 	
@@ -60,10 +62,7 @@
 				this.time += 1
 			}
 			contador.innerHTML = this.time;	
-			if(clasico && this.time >= 50){
-				this.terminar = true
-				this.getTerminar('Te quedaste sin tiempo! ')
-			}	
+				
 					
 		},100)
 	}
@@ -78,6 +77,7 @@
 			
 			if(this.terminar){
 				this.terminar = false;
+				console.log('reiniciarEstadisticas true')
 				infoPlay.innerHTML =` <i class="fa-solid fa-stop"></i>  `
 			
 				
@@ -97,7 +97,9 @@
 		return clase;
 	}
 
-	getTerminar(respuesta='',time = undefined){
+	getTerminar(respuesta=''){
+		this.reiniciarEstadisticas();
+		this.terminar = false;
 		endGame.style.display = 'flex';
 		endGame_puntos.innerHTML = this.puntos;
 		endGame_rsta.innerHTML = respuesta;  
