@@ -32,18 +32,24 @@ function main(){
 //mismo delay del cronometro
 		setTimeout(()=>{
 			// console.log(tipeGame)
-			if (cronometro.gameTipe == 'DeathMode'){
+			if (puntos.gameTipe != 'DeathMode'){
 				botonComun(puntos,par)
 			}else{
 				botonDeathMode(puntos,par,cronometro)
 			}
 		},200)
-
-
+	})
+	infoMenu.forEach(elem=>{
+		elem.addEventListener('click',()=>{
+			hideMenu()
+			cronometro.terminar = false;
+			cronometro.reiniciarCronometro();
+			puntos.reiniciarPuntos()
+		})
 	})
 }
 
-function botonComun(puntos,par){
+function botonComun(puntos,par){	
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
 
@@ -73,8 +79,6 @@ function selectGame(cronometro,puntos){
 			cronometro.selecTipeGame(elem.value)
 			puntos.selecTipeGame(elem.value)
 
-			let a = elem.value
-			return a;
 		});
 	})
 }
@@ -82,11 +86,7 @@ main()
 
 
 
-infoMenu.forEach(elem=>{
-	elem.addEventListener('click',()=>{
-		hideMenu()
-	})
-})
+
 
 
 

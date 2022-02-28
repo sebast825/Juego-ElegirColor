@@ -47,10 +47,11 @@ export class Puntos extends Contador{
 	}
 	
 
-	 reiniciarPuntos(tipeGame){
+	 reiniciarPuntos(){
 		
-		this.tipeGame = tipeGame;
-		this.time = 0;
+			this.puntos = null;
+
+		
 		puntos.innerHTML = this.puntos;
 		
 		if(this.terminar){

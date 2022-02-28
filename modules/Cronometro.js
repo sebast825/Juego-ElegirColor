@@ -51,6 +51,9 @@ import { hideMenu } from "./Menu.js";
 	
 			if(this.terminar){
 				clearInterval(interval);
+				this.time = null;
+				contador.innerHTML = this.time;	
+
 				return
 				
 			}else{
