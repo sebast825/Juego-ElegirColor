@@ -13,7 +13,7 @@ export class Partida{
 	//para btn play-- agregar clase que saque los botones de FE
 	activarTablero(){
 		this.mostrarBotones()
-		this.clickBtn();
+		// this.clickBtn();
 		this.numArray();
 		this.setColor();
 		
