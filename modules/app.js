@@ -17,7 +17,7 @@ const btn = document.querySelectorAll('.btn')
 
 function main(){
 	let cronometro = new Cronometro();
-	let puntos = new Puntos()
+	let puntos = new Puntos();
 	let par = new Partida();	
 	par.activarTablero();
 
@@ -32,7 +32,9 @@ function main(){
 //mismo delay del cronometro
 		setTimeout(()=>{
 			// console.log(tipeGame)
-			if (puntos.gameTipe != 'DeathMode'){
+			if (puntos.tipeGame != 'DeathMode'){
+				console.log(cronometro.gameTipe)
+
 				botonComun(puntos,par)
 			}else{
 				botonDeathMode(puntos,par,cronometro)
@@ -65,7 +67,7 @@ function botonDeathMode(puntos,par,cronometro){
 			if(puntos.modificarPuntosDeathMode(elem.classList[1])){
 
 				cronometro.tiempo(false)				
-			}{
+			}else{
 				cronometro.getTerminar('Te equivocaste! ')
 			}
 			par.clickBtn()
@@ -76,8 +78,8 @@ function selectGame(cronometro,puntos){
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
 			hideMenu();
-			cronometro.selecTipeGame(elem.value)
-			puntos.selecTipeGame(elem.value)
+			cronometro.selecTipeGame(elem.value);
+			puntos.selecTipeGame(elem.value);
 
 		});
 	})

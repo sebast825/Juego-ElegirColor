@@ -160,7 +160,7 @@ import { hideMenu } from "./Menu.js";
 	}
 
 	getTerminar(respuesta=''){
-		
+		this.terminar = true;
 		endGame.style.display = 'flex';
 		endGame_puntos.innerHTML = this.puntos;
 		endGame_rsta.innerHTML = respuesta;  
