@@ -7,7 +7,7 @@ const infoMenu = document.querySelectorAll('.infoMenu')
 
 
 import { Partida} from "./Partida.js";
-import {hideMenu, selectGame} from './Menu.js'
+import {hideMenu} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
 import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
@@ -19,20 +19,11 @@ function main(tipeGame){
 	let tipeGam = tipeGame;
 	let cronometro = new Cronometro();
 	let puntos = new Puntos()
-	boton()
-	
-	let par = new Partida();
+	let par = new Partida();	
 	par.activarTablero();
-	menuBtn.forEach(elem=>{
-		elem.addEventListener('click',()=>{
-			hideMenu();
-			cronometro.selecTipeGame(elem.value)
-			cronometro.selectFunction()
-			
-			gameTipe = elem.value;
-		});
-	
-	})
+
+	selectGame(cronometro)
+	boton()
 	
 	infoPlay.addEventListener('click',()=>{
 		cronometro.reiniciarCronometro(tipeGam);
@@ -49,6 +40,17 @@ function boton(){
 		
 			par.clickBtn()
 		})
+	})
+}
+function selectGame(cronometro){
+	menuBtn.forEach(elem=>{
+		elem.addEventListener('click',()=>{
+			hideMenu();
+			cronometro.selecTipeGame(elem.value)
+			cronometro.selectFunction()
+			
+			gameTipe = elem.value;
+		});
 	})
 }
 main()

@@ -21,7 +21,6 @@ import { hideMenu } from "./Menu.js";
 	
 	selectFunction(){
 		let parametro = this.tipeGame;
-		 console.log(parametro,'para')
 		if (parametro == 'DeathMode'){
 			 this.cronometroDeathMode();
 		}else if(parametro == 'Clasico'){
@@ -37,7 +36,6 @@ import { hideMenu } from "./Menu.js";
  	
 	 delay(){
 		if(!this.terminar){
-			console.log(this.funcionCronometro)
 			setTimeout(()=>{
 				this.selectFunction()
 				// console.log('delay false')
@@ -117,7 +115,6 @@ import { hideMenu } from "./Menu.js";
 	
 			if(this.terminar){
 				clearInterval(interval);
-				console.log('asd')
 				return
 				
 			}else{

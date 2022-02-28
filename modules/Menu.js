@@ -11,7 +11,6 @@ export function hideMenu(){
 	
 
 	endGame.style.display = 'none'
-	console.log('atr perri')
 	if(menu.style.display == "none"){
 		menu.style.display = "flex";
 		menuBtn.forEach(elem=>{
@@ -31,15 +30,3 @@ export function hideMenu(){
 	
 }
 
-export function selectGame(parametro){
-	console.log(parametro)
-	if (parametro == 'DeathMode'){
-		return  new DeathMode();
-	}else if(parametro == 'Clasico'){
-		return  new Clasico();
-	}else if(parametro == 'ContraReloj'){
-		return  new ContraReloj();
-	}else{
-		console.log('error select Game')
-	}
-}

@@ -5,8 +5,6 @@ export class Contador{
 	terminar = true;
 
 	selecTipeGame(tipeGam){
-		console.log(tipeGam,'asd')
 		 this.tipeGame = tipeGam;
-		console.log(this.tipeGame)
 	}
 }
