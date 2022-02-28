@@ -1,3 +1,4 @@
+import { Contador } from "./Contador.js";
 import { hideMenu } from "./Menu.js";
 
  const puntos = document.querySelector('.puntos');
@@ -11,22 +12,22 @@ import { hideMenu } from "./Menu.js";
 
 
 
- export class Cronometro{
+ export class Cronometro extends Contador{
  	time = 0;
-	terminar = true;
-	tipeGame = undefined;
 	
+	funcionCronometro = undefined;
 	// finalizarContador = true
 
-	selectGame(){
+	
+	selectFunction(){
 		let parametro = this.tipeGame;
-		// console.log(parametro)
+		 console.log(parametro,'para')
 		if (parametro == 'DeathMode'){
-			this.cronometroDeathMode()
+			 this.cronometroDeathMode();
 		}else if(parametro == 'Clasico'){
-			this.cronometroClasico()
+			 this.cronometroClasico();
 		}else if(parametro == 'ContraReloj'){
-			return  new ContraReloj();
+			 this.cronometroContraReloj();
 		}else{
 			console.log('error select Game')
 		}
@@ -36,12 +37,13 @@ import { hideMenu } from "./Menu.js";
  	
 	 delay(){
 		if(!this.terminar){
+			console.log(this.funcionCronometro)
 			setTimeout(()=>{
-				this.selectGame()
+				this.selectFunction()
 				// console.log('delay false')
 			},200)
 		}else{
-			this.selectGame()
+			this.selectFunction()
 			// console.log('delay true')
 		}
 	 }
@@ -62,6 +64,24 @@ import { hideMenu } from "./Menu.js";
 			 	this.getTerminar('Te quedaste sin tiempo! ')
 			 }	
 					
+		},100)
+	}
+
+	cronometroContraReloj(){
+		this.time = 100
+		let interval = setInterval(()=>{			
+	
+			if(this.terminar ){
+				clearInterval(interval);
+				
+			}else{
+				this.time -= 0.46
+			}
+			contador.innerHTML = this.time.toFixed(1);	
+		if(this.time == 0){
+			this.terminar = true;
+			this.getTerminar('Te quedaste sin tiempo! ')}			
+
 		},100)
 	}
 	cronometroDeathMode(){
@@ -124,7 +144,6 @@ import { hideMenu } from "./Menu.js";
 
 	reiniciarCronometro(tipeGame){
 		
-			this.tipeGame = tipeGame;
 			this.time = 0;
 			puntos.innerHTML = this.puntos;
 			
@@ -153,8 +172,7 @@ import { hideMenu } from "./Menu.js";
 	}
 
 	getTerminar(respuesta=''){
-		this.reiniciarCronometro();
-		this.terminar = false;
+		
 		endGame.style.display = 'flex';
 		endGame_puntos.innerHTML = this.puntos;
 		endGame_rsta.innerHTML = respuesta;  

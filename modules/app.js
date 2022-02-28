@@ -19,17 +19,24 @@ function main(tipeGame){
 	let tipeGam = tipeGame;
 	let cronometro = new Cronometro();
 	let puntos = new Puntos()
-
 	boton()
 	
-
-
 	let par = new Partida();
 	par.activarTablero();
+	menuBtn.forEach(elem=>{
+		elem.addEventListener('click',()=>{
+			hideMenu();
+			cronometro.selecTipeGame(elem.value)
+			cronometro.selectFunction()
+			
+			gameTipe = elem.value;
+		});
+	
+	})
 	
 	infoPlay.addEventListener('click',()=>{
 		cronometro.reiniciarCronometro(tipeGam);
-		puntos.reiniciarPuntos(tipeGam)
+		// puntos.reiniciarPuntos(tipeGam)
 	})
 }
 
@@ -37,22 +44,16 @@ function boton(){
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
 
-						// puntos.modificarPuntos(elem.classList[1])
+			puntos.modificarPuntos(elem.classList[1])
 
 		
 			par.clickBtn()
 		})
 	})
 }
+main()
 
-menuBtn.forEach(elem=>{
-	elem.addEventListener('click',()=>{
-		hideMenu();
-		main(elem.value)
-		gameTipe = elem.value;
-	});
 
-})
 
 infoMenu.forEach(elem=>{
 	elem.addEventListener('click',()=>{
