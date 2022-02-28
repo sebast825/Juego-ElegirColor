@@ -97,8 +97,8 @@ import { hideMenu } from "./Menu.js";
 			contador.innerHTML = this.time;	
 		if(this.time == 0 && this.terminar == false){
 			this.terminar = true;
-			this.getTerminar('Te quedaste sin tiempo! ')}			
-
+			this.getTerminar('Te quedaste sin tiempo! ')
+			}	
 		},100)
 	}
 	tiempo(parametro){
@@ -126,23 +126,11 @@ import { hideMenu } from "./Menu.js";
 		},100)
 	}
 
-	botones(){
-		
-		
-		infoMenu.forEach(elem=>{
-			elem.addEventListener('click',()=>{
-				this.terminar = true;
-			})
-		})
-		
-	 
-	}
-	
 
-	reiniciarCronometro(tipeGame){
+
+	reiniciarCronometro(){
 		
 			this.time = 0;
-			puntos.innerHTML = this.puntos;
 			
 			if(this.terminar){
 				this.terminar = false;

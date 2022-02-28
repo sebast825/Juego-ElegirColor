@@ -1,61 +1,51 @@
+import { Contador } from "./Contador.js";
+
 const puntos = document.querySelector('.puntos');
 
 
-export class Puntos{
+export class Puntos extends Contador{
 	parametro = 'yellow';
 	puntos = 0;
-	terminar = true;
-	tipeGame = undefined;
+	
 
 
 	modificarPuntos(clases){
-		// console.log(clases)
 		if(this.terminar ) return
 
  		if(clases === this.parametro){
 
  			this.puntos +=1;
 			 puntos.innerHTML = this.puntos;
-			 return true;
+			return true;
  		}
  		else{
 
  			this.puntos--;
 			 puntos.innerHTML = this.puntos;
-			 return false;
- 		}				
+			return false;
+ 		}		
+		 
  	}
 	
 	modificarPuntosDeathMode(clases){
-		let supers = this.modificarPuntos(clases);
-		if (supers){
+		
+		if (this.modificarPuntos(clases)){
+
 			return true	
+			
 		}else{					
 			return false
 		}	 				
  	}
 
-	 selectGame(){
-		let parametro = this.tipeGame;
-		 console.log(parametro)
-		if (parametro == 'DeathMode'){
-			this.modificarPuntosDeathMode(parametro);
+	 selectGame(tipeGame,clases){		
+		if (tipeGame == 'DeathMode'){
+			this.modificarPuntosDeathMode(clases);
 		}else {
-			this.modificarPuntos(parametro);
+			this.modificarPuntos(clases);
 		}
 	}
-
-	delay(){
-		if(!this.terminar){
-			setTimeout(()=>{
-				this.selectGame()
-				// console.log('delay false')
-			},200)
-		}else{
-			this.selectGame()
-			// console.log('delay true')
-		}
-	 }
+	
 
 	 reiniciarPuntos(tipeGame){
 		
@@ -71,6 +61,5 @@ export class Puntos{
 			this.terminar = true;
 			
 		}
-			this.delay();
 }
 }
