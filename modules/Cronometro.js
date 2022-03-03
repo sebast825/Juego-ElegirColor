@@ -8,7 +8,7 @@ import { hideMenu } from "./Menu.js";
  const endGame = document.querySelector('.endGame');
  const endGame_rsta = document.querySelector('.endGame_rsta');
  const endGame_puntos = document.querySelector('.endGame_puntos');
- const infoMenu = document.querySelectorAll('.infoMenu');
+ const infoMenuEnd = document.querySelector('.infoMenuEnd');
 
 
 

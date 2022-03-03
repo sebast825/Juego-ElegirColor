@@ -10,6 +10,7 @@ export class Puntos extends Contador{
 
 
 	modificarPuntos(clases){
+		console.log(clases)
 		if(this.terminar ) return
 
  		if(clases === this.parametro){
@@ -28,7 +29,7 @@ export class Puntos extends Contador{
  	}
 	
 	modificarPuntosDeathMode(clases){
-		
+		console.log(clases)
 		if (this.modificarPuntos(clases)){
 
 			return true	
@@ -38,13 +39,13 @@ export class Puntos extends Contador{
 		}	 				
  	}
 
-	 selectGame(tipeGame,clases){		
-		if (tipeGame == 'DeathMode'){
-			this.modificarPuntosDeathMode(clases);
-		}else {
-			this.modificarPuntos(clases);
-		}
-	}
+	//  selectGame(tipeGame,clases){		
+	// 	if (tipeGame == 'DeathMode'){
+	// 		this.modificarPuntosDeathMode(clases);
+	// 	}else {
+	// 		this.modificarPuntos(clases);
+	// 	}
+	// }
 	
 
 	 reiniciarPuntos(){

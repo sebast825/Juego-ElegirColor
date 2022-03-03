@@ -22,19 +22,18 @@ function main(){
 	par.activarTablero();
 
 	
-	 selectGame(cronometro,puntos);
+	 selectGame(puntos,cronometro,puntos,par);
 
 	
 	infoPlay.addEventListener('click',()=>{
 		cronometro.reiniciarCronometro();
 		puntos.reiniciarPuntos()
 		
-//mismo delay del cronometro
+		
+		//mismo delay del cronometro
 		setTimeout(()=>{
 			// console.log(tipeGame)
-			if (puntos.tipeGame != 'DeathMode'){
-				console.log(cronometro.gameTipe)
-
+			if (puntos.gameTipe != 'DeathMode'){
 				botonComun(puntos,par)
 			}else{
 				botonDeathMode(puntos,par,cronometro)
@@ -42,8 +41,16 @@ function main(){
 		},200)
 	})
 	infoMenu.forEach(elem=>{
+		//se reiniciar los 2 contadores :)
+		if(cronometro.getTerminar != false || puntos.getTerminar != false){
+			cronometro.getTerminar == true;
+			puntos.getTerminar == true;
+		}
+	
 		elem.addEventListener('click',()=>{
+			console.log('infoMenu')
 			hideMenu()
+
 			cronometro.terminar = false;
 			cronometro.reiniciarCronometro();
 			puntos.reiniciarPuntos()
@@ -54,8 +61,8 @@ function main(){
 function botonComun(puntos,par){	
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-
-			puntos.modificarPuntos(elem.classList[1])		
+			console.log('btnComun' ,puntos);
+			puntos.modificarPuntos(elem.classList[1]);	
 			par.clickBtn()
 		})
 	})
@@ -74,15 +81,30 @@ function botonDeathMode(puntos,par,cronometro){
 		})
 	})
 }
-function selectGame(cronometro,puntos){
+function selectGame(cronometro,puntos,par){
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
-			puntos.selecTipeGame(elem.value);
+
+			// let tipoJuego = puntos.selecTipeGame(elem.value)
+			puntos.selecTipeGame(elem.value)
+			// selectPuntos(tipoJuego,puntos,cronometro,par);
 
 		});
 	})
+}
+
+function selectPuntos(tipeGame,puntos,cronometro,par){
+	setTimeout(()=>{
+		// console.log(tipeGame)
+		if (tipeGame != 'DeathMode'){
+
+			botonComun(puntos,par)
+		}else{
+			botonDeathMode(puntos,par,cronometro)
+		}
+	},200)
 }
 main()
 
