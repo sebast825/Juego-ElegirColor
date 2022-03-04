@@ -7,12 +7,11 @@ export class Puntos extends Contador{
 	parametro = 'yellow';
 	puntos = 0;
 	
-
+	
 
 	modificarPuntos(clases){
-		console.log(clases)
 		if(this.terminar ) return
-
+console.log('puntosClasico')
  		if(clases === this.parametro){
 
  			this.puntos +=1;
@@ -29,7 +28,6 @@ export class Puntos extends Contador{
  	}
 	
 	modificarPuntosDeathMode(clases){
-		console.log(clases)
 		if (this.modificarPuntos(clases)){
 
 			return true	

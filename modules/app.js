@@ -3,6 +3,7 @@
 const infoPlay = document.querySelector('.infoPlay')
 const menuBtn = document.querySelectorAll('.menu_btn')
 const infoMenu = document.querySelectorAll('.infoMenu')
+const endGame = document.querySelector('.endGame');
 
 
 
@@ -23,6 +24,7 @@ function main(){
 
 	
 	 selectGame(puntos,cronometro,puntos,par);
+	 selecTipeBtn(cronometro,puntos,par)
 
 	
 	infoPlay.addEventListener('click',()=>{
@@ -33,11 +35,8 @@ function main(){
 		//mismo delay del cronometro
 		setTimeout(()=>{
 			// console.log(tipeGame)
-			if (puntos.gameTipe != 'DeathMode'){
-				botonComun(puntos,par)
-			}else{
-				botonDeathMode(puntos,par,cronometro)
-			}
+			console.log(puntos.tipeGame, cronometro.tipeGame)
+			
 		},200)
 	})
 	infoMenu.forEach(elem=>{
@@ -48,7 +47,6 @@ function main(){
 		}
 	
 		elem.addEventListener('click',()=>{
-			console.log('infoMenu')
 			hideMenu()
 
 			cronometro.terminar = false;
@@ -58,21 +56,47 @@ function main(){
 	})
 }
 
-function botonComun(puntos,par){	
-	btn.forEach(elem=>{
+function selecTipeBtn(cronometro,puntos,par){
+	console.log('LLAMAR BTN')
+		btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-			console.log('btnComun' ,puntos);
+			if (puntos.tipeGame != 'DeathMode'){
+				puntos.modificarPuntos(elem.classList[1]);	
+			}else{
+				if(puntos.modificarPuntosDeathMode(elem.classList[1])){
+					//le va a sumar tiempo
+					cronometro.tiempo(false)				
+				}else{
+					cronometro.getTerminar('Te equivocaste! ')
+				}
+			}
+	
+			par.clickBtn()
+		})
+		})
+	 
+	
+	
+
+}
+
+
+
+function botonComun(puntos,par){	
+		elem.addEventListener('click',()=>{
+			// console.log('btnComun' ,puntos);
 			puntos.modificarPuntos(elem.classList[1]);	
 			par.clickBtn()
 		})
-	})
+	
 }
 function botonDeathMode(puntos,par,cronometro){
 	btn.forEach(elem=>{
+		// console.log('btnDeath')
 		elem.addEventListener('click',()=>{
 
 			if(puntos.modificarPuntosDeathMode(elem.classList[1])){
-
+				//le va a sumar tiempo
 				cronometro.tiempo(false)				
 			}else{
 				cronometro.getTerminar('Te equivocaste! ')
