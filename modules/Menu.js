@@ -13,6 +13,7 @@ export function hideMenu(){
 	endGame.style.display = 'none'
 	if(menu.style.display == "none"){
 		menu.style.display = "flex";
+		container.style.display = 'none'
 		menuBtn.forEach(elem=>{
 			elem.addEventListener('click',()=>{
 				elem.style.display = "block"		
@@ -20,10 +21,12 @@ export function hideMenu(){
 		})
 	}else{
 		menu.style.display = "none";
+		container.style.display = 'flex';
 
 		menuBtn.forEach(elem=>{
 			elem.addEventListener('click',()=>{
-				elem.style.display = "none"		
+				elem.style.display = "none"	;
+	
 			})
 		})
 	}
