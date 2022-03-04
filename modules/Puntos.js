@@ -37,14 +37,7 @@ console.log('puntosClasico')
 		}	 				
  	}
 
-	//  selectGame(tipeGame,clases){		
-	// 	if (tipeGame == 'DeathMode'){
-	// 		this.modificarPuntosDeathMode(clases);
-	// 	}else {
-	// 		this.modificarPuntos(clases);
-	// 	}
-	// }
-	
+
 
 	 reiniciarPuntos(){
 		
