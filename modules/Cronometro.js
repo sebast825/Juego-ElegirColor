@@ -137,7 +137,7 @@ import { hideMenu } from "./Menu.js";
 			
 			if(this.terminar){
 				this.terminar = false;
-				infoPlay.innerHTML =` <i class="fa-solid fa-stop"></i>`
+				infoPlay.innerHTML =`<i class="fas fa-pause-circle"></i>`
 			
 				
 			}else{
