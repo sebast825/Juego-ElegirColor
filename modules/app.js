@@ -17,7 +17,7 @@ const btn = document.querySelectorAll('.btn')
 
 
 function main(){
-	
+
 	let cronometro = new Cronometro();
 	let puntos = new Puntos();
 	let par = new Partida();	
@@ -67,9 +67,11 @@ function selecTipeBtn(cronometro,puntos,par){
 				puntos.modificarPuntos(elem.classList[1]);	
 
 			}else{
-
+				par.iniciarSnowMan()
 				if(puntos.modificarPuntosDeathMode(elem.classList[1])){
 					//le va a sumar tiempo
+					// par.snowMan()
+
 					cronometro.tiempo(false)	
 
 				}else{

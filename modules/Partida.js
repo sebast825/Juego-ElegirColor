@@ -2,6 +2,7 @@ const infoMenu = document.querySelector('.infoMenu')
 const btn = document.querySelectorAll('.btn')
 
 const tablero = document.querySelector('.containerTablero');
+const endGame = document.querySelector('.endGame');
 
 //cambia los botones! malditos nombres de clases!
 export class Partida{
@@ -88,7 +89,41 @@ export class Partida{
 			console.log('error')
 		}
 	}
-	
+	iniciarSnowMan(){
+		let interval = setInterval(()=>{
+
+			if(endGame.style.display == 'none'){
+				clearInterval(interval)
+			}
+	   this.numArraySnowMan()
+	   this.setColorSnowMan()
+		},400) 
+	}
+
+	snowMan(num,elem){
+		elem.classList.remove('black')
+		if(this.array[num]==1){
+			elem.classList.add('black')
+		}
+	   
+	}
+	numArraySnowMan(){
+	   this.array = [];
+	   
+	   while(this.array.length < 4){
+		   let mat = Math.floor(Math.random(1)*4);			
+		   this.array.push(mat);
+		   
+	   }
+			   
+   }
+  
+   setColorSnowMan(){
+	let num = 0;
+   tablero.childNodes.forEach(elem =>{
+   this.snowMan(num,elem);
+   num++})
+}
 
 
 	
