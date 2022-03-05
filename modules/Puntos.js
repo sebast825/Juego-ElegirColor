@@ -15,7 +15,11 @@ console.log('puntosClasico')
  		if(clases === this.parametro){
 
  			this.puntos +=1;
-			 puntos.innerHTML = this.puntos;
+			puntos.innerHTML = this.puntos;
+			
+			if(this.tipeGame == 'Clasico' && puntos ==5){
+				this.terminar == true;
+			}
 			return true;
  		}
  		else{
@@ -26,6 +30,7 @@ console.log('puntosClasico')
  		}		
 		 
  	}
+	
 	
 	modificarPuntosDeathMode(clases){
 		if (this.modificarPuntos(clases)){

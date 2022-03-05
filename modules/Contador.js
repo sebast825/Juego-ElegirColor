@@ -10,4 +10,7 @@ export class Contador{
 	selecTipeGame(tipeGame){
 		 this.tipeGame = tipeGame;
 	}
+	getTerminar(){
+		return this.terminar;
+	}
 }

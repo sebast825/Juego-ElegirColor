@@ -3,6 +3,7 @@ import { hideMenu } from "./Menu.js";
 
  const puntos = document.querySelector('.puntos');
  const contador = document.querySelector('.contador');
+ const container = document.querySelector('.container')
 
  const infoPlay = document.querySelector('.infoPlay');
  const endGame = document.querySelector('.endGame');
@@ -62,7 +63,7 @@ import { hideMenu } from "./Menu.js";
 			contador.innerHTML = this.time;	
 			 if(this.time >= 5000){
 			 	this.terminar = true
-			 	this.getTerminar('Te quedaste sin tiempo! ')
+			 	this.setTerminar('Te quedaste sin tiempo! ')
 			 }	
 					
 		},100)
@@ -81,7 +82,7 @@ import { hideMenu } from "./Menu.js";
 			contador.innerHTML = this.time.toFixed(1);	
 		if(this.time == 0){
 			this.terminar = true;
-			this.getTerminar('Te quedaste sin tiempo! ')}			
+			this.setTerminar('Te quedaste sin tiempo! ')}			
 
 		},100)
 	}
@@ -100,7 +101,7 @@ import { hideMenu } from "./Menu.js";
 			contador.innerHTML = this.time;	
 		if(this.time == 0 && this.terminar == false){
 			this.terminar = true;
-			this.getTerminar('Te quedaste sin tiempo! ')
+			this.setTerminar('Te quedaste sin tiempo! ')
 			}	
 		},100)
 	}
@@ -159,9 +160,11 @@ import { hideMenu } from "./Menu.js";
 		return clase;
 	}
 
-	getTerminar(respuesta=''){
+	setTerminar(respuesta=''){
 		this.terminar = true;
 		endGame.style.display = 'flex';
+		container.style.display = 'none';
+		
 		endGame_puntos.innerHTML = this.puntos;
 		endGame_rsta.innerHTML = respuesta;  
 	
