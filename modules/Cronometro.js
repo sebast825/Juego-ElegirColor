@@ -80,7 +80,7 @@ import { hideMenu } from "./Menu.js";
 			}
 			contador.innerHTML = this.time.toFixed(1);	
 		if(this.time <= 0){
-			// this.terminar = true;
+			 this.terminar = true;
 			this.respuesta = 'Te Quedaste sin tiempo! '
 			callBack()
 			}			
