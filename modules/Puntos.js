@@ -1,3 +1,4 @@
+import { seFinish } from "./app.js";
 import { Contador } from "./Contador.js";
 
 const puntos = document.querySelector('.puntos');
@@ -9,17 +10,18 @@ export class Puntos extends Contador{
 	
 	
 
-	modificarPuntos(clases){
+	modificarPuntos(clases,callBack){
 		if(this.terminar ) return
 		console.log('puntosClasico')
  		if(clases === this.parametro){
 
  			this.puntos +=1;
 			puntos.innerHTML = this.puntos;
-			if(this.tipeGame == 'Clasico' && this.puntos ==1){
+			if(this.tipeGame == 'Clasico' && this.puntos == 11){
 				this.terminar = true;
-				this.respuesta = 'Has alcanzado 30 puntos!'
-				}
+				this.respuesta = 'Has terminado!'
+				callBack()
+			}
 		
 			return true;
  		}

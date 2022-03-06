@@ -32,22 +32,12 @@ function main(){
 	
 	infoPlay.addEventListener('click',()=>{
 
-		cronometro.reiniciarCronometro();
-		puntos.reiniciarPuntos()	
+		cronometro.reiniciarCronometro((callBack)=>{
+			let respuesta = cronometro.getRespuesta()
+				seFinish(puntos,cronometro,respuesta)
 			
-setTimeout(() => {
-	do{
-			console.log(puntos.getTerminar(),cronometro.getTerminar())
-		// seFinish(puntos,cronometro)
-	break
-	
-
-}while(puntos.getTerminar() == true || cronometro.getTerminar() == true)
-}, 1000);
-		
-			
-
-	
+		})		
+		puntos.reiniciarPuntos()
 		
 	})
 
@@ -58,7 +48,6 @@ setTimeout(() => {
 		// asi no hay problemiyas con los cambios de color de deathMode
 				
 			if(cronometro.getTerminar != false || puntos.getTerminar != false){
-	
 				cronometro.getTerminar = true;
 				puntos.getTerminar = true;
 			}
@@ -77,9 +66,13 @@ function selecTipeBtn(cronometro,puntos,par){
 	
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-
 			if (puntos.tipeGame != 'DeathMode'){
-				puntos.modificarPuntos(elem.classList[1]);	
+				
+				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
+					let respuesta = puntos.getRespuesta()
+		
+					seFinish(puntos,cronometro,respuesta)
+				});	
 
 			}else{
 				par.iniciarSnowMan()
@@ -116,7 +109,7 @@ function selectGame(cronometro,puntos){
 	})
 }
 
-export function seFinish(puntos,cronometro){
+export function seFinish(puntos,cronometro,respuesta){
 	console.log('estasmos Se FENEEEEEE')
 	
 		puntos.terminar = true;
@@ -125,7 +118,7 @@ export function seFinish(puntos,cronometro){
 	// console.log( cronometro.getTerminar(),puntos.getTerminar())
 	endGame.style.display = 'flex';
 	container.style.display = 'none';
-	let respuesta = puntos.getRespuesta();
+	// let respuesta = puntos.getRespuesta();
 	
 	
 	endGame_rsta.innerHTML = respuesta; 

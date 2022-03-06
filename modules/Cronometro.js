@@ -19,10 +19,10 @@ import { seFinish } from "./app.js";
 	// finalizarContador = true
 
 	
-	selectFunction(){
+	selectFunction(callBack){
 		let parametro = this.tipeGame;
 		if (parametro == 'DeathMode'){
-			 this.cronometroDeathMode();
+			 this.cronometroDeathMode(callBack);
 		}else if(parametro == 'Clasico'){
 			 this.cronometroClasico();
 		}else if(parametro == 'ContraReloj'){
@@ -34,14 +34,14 @@ import { seFinish } from "./app.js";
 
 	
  	
-	 delay(){
+	 delay(callBack){
 		if(!this.terminar){
 			setTimeout(()=>{
-				this.selectFunction()
+				this.selectFunction(callBack)
 				// console.log('delay false')
 			},200)
 		}else{
-			this.selectFunction()
+			this.selectFunction(callBack)
 			// console.log('delay true')
 		}
 	 }
@@ -69,7 +69,7 @@ import { seFinish } from "./app.js";
 	}
 
 	cronometroContraReloj(){
-		this.time = 100
+		this.time = 30;
 		let interval = setInterval(()=>{			
 	
 			if(this.terminar ){
@@ -85,7 +85,7 @@ import { seFinish } from "./app.js";
 
 		},100)
 	}
-	cronometroDeathMode(){
+	cronometroDeathMode(callBack){
 		// this.iniciarSnowMan()
 		this.time = 10
 
@@ -95,21 +95,25 @@ import { seFinish } from "./app.js";
 				clearInterval(interval);
 				
 			}else{
-				this.tiempo(true);
+				this.tiempo(true,callBack);
 			}
 			contador.innerHTML = this.time;	
-			
+
 		if(this.time == 0 && this.terminar == false){
 			this.terminar = true;
-
-			this.respuesta = ('Te quedaste sin tiempo! ')
+			this.respuesta = 'Te Quedaste sin tiempo! '
+			callBack()
 			// this.terminarRonda()
 			}	
 		},100)
 	}
 	tiempo(parametro){
 		if(parametro){
-			this.time -= 1;
+			
+				this.time -= 1;
+
+			
+			
 		}else{
 			this.time += 6.5; 
 		}		
@@ -134,7 +138,7 @@ import { seFinish } from "./app.js";
 
 
 
-	reiniciarCronometro(){
+	reiniciarCronometro(callBack){
 		
 			this.time = 0;
 			
@@ -151,7 +155,7 @@ import { seFinish } from "./app.js";
 				
 				
 			}
-				this.delay();
+				this.delay(callBack);
 	}
 
 	getTime(){

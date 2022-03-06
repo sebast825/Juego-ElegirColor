@@ -16,8 +16,8 @@ export class Contador{
 	getTerminar(){
 		return this.terminar;
 	}
-	getRespuesta(respuesta){
-		this.respuesta = respuesta;
+	getRespuesta(){
+		return this.respuesta;
 	}
 	
 	terminarRonda(){
