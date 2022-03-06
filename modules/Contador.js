@@ -1,4 +1,3 @@
-import { seFinish } from "./app.js";
 
 
 export class Contador{
@@ -15,6 +14,9 @@ export class Contador{
 	}
 	getTerminar(){
 		return this.terminar;
+	}
+	setTerminar(parametro){
+		this.terminar = parametro;
 	}
 	getRespuesta(){
 		return this.respuesta;

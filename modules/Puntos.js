@@ -1,7 +1,7 @@
-import { seFinish } from "./app.js";
 import { Contador } from "./Contador.js";
 
 const puntos = document.querySelector('.puntos');
+
 
 
 export class Puntos extends Contador{
@@ -18,7 +18,7 @@ export class Puntos extends Contador{
  			this.puntos +=1;
 			puntos.innerHTML = this.puntos;
 			if(this.tipeGame == 'Clasico' && this.puntos == 11){
-				this.terminar = true;
+				// this.terminar = true;
 				this.respuesta = 'Has terminado!'
 				callBack()
 			}

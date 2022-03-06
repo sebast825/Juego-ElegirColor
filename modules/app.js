@@ -2,14 +2,12 @@ const infoPlay = document.querySelector('.infoPlay')
 const menuBtn = document.querySelectorAll('.menu_btn')
 const infoMenu = document.querySelectorAll('.infoMenu')
 const endGame = document.querySelector('.endGame');
-const endGame_rsta = document.querySelector('.endGame_rsta');
- const endGame_puntos = document.querySelector('.endGame_puntos');
- const endGame_tiempo = document.querySelector('.endGame_tiempo')
+
  const container = document.querySelector('.container')
 
 
 import { Partida} from "./Partida.js";
-import {hideMenu} from './Menu.js'
+import {hideMenu, seFinish} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
 import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
@@ -38,26 +36,19 @@ function main(){
 			
 		})		
 		puntos.reiniciarPuntos()
-		
+		console.log(puntos.getTerminar())
 	})
-
 	
-		
 		infoMenu.forEach(elem=>{
-//se reiniciar los 2 contadores :)
-		// asi no hay problemiyas con los cambios de color de deathMode
 				
-			if(cronometro.getTerminar != false || puntos.getTerminar != false){
-				cronometro.getTerminar = true;
-				puntos.getTerminar = true;
-			}
-		
+			
+
 			elem.addEventListener('click',()=>{
-				
+				console.log(puntos.getTerminar())
+				cronometro.setTerminar(true);
+				puntos.setTerminar(true)
 				hideMenu()
-				cronometro.terminar = false;
-				cronometro.reiniciarCronometro();
-				puntos.reiniciarPuntos()
+				
 			})
 		})
 }
@@ -83,8 +74,8 @@ function selecTipeBtn(cronometro,puntos,par){
 					cronometro.tiempo(false)	
 
 				}else{
-
-					seFinish(puntos,cronometro)
+					let respuesta = puntos.getRespuesta()
+					seFinish(puntos,cronometro,respuesta)
 				}
 			}
 	
@@ -109,26 +100,7 @@ function selectGame(cronometro,puntos){
 	})
 }
 
-export function seFinish(puntos,cronometro,respuesta){
-	console.log('estasmos Se FENEEEEEE')
-	
-		puntos.terminar = true;
-	cronometro.terminar = true;
 
-	// console.log( cronometro.getTerminar(),puntos.getTerminar())
-	endGame.style.display = 'flex';
-	container.style.display = 'none';
-	// let respuesta = puntos.getRespuesta();
-	
-	
-	endGame_rsta.innerHTML = respuesta; 
-	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;
-	endGame_tiempo.innerHTML = `Tiempo: ${cronometro.getTime().toFixed(2)} `;
-
-
-	
-		
-}
 main()
 
 

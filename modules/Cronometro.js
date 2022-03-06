@@ -1,6 +1,5 @@
 import { Contador } from "./Contador.js";
 import { hideMenu } from "./Menu.js";
-import { seFinish } from "./app.js";
 
  const puntos = document.querySelector('.puntos');
  const contador = document.querySelector('.contador');
@@ -15,9 +14,13 @@ import { seFinish } from "./app.js";
 
  export class Cronometro extends Contador{
  	time = 0;	
+	timeTotal = 10;
 	funcionCronometro = undefined;
 	// finalizarContador = true
 
+	getTimeTotal(){
+		return this.timeTotal;
+	}
 	
 	selectFunction(callBack){
 		let parametro = this.tipeGame;
@@ -77,7 +80,7 @@ import { seFinish } from "./app.js";
 			}
 			contador.innerHTML = this.time.toFixed(1);	
 		if(this.time <= 0){
-			this.terminar = true;
+			// this.terminar = true;
 			this.respuesta = 'Te Quedaste sin tiempo! '
 			callBack()
 			}			
@@ -99,10 +102,9 @@ import { seFinish } from "./app.js";
 			contador.innerHTML = this.time;	
 
 		if(this.time == 0 && this.terminar == false){
-			this.terminar = true;
+			// this.terminar = true;
 			this.respuesta = 'Te Quedaste sin tiempo! '
 			callBack()
-			// this.terminarRonda()
 			}	
 		},100)
 	}
@@ -115,6 +117,7 @@ import { seFinish } from "./app.js";
 			
 		}else{
 			this.time += 6.5; 
+			this.timeTotal += 6.5; 
 		}		
 	}
  	
