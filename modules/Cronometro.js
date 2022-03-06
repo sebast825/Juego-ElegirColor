@@ -116,8 +116,8 @@ import { hideMenu } from "./Menu.js";
 			
 			
 		}else{
-			this.time += 6.5; 
-			this.timeTotal += 6.5; 
+			this.time += 6.8; 
+			this.timeTotal += 6.8; 
 		}		
 	}
  	

@@ -98,7 +98,7 @@ export class Partida{
 			}
 	   this.numArraySnowMan()
 	   this.setColorSnowMan()
-		},400) 
+		},200) 
 	}
 
 	snowMan(num,elem){
