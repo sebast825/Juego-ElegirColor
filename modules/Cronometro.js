@@ -26,7 +26,7 @@ import { seFinish } from "./app.js";
 		}else if(parametro == 'Clasico'){
 			 this.cronometroClasico();
 		}else if(parametro == 'ContraReloj'){
-			 this.cronometroContraReloj();
+			 this.cronometroContraReloj(callBack);
 		}else{
 			console.log('error select Game')
 		}
@@ -60,16 +60,13 @@ import { seFinish } from "./app.js";
 				this.time += 1
 			}
 			contador.innerHTML = this.time;	
-			 if(this.time >= 5000){
-			 	this.terminar = true
-			 	this.setTerminar('Te quedaste sin tiempo! ')
-			 }	
+			
 					
 		},100)
 	}
 
-	cronometroContraReloj(){
-		this.time = 30;
+	cronometroContraReloj(callBack){
+		this.time = 3;
 		let interval = setInterval(()=>{			
 	
 			if(this.terminar ){
@@ -79,9 +76,11 @@ import { seFinish } from "./app.js";
 				this.time -= 0.46
 			}
 			contador.innerHTML = this.time.toFixed(1);	
-		if(this.time == 0){
+		if(this.time <= 0){
 			this.terminar = true;
-			this.setTerminar('Te quedaste sin tiempo! ')}			
+			this.respuesta = 'Te Quedaste sin tiempo! '
+			callBack()
+			}			
 
 		},100)
 	}

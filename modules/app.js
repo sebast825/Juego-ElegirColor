@@ -123,7 +123,7 @@ export function seFinish(puntos,cronometro,respuesta){
 	
 	endGame_rsta.innerHTML = respuesta; 
 	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;
-	endGame_tiempo.innerHTML = `Tiempo: ${cronometro.getTime()} `;
+	endGame_tiempo.innerHTML = `Tiempo: ${cronometro.getTime().toFixed(2)} `;
 
 
 	
