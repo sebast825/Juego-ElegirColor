@@ -89,7 +89,7 @@ import { hideMenu } from "./Menu.js";
 	}
 	cronometroDeathMode(callBack){
 		// this.iniciarSnowMan()
-		this.time = 1
+		this.time = 10;
 
 		let interval = setInterval(()=>{			
 	
@@ -99,19 +99,19 @@ import { hideMenu } from "./Menu.js";
 			}else{
 				this.tiempo(true,callBack);
 			}
-			contador.innerHTML = this.time;	
+			contador.innerHTML = this.time.toFixed(2);	
 
 		if(this.time == 0 && this.terminar == false){
 			// this.terminar = true;
-			this.respuesta = 'Te Quedaste sin tiempo! '
-			callBack()
+			this.respuesta = 'Te Quedaste sin tiempo! ';
+			callBack();
 			}	
 		},100)
 	}
 	tiempo(parametro){
 		if(parametro){
 			
-				this.time -= 1;
+				this.time -= 1.11;
 
 			
 			
