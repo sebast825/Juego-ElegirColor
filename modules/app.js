@@ -2,7 +2,10 @@ const infoPlay = document.querySelector('.infoPlay')
 const menuBtn = document.querySelectorAll('.menu_btn')
 const infoMenu = document.querySelectorAll('.infoMenu')
 const endGame = document.querySelector('.endGame');
-
+const endGame_rsta = document.querySelector('.endGame_rsta');
+ const endGame_puntos = document.querySelector('.endGame_puntos');
+ const endGame_tiempo = document.querySelector('.endGame_tiempo')
+ const container = document.querySelector('.container')
 
 
 import { Partida} from "./Partida.js";
@@ -30,9 +33,21 @@ function main(){
 	infoPlay.addEventListener('click',()=>{
 
 		cronometro.reiniciarCronometro();
-		puntos.reiniciarPuntos()		
+		puntos.reiniciarPuntos()	
+			
+setTimeout(() => {
+	do{
+			console.log(puntos.getTerminar(),cronometro.getTerminar())
+		// seFinish(puntos,cronometro)
+	break
+	
 
+}while(puntos.getTerminar() == true || cronometro.getTerminar() == true)
+}, 1000);
 		
+			
+
+	
 		
 	})
 
@@ -44,8 +59,8 @@ function main(){
 				
 			if(cronometro.getTerminar != false || puntos.getTerminar != false){
 	
-				cronometro.getTerminar == true;
-				puntos.getTerminar == true;
+				cronometro.getTerminar = true;
+				puntos.getTerminar = true;
 			}
 		
 			elem.addEventListener('click',()=>{
@@ -76,16 +91,12 @@ function selecTipeBtn(cronometro,puntos,par){
 
 				}else{
 
-					cronometro.setTerminar('Te equivocaste! ')
+					seFinish(puntos,cronometro)
 				}
 			}
 	
 			par.clickBtn()
 
-			if(puntos.getTerminar() == true || cronometro.getTerminar() == true){
-
-				seFinish(puntos,cronometro)
-		}
 			
 			
 		})
@@ -105,12 +116,22 @@ function selectGame(cronometro,puntos){
 	})
 }
 
-function seFinish(puntos,cronometro){
+export function seFinish(puntos,cronometro){
+	console.log('estasmos Se FENEEEEEE')
 	
 		puntos.terminar = true;
 	cronometro.terminar = true;
 
-	console.log( cronometro.getTerminar(),puntos.getTerminar())
+	// console.log( cronometro.getTerminar(),puntos.getTerminar())
+	endGame.style.display = 'flex';
+	container.style.display = 'none';
+	let respuesta = puntos.getRespuesta();
+	
+	
+	endGame_rsta.innerHTML = respuesta; 
+	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;
+	endGame_tiempo.innerHTML = `Tiempo: ${cronometro.getTime()} `;
+
 
 	
 		

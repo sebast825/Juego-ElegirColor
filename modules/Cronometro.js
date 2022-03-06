@@ -1,5 +1,6 @@
 import { Contador } from "./Contador.js";
 import { hideMenu } from "./Menu.js";
+import { seFinish } from "./app.js";
 
  const puntos = document.querySelector('.puntos');
  const contador = document.querySelector('.contador');
@@ -7,15 +8,13 @@ import { hideMenu } from "./Menu.js";
 
  const infoPlay = document.querySelector('.infoPlay');
  const endGame = document.querySelector('.endGame');
- const endGame_rsta = document.querySelector('.endGame_rsta');
- const endGame_puntos = document.querySelector('.endGame_puntos');
+ 
  const infoMenuEnd = document.querySelector('.infoMenuEnd');
 
 
 
  export class Cronometro extends Contador{
- 	time = 0;
-	
+ 	time = 0;	
 	funcionCronometro = undefined;
 	// finalizarContador = true
 
@@ -99,9 +98,12 @@ import { hideMenu } from "./Menu.js";
 				this.tiempo(true);
 			}
 			contador.innerHTML = this.time;	
+			
 		if(this.time == 0 && this.terminar == false){
 			this.terminar = true;
-			this.setTerminar('Te quedaste sin tiempo! ')
+
+			this.respuesta = ('Te quedaste sin tiempo! ')
+			// this.terminarRonda()
 			}	
 		},100)
 	}
@@ -152,23 +154,13 @@ import { hideMenu } from "./Menu.js";
 				this.delay();
 	}
 
-	
-	elegirJuego(nameGame){
-		this.gameTipe = nameGame;
-		let clase = new Cronometro();
-				
-		return clase;
+	getTime(){
+		return this.time;
 	}
+	
+	
 
-	setTerminar(respuesta=''){
-		this.terminar = true;
-		endGame.style.display = 'flex';
-		container.style.display = 'none';
-		
-		endGame_puntos.innerHTML = this.puntos;
-		endGame_rsta.innerHTML = respuesta;  
-	
-	}
+
 }
 
 

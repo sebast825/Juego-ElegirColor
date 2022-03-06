@@ -11,33 +11,38 @@ export class Puntos extends Contador{
 
 	modificarPuntos(clases){
 		if(this.terminar ) return
-console.log('puntosClasico')
+		console.log('puntosClasico')
  		if(clases === this.parametro){
 
  			this.puntos +=1;
 			puntos.innerHTML = this.puntos;
-			
-			if(this.tipeGame == 'Clasico' && puntos ==5){
-				this.terminar == true;
-			}
+			if(this.tipeGame == 'Clasico' && this.puntos ==1){
+				this.terminar = true;
+				this.respuesta = 'Has alcanzado 30 puntos!'
+				}
+		
 			return true;
  		}
  		else{
 
  			this.puntos--;
 			 puntos.innerHTML = this.puntos;
+			
 			return false;
  		}		
 		 
  	}
 	
-	
+	getPuntos(){
+		return this.puntos;
+	}
 	modificarPuntosDeathMode(clases){
 		if (this.modificarPuntos(clases)){
 
 			return true	
 			
-		}else{					
+		}else{				
+			this.respuesta = `Te equivocaste!`	
 			return false
 		}	 				
  	}

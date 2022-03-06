@@ -25,7 +25,6 @@
 	align-items: center;
 	gap: 1rem;
 	background-color: red;
-	width: 100vw;
 	height: 100vh;
 	transition: 1s all ease-in;
 	z-index: 10;
