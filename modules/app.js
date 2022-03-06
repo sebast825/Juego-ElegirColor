@@ -37,7 +37,6 @@ function main(){
 			
 		})		
 		puntos.reiniciarPuntos()
-		console.log(puntos.getTerminar())
 	})
 	
 		infoMenu.forEach(elem=>{

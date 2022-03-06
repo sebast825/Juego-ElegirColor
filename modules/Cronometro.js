@@ -100,9 +100,10 @@ import { hideMenu } from "./Menu.js";
 				this.tiempo(true,callBack);
 			}
 			contador.innerHTML = this.time.toFixed(2);	
+		
 
 		if(this.time <= 0 && this.terminar == false){
-			// this.terminar = true;
+			this.terminar = true;
 			this.respuesta = 'Te Quedaste sin tiempo! ';
 			callBack();
 			}	
@@ -112,7 +113,6 @@ import { hideMenu } from "./Menu.js";
 		if(parametro){
 			
 				this.time -= 1.11;
-
 			
 			
 		}else{

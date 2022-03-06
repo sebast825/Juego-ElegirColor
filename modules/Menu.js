@@ -2,16 +2,21 @@ const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
 const endGame = document.querySelector('.endGame')
 const container = document.querySelector('.container');
-// import { Cronometro } from "./app.js"
-import { Cronometro } from "./Cronometro.js"
+const puntos = document.querySelector('.puntos');
+const contador = document.querySelector('.contador');
 
 const endGame_rsta = document.querySelector('.endGame_rsta');
  const endGame_puntos = document.querySelector('.endGame_puntos');
- const endGame_tiempo = document.querySelector('.endGame_tiempo')
- const endGame_again = document.querySelector('.endGame_again')
+ const endGame_tiempo = document.querySelector('.endGame_tiempo');
+ const endGame_again = document.querySelector('.endGame_again');
+
+ 
 
 export function hideMenu(){
 
+	ocultarPuntos();
+	puntos.innerHTML = null;
+	contador.innerHTML = null;
 	endGame.style.display = 'none';
 
 	if(menu.style.display == "none"){
@@ -45,10 +50,11 @@ export function hideMenu(){
 export function seFinish(puntos,cronometro,respuesta,par){
 	console.log('estasmos Se FENEEEEEE')
 	cronometro.setTerminar(true);
-	puntos.setTerminar(true)
+	puntos.setTerminar(true);
+	ocultarPuntos();
 
 	endGame_again.addEventListener('click',()=>{
-
+		
 		par.ocultarBotnoes();
 		endGame.style.display = 'none';
 		container.style.display = 'flex';
@@ -65,13 +71,26 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	if(cronometro.getGametipe() == 'DeathMode'){
 
 		endGame_tiempo.innerHTML = `Tiempo jugado: ${cronometro.getTimeTotal().toFixed(2)} `;
-		
+
 	}else{
 		endGame_tiempo.innerHTML = `Tiempo: ${cronometro.getTime().toFixed(2)} `;
 
 	}
 
+}
 
+
+
+function ocultarPuntos  (){
+	console.log('limpiar')
 	
-		
+	contador.innerHTML = 'asd';
+
+	puntos.innerHTML = 'asd';
+
+	//sin el intervalo en el contador pasa una setInterval mas y no queda vacio :)
+	setTimeout(()=>{
+		contador.innerHTML = null;
+		puntos.innerHTML = null;
+	},100)
 }
