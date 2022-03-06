@@ -13,7 +13,6 @@ export class Partida{
 
 	//para btn play-- agregar clase que saque los botones de FE
 	activarTablero(){
-		this.mostrarBotones()
 		// this.clickBtn();
 		this.numArray();
 		this.setColor();
@@ -21,21 +20,23 @@ export class Partida{
 	}
 
 	mostrarBotones(){
-		if(!this.terminar){
+		
 
 			btn.forEach(elem=>{
 				elem.style.display = 'flex';
 			})
-			this.terminar = true
-
-		}else{
-
-			btn.forEach(elem=>{
-				elem.style.display = 'none';
-			})			
-			this.terminar = false
 		}
+			
+
+	ocultarBotnoes(){
+		btn.forEach(elem=>{
+			elem.style.display = 'none';
+		})	
+
 	}
+
+					
+		
 	//pone los botones en el tablero
 	clickBtn(){	
 		btn.forEach(elem => {

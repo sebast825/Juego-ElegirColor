@@ -29,10 +29,11 @@ function main(){
 
 	
 	infoPlay.addEventListener('click',()=>{
+		par.mostrarBotones()
 
 		cronometro.reiniciarCronometro((callBack)=>{
 			let respuesta = cronometro.getRespuesta()
-				seFinish(puntos,cronometro,respuesta)
+				seFinish(puntos,cronometro,respuesta,par)
 			
 		})		
 		puntos.reiniciarPuntos()
@@ -40,11 +41,11 @@ function main(){
 	})
 	
 		infoMenu.forEach(elem=>{
-				
+
 			
 
 			elem.addEventListener('click',()=>{
-				console.log(puntos.getTerminar())
+				par.ocultarBotnoes()
 				cronometro.setTerminar(true);
 				puntos.setTerminar(true)
 				hideMenu()
@@ -62,7 +63,7 @@ function selecTipeBtn(cronometro,puntos,par){
 				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
 					let respuesta = puntos.getRespuesta()
 		
-					seFinish(puntos,cronometro,respuesta)
+					seFinish(puntos,cronometro,respuesta,par)
 				});	
 
 			}else{
@@ -75,7 +76,7 @@ function selecTipeBtn(cronometro,puntos,par){
 
 				}else{
 					let respuesta = puntos.getRespuesta()
-					seFinish(puntos,cronometro,respuesta)
+					seFinish(puntos,cronometro,respuesta,par)
 				}
 			}
 	

@@ -33,3 +33,12 @@
 .endGame_text{
 	padding: 30%;
 }
+
+.endGame_option{
+	width: 30vw;	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+
+}

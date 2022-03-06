@@ -89,7 +89,7 @@ import { hideMenu } from "./Menu.js";
 	}
 	cronometroDeathMode(callBack){
 		// this.iniciarSnowMan()
-		this.time = 10
+		this.time = 1
 
 		let interval = setInterval(()=>{			
 	
