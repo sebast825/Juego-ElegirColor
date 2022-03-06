@@ -35,10 +35,11 @@
 }
 
 .endGame_option{
-	width: 30vw;	
+	/* width: 7vw;	 */
 	display: flex;
 	flex-direction: row;
+	 gap: 5rem; 
 	justify-content: space-between;
-	align-items: flex-start;
+	
 
 }
