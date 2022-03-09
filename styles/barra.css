@@ -6,3 +6,12 @@
 	display: flex;
 	align-content: center;
 }
+
+.barra{
+	height: 80%;
+	align-self: center;
+	margin-left: 1%;
+	/* width: 100%; */
+	transition:  1s ease;
+	background-color: red;
+}

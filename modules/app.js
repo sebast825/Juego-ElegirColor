@@ -4,6 +4,8 @@ const infoMenu = document.querySelectorAll('.infoMenu')
 const endGame = document.querySelector('.endGame');
 
  const container = document.querySelector('.container')
+ const puntoss = document.querySelector('.puntos');
+
 
 
 import { Partida} from "./Partida.js";
@@ -12,6 +14,7 @@ import { Cronometro } from "./Cronometro.js";
 import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
+import { Barra } from "./Barra.js";
 const btn = document.querySelectorAll('.btn')
 
 
@@ -20,12 +23,12 @@ function main(){
 	let cronometro = new Cronometro();
 	let puntos = new Puntos();
 	let par = new Partida();	
-
+	let bar = new Barra()
 
 	par.activarTablero();
 	
 	selectGame(puntos,cronometro,puntos);
-	selecTipeBtn(cronometro,puntos,par)
+	selecTipeBtn(cronometro,puntos,par,bar)
 
 	
 	infoPlay.addEventListener('click',()=>{
@@ -53,7 +56,7 @@ function main(){
 		})
 }
 
-function selecTipeBtn(cronometro,puntos,par){
+function selecTipeBtn(cronometro,puntos,par,bar){
 	
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
@@ -80,7 +83,7 @@ function selecTipeBtn(cronometro,puntos,par){
 			}
 	
 			par.clickBtn()
-
+			bar.barraComun(puntoss.innerHTML)
 			
 			
 		})
