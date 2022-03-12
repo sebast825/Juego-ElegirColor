@@ -41,9 +41,9 @@ function main(){
 				seFinish(puntos,cronometro,respuesta,par)
 			
 		})	
-		if (cronometro.getGametipe() == 'ContraReloj'){
-			console.log('jaj')
-			bar.barraContrarreloj(cronometro)
+		if (cronometro.getGametipe() == 'ContraReloj' && cronometro.getTerminar() != true){			
+				bar.barraContrarreloj(cronometro)
+			
 		}	
 
 	
@@ -55,6 +55,7 @@ function main(){
 			
 
 			elem.addEventListener('click',()=>{
+				bar.setTerminar(true)
 				par.ocultarBotnoes()
 				cronometro.setTerminar(true);
 				puntos.setTerminar(true)
@@ -112,6 +113,9 @@ function selectGame(cronometro,puntos,bar){
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
 
+			if(cronometro.getGametipe() == 'ContraReloj'){
+				bar.barFull()
+			}
 		
 		});
 	})
