@@ -9,10 +9,12 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
  const endGame_puntos = document.querySelector('.endGame_puntos');
  const endGame_tiempo = document.querySelector('.endGame_tiempo');
  const endGame_again = document.querySelector('.endGame_again');
+ const barra = document.querySelector('.barra');
 
  
 
 export function hideMenu(){
+	barra.style.width = '0%'
 
 	ocultarPuntos();
 	puntos.innerHTML = null;
@@ -48,16 +50,17 @@ export function hideMenu(){
 
 
 export function seFinish(puntos,cronometro,respuesta,par){
-	console.log('estasmos Se FENEEEEEE')
+
 	cronometro.setTerminar(true);
 	puntos.setTerminar(true);
 	ocultarPuntos();
 
 	endGame_again.addEventListener('click',()=>{
-		
+
 		par.ocultarBotnoes();
 		endGame.style.display = 'none';
 		container.style.display = 'flex';
+		barra.style.width = '0%';
 
 	})
 

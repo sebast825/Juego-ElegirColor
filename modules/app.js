@@ -5,6 +5,7 @@ const endGame = document.querySelector('.endGame');
 
  const container = document.querySelector('.container')
  const puntoss = document.querySelector('.puntos');
+ const barra = document.querySelector('.barra');
 
 
 
@@ -27,18 +28,25 @@ function main(){
 
 	par.activarTablero();
 	
-	selectGame(puntos,cronometro,puntos);
+	selectGame(puntos,cronometro,bar);
 	selecTipeBtn(cronometro,puntos,par,bar)
-
+	
 	
 	infoPlay.addEventListener('click',()=>{
+		
 		par.mostrarBotones()
-
+		barra.style.width = '0%'
 		cronometro.reiniciarCronometro((callBack)=>{
 			let respuesta = cronometro.getRespuesta()
 				seFinish(puntos,cronometro,respuesta,par)
 			
-		})		
+		})	
+		if (cronometro.getGametipe() == 'ContraReloj'){
+			console.log('jaj')
+			bar.barraContrarreloj(cronometro)
+		}	
+
+	
 		puntos.reiniciarPuntos()
 	})
 	
@@ -61,12 +69,17 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
 			if (puntos.tipeGame != 'DeathMode'){
-				
+
 				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
 					let respuesta = puntos.getRespuesta()
 		
 					seFinish(puntos,cronometro,respuesta,par)
 				});	
+
+				if(puntos.tipeGame == 'Clasico'){
+					bar.barraComun(puntoss.innerText)
+
+				}
 
 			}else{
 				par.iniciarSnowMan()
@@ -83,7 +96,6 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 			}
 	
 			par.clickBtn()
-			bar.barraComun(puntoss.innerHTML)
 			
 			
 		})
@@ -91,16 +103,19 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 }
 
 
-function selectGame(cronometro,puntos){
+function selectGame(cronometro,puntos,bar){
 	
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-
+			console.log(elem.value)
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
+
+		
 		});
 	})
+	
 }
 
 

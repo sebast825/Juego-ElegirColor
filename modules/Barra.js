@@ -9,4 +9,21 @@ export class Barra{
 		barra.style.width = `${actualBarra}%`
 		console.log(puntos)
 	}
+
+	barraContrarreloj(cronometro){
+		let interval = setInterval(()=>{
+			let actualBarra = (cronometro.getTime() / 40 ) * 98;
+			console.log(actualBarra)
+			console.log(cronometro.getTime())
+			barra.style.width = `${actualBarra}%`
+			if(actualBarra <= 0 || actualBarra == 100){
+				clearInterval(interval)
+			}
+		},100)
+	
+	}
+
+	barFull(){
+		barra.style.width = `98%`
+	}
 }
