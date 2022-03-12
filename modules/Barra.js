@@ -28,7 +28,9 @@ export class Barra{
 			infoPlay.addEventListener('click',()=>{
 				if(cronometro.getGametipe() == 'ContraReloj')
 				clearInterval(interval)
-				this.barFull()
+				// console.log(cronometro.getGametipe())
+
+				 this.barFull(cronometro)
 
 			})
 
@@ -40,7 +42,11 @@ export class Barra{
 	
 	}
 
-	barFull(){
+	barFull(cronometro){
+		if(cronometro.getGametipe() != 'ContraReloj')return
 		barra.style.width = `96%`
+	}
+	barEmpty(){
+		barra.style.width = `0%`
 	}
 }

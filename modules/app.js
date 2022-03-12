@@ -42,17 +42,17 @@ function main(){
 			
 		})	
 		if (cronometro.getGametipe() == 'ContraReloj' && cronometro.getTerminar() != true){			
-				bar.barraContrarreloj(cronometro)
+			console.log('entra aca')
+			bar.setTerminar(false)
+			bar.barraContrarreloj(cronometro)
 			
-		}	
-
-	
+		}	else if(cronometro.getGametipe() == 'Clasico'){
+			bar.barEmpty()
+		}
 		puntos.reiniciarPuntos()
 	})
 	
-		infoMenu.forEach(elem=>{
-
-			
+	infoMenu.forEach(elem=>{
 
 			elem.addEventListener('click',()=>{
 				bar.setTerminar(true)
@@ -114,7 +114,7 @@ function selectGame(cronometro,puntos,bar){
 			puntos.selecTipeGame(elem.value)
 
 			if(cronometro.getGametipe() == 'ContraReloj'){
-				bar.barFull()
+				bar.barFull(cronometro)
 			}
 		
 		});
