@@ -145,16 +145,10 @@ import { hideMenu } from "./Menu.js";
 			this.time = 0;
 			
 			if(this.terminar){
-				this.terminar = false;
-				infoPlay.innerHTML =`<i class="fas fa-pause-circle"></i>`
-			
+				this.terminar = false;			
 				
 			}else{
-				this.terminar = true;
-				
-
-				infoPlay.innerHTML = (`<i class="fas fa-play-circle"></i>`)
-				
+				this.terminar = true;					
 				
 			}
 				this.delay(callBack);

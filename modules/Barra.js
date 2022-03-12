@@ -26,10 +26,8 @@ export class Barra{
 			tiempoRestante -= 0.46;
 
 			infoPlay.addEventListener('click',()=>{
-				if(cronometro.getGametipe() == 'ContraReloj')
+				
 				clearInterval(interval)
-				// console.log(cronometro.getGametipe())
-
 				 this.barFull(cronometro)
 
 			})

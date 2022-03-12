@@ -10,7 +10,7 @@ const endGame = document.querySelector('.endGame');
 
 
 import { Partida} from "./Partida.js";
-import {hideMenu, seFinish} from './Menu.js'
+import {hideMenu, seFinish,playFE} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
 import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
@@ -41,6 +41,9 @@ function main(){
 				seFinish(puntos,cronometro,respuesta,par)
 			
 		})	
+			playFE(cronometro)
+
+		
 		if (cronometro.getGametipe() == 'ContraReloj' && cronometro.getTerminar() != true){			
 			console.log('entra aca')
 			bar.setTerminar(false)
@@ -61,6 +64,8 @@ function main(){
 				puntos.setTerminar(true)
 				hideMenu()
 				
+				playFE(cronometro)
+
 			})
 		})
 }

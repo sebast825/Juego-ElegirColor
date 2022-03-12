@@ -10,6 +10,8 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
  const endGame_tiempo = document.querySelector('.endGame_tiempo');
  const endGame_again = document.querySelector('.endGame_again');
  const barra = document.querySelector('.barra');
+ const infoPlay = document.querySelector('.infoPlay');
+
 
  
 
@@ -50,6 +52,9 @@ export function hideMenu(){
 
 
 export function seFinish(puntos,cronometro,respuesta,par){
+
+	playFE(cronometro)
+
 
 	cronometro.setTerminar(true);
 	puntos.setTerminar(true);
@@ -96,4 +101,14 @@ function ocultarPuntos  (){
 		contador.innerHTML = null;
 		puntos.innerHTML = null;
 	},100)
+}
+
+export function playFE(cronometro){
+	if(cronometro.getTerminar() == true){
+		infoPlay.innerHTML = (`<i class="fas fa-play-circle"></i>`)
+
+	}else{
+		infoPlay.innerHTML =`<i class="fas fa-pause-circle"></i>`
+
+	}
 }
