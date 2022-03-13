@@ -26,18 +26,15 @@ export function hideMenu(){
 	// puntos.innerHTML = null;
 	// contador.innerHTML = null;
 	endGame.style.display = 'none';
-	console.log(menu.style.display )
-
+console.log(menu.style.display)
 	if(menu.style.display == "none"){
 		// timeLine()
 
 animationShowMenu()
-animationHidePartida()
-console.log('atr')
-setTimeout(()=>{
-	container.style.display = 'none';
+// animationHidePartida()
 
-})
+
+
 		historial.style.display = 'none'
 
 		menuBtn.forEach(elem=>{
@@ -49,8 +46,7 @@ setTimeout(()=>{
 	}else{
 		// menu.style.display = 'flex';
 		animationHideMenu();
-		animationShowPartida();
-		console.log('asd')
+		// animationShowPartida();
 
 		//  container.style.display = 'flex';
 
@@ -107,9 +103,8 @@ export function seFinish(puntos,cronometro,respuesta,par){
 function ocultarPuntos  (){
 	console.log('limpiar')
 	
-	contador.innerHTML = 'asd';
-
-	puntos.innerHTML = 'asd';
+	contador.innerHTML = null;
+		puntos.innerHTML = null;
 
 	//sin el intervalo en el contador pasa una setInterval mas y no queda vacio :)
 	setTimeout(()=>{

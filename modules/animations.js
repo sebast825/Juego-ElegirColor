@@ -58,23 +58,46 @@ function animationPartidaInfo(){
 
 export 	function animationHideMenu(){
 	
-	const timeLine = gsap.timeline({default:{duration:1}});
+	const timeLine = gsap.timeline({default:{duration:.5}});
 	timeLine
 	.to('.menu_btn_Css',
 		{x:200,opacity:0})
 	.to('.menu',{
 		opacity:0,display:'none'})	
+		.to('.container',{
+			opacity:1,display:'flex',duration:.3,},.5)
+		.fromTo('.infoItem',{
+			y:-100,opacity:0},{
+				y:-0,opacity:1
+			})
+		.fromTo('.containerTablero',{
+			opacity:0},{
+				opacity:1
+			},'<.3')
+		.fromTo('.containerBarra',{
+			opacity:0},{
+				opacity:1
+			},'<')
 	
 
 }
 export 	function animationShowMenu(){
 	
-	const timeLine = gsap.timeline({default:{duration:.4}});
+	const timeLine = gsap.timeline({default:{duration:.2}});
 	timeLine
+	.to('.infoItem',{
+		y:-100,opacity:0,duration:.5})
+	.to('.containerTablero',{
+		opacity:0},'<')
+	.to('.containerBarra',{
+		opacity:0},'<')
+	.to('.container',{
+		opacity:0})
 	.to('.menu',{
-		opacity:1,display:'flex'},.3)	
+		opacity:1,display:'flex'},'<-.2')	
 	.to('.menu_btn_Css',
 		{x:0,opacity:1,stagger:.3})
+	
 
 	
 
@@ -100,17 +123,16 @@ export function animationShowPartida(){
 
 }
 export function animationHidePartida(){
-	console.log('asd')
 	const timeLine = gsap.timeline();
 	timeLine
 	.to('.infoItem',{
-		y:-100,opacity:0,duration:.3})
+		y:-100,opacity:0,duration:1},5)
 	.to('.containerTablero',{
-		opacity:0},'<')
+		opacity:0,duration:.4},)
 	.to('.containerBarra',{
-		opacity:0},'<')
+		opacity:0,duration:.4},)
 	.to('.container',{
-		opacity:0,display:'none'})
+		opacity:0,})
 	
 }
 
