@@ -7,8 +7,8 @@ const endGame = document.querySelector('.endGame');
  const puntoss = document.querySelector('.puntos');
  const barra = document.querySelector('.barra');
 
-// 
-import {Historial} from './historial.js'
+ 
+ import { mostrarHistorial,recuperarLocalStoarage} from './historial.js'
 import { Partida} from "./Partida.js";
 import {hideMenu, seFinish,playFE} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
@@ -27,7 +27,7 @@ function main(){
 	let bar = new Barra()
 
 	par.activarTablero();
-	
+	 recuperarLocalStoarage()
 	selectGame(puntos,cronometro,bar);
 	selecTipeBtn(cronometro,puntos,par,bar)
 	
@@ -129,20 +129,22 @@ main()
 const clasic = document.querySelector('.historial_clasico');
 const historial = document.querySelector('.historial');
 const menu_historial = document.querySelector('.menu_historial');
+const btnHistorial = document.querySelectorAll('.btn_historial');
 
 
 menu_historial.addEventListener('click',()=>{
 	hideMenu()
-	console.log('asd')
-	historial.style.display = 'flex';
-	console.log('asd')
-})
-clasic.addEventListener('click',()=>{
 	
-
-	//  let hist = new Historial()
-	Historial.recupuerar_lsClasico()
+	historial.style.display = 'flex';
+	btnHistorial.forEach(elem=>{
+		elem.addEventListener('click',()=>{
+		
+			mostrarHistorial(elem.value)
+		})
+	})
 })
+
+
 
 
 

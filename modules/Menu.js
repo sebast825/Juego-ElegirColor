@@ -1,4 +1,4 @@
-import { Historial } from "./historial.js";
+import { lsAlmacenar } from "./historial.js";
 
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
@@ -71,8 +71,7 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 	})
 
-	let hist = new Historial();
-	Historial.almacenar(cronometro,puntos)
+	lsAlmacenar(cronometro,puntos)
 	endGame.style.display = 'flex';
 	container.style.display = 'none';	
 	

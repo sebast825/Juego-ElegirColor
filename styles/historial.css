@@ -1,8 +1,22 @@
 .historial{
 	display: none;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: green;
 	z-index: 1000;
 	height: 100vh;
+}
+
+.historial_info_titulo{
+	display: flex;
+	gap: 4rem;
+}
+
+.historial_info_partida{
+	display: flex;
+	color:white;
+	/* flex-direction: row; */
+	gap: 7rem;
+	border-bottom: 2px solid white;
 }
