@@ -42,19 +42,11 @@ function main(){
 			
 		})	
 			playFE(cronometro)
-		setTimeout(()=>{
-
-		},220)
 		
-		if (cronometro.getGametipe() == 'ContraReloj' && cronometro.getTerminar() != true){			
-			console.log('entra aca')
-			bar.setTerminar(false)
-			bar.barraContrarreloj(cronometro)
-			
-		}	else if(cronometro.getGametipe() == 'Clasico'){
-			bar.barEmpty()
-		}
+
+		bar.selectBar(cronometro)
 		puntos.reiniciarPuntos()
+
 	})
 	
 	infoMenu.forEach(elem=>{
@@ -121,7 +113,7 @@ function selectGame(cronometro,puntos,bar){
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
 
-			if(cronometro.getGametipe() == 'ContraReloj'){
+			if(cronometro.getGametipe() != 'Clasico'){
 				bar.barFull(cronometro)
 			}
 		

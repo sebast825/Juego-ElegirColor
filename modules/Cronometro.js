@@ -107,12 +107,12 @@ import { hideMenu } from "./Menu.js";
 		 	this.respuesta = 'Te Quedaste sin tiempo! ';
 		 	callBack();
 		 	}	
-		},1000)
+		},123)
 	}
 	tiempo(parametro){
 		if(parametro){
 			
-				this.time -= 1.2;
+				this.time -= 1.11;
 			
 			
 		}else{

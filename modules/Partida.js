@@ -1,5 +1,6 @@
 const infoMenu = document.querySelector('.infoMenu')
 const btn = document.querySelectorAll('.btn')
+const barra = document.querySelector('.barra');
 
 const tablero = document.querySelector('.containerTablero');
 const endGame = document.querySelector('.endGame');
@@ -25,6 +26,7 @@ export class Partida{
 			btn.forEach(elem=>{
 				elem.style.display = 'flex';
 			})
+			// barra.style.display = 'flex';
 		}
 			
 
@@ -32,6 +34,7 @@ export class Partida{
 		btn.forEach(elem=>{
 			elem.style.display = 'none';
 		})	
+		// barra.style.display = 'none';
 
 	}
 

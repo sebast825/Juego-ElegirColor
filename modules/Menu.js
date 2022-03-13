@@ -100,7 +100,7 @@ function ocultarPuntos  (){
 	setTimeout(()=>{
 		contador.innerHTML = null;
 		puntos.innerHTML = null;
-	},100)
+	},200)
 }
 
 export function playFE(cronometro){
