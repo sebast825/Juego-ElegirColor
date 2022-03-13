@@ -126,16 +126,18 @@ function selectGame(cronometro,puntos,bar){
 main()
 
 
-const clasic = document.querySelector('.historial_clasico');
 const historial = document.querySelector('.historial');
 const menu_historial = document.querySelector('.menu_historial');
 const btnHistorial = document.querySelectorAll('.btn_historial');
+const menu = document.querySelector('.menu')
 
 
 menu_historial.addEventListener('click',()=>{
-	hideMenu()
-	
+
+	menu.style.display = 'none';
 	historial.style.display = 'flex';
+
+	
 	btnHistorial.forEach(elem=>{
 		elem.addEventListener('click',()=>{
 		

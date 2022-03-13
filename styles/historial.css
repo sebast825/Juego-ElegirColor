@@ -8,8 +8,24 @@
 	height: 100vh;
 }
 
+.historial_menu{
+	display: flex;
+	width: 15rem;
+	margin:1rem;
+	justify-content: space-between;
+}
+.historial_menu :nth-child(1){	
+	flex-grow: 1;
+	text-align: center;
+padding-left: 10%;
+}
+.historial_menu :nth-child(2){
+	padding-right: 10%;
+}	
+
 .historial_info_titulo{
 	display: flex;
+
 	gap: 4rem;
 }
 
@@ -19,4 +35,17 @@
 	/* flex-direction: row; */
 	gap: 7rem;
 	border-bottom: 2px solid white;
+	justify-content: center;
+}
+
+
+.historial_btn_div{
+
+	display: flex;
+	/* flex-direction: column; */
+}
+
+.btn_historial{
+	padding: .3rem;
+	margin: .1rem;
 }

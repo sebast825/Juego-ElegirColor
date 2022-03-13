@@ -13,6 +13,7 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
  const endGame_again = document.querySelector('.endGame_again');
  const barra = document.querySelector('.barra');
  const infoPlay = document.querySelector('.infoPlay');
+const historial = document.querySelector('.historial');
 
 
  
@@ -29,6 +30,7 @@ export function hideMenu(){
 
 		menu.style.display = "flex";
 		container.style.display = 'none';
+		historial.style.display = 'none'
 
 		menuBtn.forEach(elem=>{
 
