@@ -42,7 +42,9 @@ function main(){
 			
 		})	
 			playFE(cronometro)
+		setTimeout(()=>{
 
+		},220)
 		
 		if (cronometro.getGametipe() == 'ContraReloj' && cronometro.getTerminar() != true){			
 			console.log('entra aca')
@@ -94,6 +96,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 					//le va a sumar tiempo
 					// par.snowMan()
 					cronometro.tiempo(false)	
+					bar.deathMode(cronometro.getTime())
 
 				}else{
 					let respuesta = puntos.getRespuesta()

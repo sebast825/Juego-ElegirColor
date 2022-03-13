@@ -102,17 +102,17 @@ import { hideMenu } from "./Menu.js";
 			contador.innerHTML = this.time.toFixed(2);	
 		
 
-		if(this.time <= 0 && this.terminar == false){
-			this.terminar = true;
-			this.respuesta = 'Te Quedaste sin tiempo! ';
-			callBack();
-			}	
-		},100)
+		 if(this.time <= 0 && this.terminar == false){
+		 	this.terminar = true;
+		 	this.respuesta = 'Te Quedaste sin tiempo! ';
+		 	callBack();
+		 	}	
+		},1000)
 	}
 	tiempo(parametro){
 		if(parametro){
 			
-				this.time -= 1.11;
+				this.time -= 1.2;
 			
 			
 		}else{

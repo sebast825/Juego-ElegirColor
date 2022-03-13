@@ -40,6 +40,21 @@ export class Barra{
 	
 	}
 
+	deathMode(tiempoTotal){
+	//librearia para animar la barra
+		gsap.from('.barra',{
+			width:'100%',
+			
+		})
+		gsap.to('.barra',{
+			duration:`${tiempoTotal}`,
+			width:'0%',
+			
+		})
+
+	
+	}
+
 	barFull(cronometro){
 		if(cronometro.getGametipe() != 'ContraReloj')return
 		barra.style.width = `96%`

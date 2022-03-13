@@ -12,7 +12,8 @@
 	align-self: center;
 	margin-left: 2%;
 	/* width: 100%; */
-	transition: all 0.5s linear;
+	transition: all 0.2s linear;
+	
 	position: relative;
 	background-color: red;
 }
