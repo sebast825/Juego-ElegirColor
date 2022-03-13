@@ -1,4 +1,5 @@
 import { lsAlmacenar } from "./historial.js";
+import {animationShowMenu,animationHideMenu,animationHidePartida,animationShowPartida} from './animations.js'
 
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
@@ -22,14 +23,21 @@ export function hideMenu(){
 	barra.style.width = '0%'
 
 	ocultarPuntos();
-	puntos.innerHTML = null;
-	contador.innerHTML = null;
+	// puntos.innerHTML = null;
+	// contador.innerHTML = null;
 	endGame.style.display = 'none';
+	console.log(menu.style.display )
 
 	if(menu.style.display == "none"){
+		// timeLine()
 
-		menu.style.display = "flex";
-		container.style.display = 'none';
+animationShowMenu()
+animationHidePartida()
+console.log('atr')
+setTimeout(()=>{
+	container.style.display = 'none';
+
+})
 		historial.style.display = 'none'
 
 		menuBtn.forEach(elem=>{
@@ -39,9 +47,12 @@ export function hideMenu(){
 			})
 		})
 	}else{
+		// menu.style.display = 'flex';
+		animationHideMenu();
+		animationShowPartida();
+		console.log('asd')
 
-		menu.style.display = "none";
-		container.style.display = 'flex';
+		//  container.style.display = 'flex';
 
 		menuBtn.forEach(elem=>{
 

@@ -2,7 +2,7 @@
 	width: 30vw;
 	height: 10vh;
 	background-color: aqua;
-
+opacity: 1;
 	display: flex;
 	align-content: center;
 }

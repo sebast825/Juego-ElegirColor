@@ -2,7 +2,7 @@ body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background-color: gray;
+	background-color: #008;
 }
 
 
@@ -23,7 +23,7 @@ body{
 
 .infoItem{
 	color: aqua;
-	
+	opacity: 1;
 	
 }
 
@@ -36,7 +36,8 @@ body{
 	grid-template-rows: repeat(2,45%);
 	justify-content: space-evenly;
 	align-content: space-evenly;
-	background-color: green;
+	background-color: #060;
+	opacity: 1;
 	
 }
 
