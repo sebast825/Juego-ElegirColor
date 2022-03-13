@@ -7,8 +7,8 @@ const endGame = document.querySelector('.endGame');
  const puntoss = document.querySelector('.puntos');
  const barra = document.querySelector('.barra');
 
-
-
+// 
+import {Historial} from './historial.js'
 import { Partida} from "./Partida.js";
 import {hideMenu, seFinish,playFE} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
@@ -126,9 +126,23 @@ function selectGame(cronometro,puntos,bar){
 main()
 
 
+const clasic = document.querySelector('.historial_clasico');
+const historial = document.querySelector('.historial');
+const menu_historial = document.querySelector('.menu_historial');
 
 
+menu_historial.addEventListener('click',()=>{
+	hideMenu()
+	console.log('asd')
+	historial.style.display = 'flex';
+	console.log('asd')
+})
+clasic.addEventListener('click',()=>{
+	
 
+	//  let hist = new Historial()
+	Historial.recupuerar_lsClasico()
+})
 
 
 

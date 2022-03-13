@@ -5,6 +5,7 @@ body{
 	background-color: gray;
 }
 
+
 .container{
 	display: none;
 	flex-direction: column;
@@ -13,6 +14,17 @@ body{
 	height: 100vh;
 
 	 gap: 4vh; 
+}
+.containerInfo{
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.infoItem{
+	color: aqua;
+	
+	
 }
 
 .containerTablero{
