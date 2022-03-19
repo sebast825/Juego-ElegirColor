@@ -1,5 +1,5 @@
 import { lsAlmacenar } from "./historial.js";
-import {animationShowMenu,animationHideMenu,		hidePartida,showPartida
+import {animationShowMenu,animationHideMenu,hideEndGame,showEndGame,		hidePartida,showPartida
 	} from './animations.js'
 
 const menu = document.querySelector('.menu')
@@ -32,7 +32,8 @@ console.log(menu.style.display)
 
 		hidePartida()		
 		animationShowMenu()
-		historial.style.display = 'none'
+		hideEndGame()
+		// historial.style.display = 'none'
 
 	}else{
 		animationHideMenu();
@@ -60,15 +61,22 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	endGame_again.addEventListener('click',()=>{
 
 		par.ocultarBotnoes();
-		endGame.style.display = 'none';
-		container.style.display = 'flex';
-		barra.style.width = '0%';
+		console.log('asd')
+		hideEndGame()
+		 showPartida()
+		 playFE(cronometro)
+
+		// endGame.style.display = 'none';
+		// container.style.display = 'flex';
+		// barra.style.width = '0%';
 
 	})
 
 	lsAlmacenar(cronometro,puntos)
-	endGame.style.display = 'flex';
-	container.style.display = 'none';	
+	hidePartida()	
+	showEndGame()
+		// endGame.style.display = 'flex';
+	
 	
 	endGame_rsta.innerHTML = respuesta; 
 	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;

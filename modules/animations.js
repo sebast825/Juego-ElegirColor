@@ -28,6 +28,7 @@ export function hidePartida(){
 		 	opacity:0},'<')
 		.to('.container',{
 		 	display:'none',opacity:0},'<')
+			
 
 }
 export function showPartida(){
@@ -36,7 +37,7 @@ export function showPartida(){
 	.to('.container',{
 		opacity:1,display:'flex',duration:.3,},.5)
 	.to('.infoItem',{
-			y:-0,opacity:1
+			y:0,opacity:1
 		})
 	.to('.containerTablero',{
 			opacity:1
@@ -48,8 +49,31 @@ export function showPartida(){
 }
 
 
-export function showHistorial(){
-	const timeLine = gsap.timeline()
+export function showEndGame(){
+	const timeLine = gsap.timeline();
+	timeLine
+	
+	.to('.endGame', {
+		opacity:1,display:'flex',
+	},.1)
+	.to('.infoItem',{
+		//la la y es por que tienen la misma clase que  los botones de partida, se les aplica el mismo efecto de desplazamiento
+		opacity:1,y:0
+	})
+	
 
-	endGame
+}
+
+export function hideEndGame(){
+	const timeLine = gsap.timeline()
+	timeLine
+	.to('.infoItem',{
+		y:100,opacity:0
+	})
+	.to('.endGame',{
+		opacity:0,duration:.3
+	},'<')
+	.to('.endGame',{
+		display:'none'
+	})
 }
