@@ -34,6 +34,7 @@ function animacionMenuBtn(displ){
 
 }
 
+
 export function animationPartida(disp){
 	if(disp){
 		gsap.fromTo('.container',{
@@ -54,6 +55,12 @@ function animationPartidaInfo(){
 		y:-100,opacity:0,
 	},{y:0,opacity:1})
 }
+
+
+
+
+
+
 
 
 export 	function animationHideMenu(){
@@ -77,31 +84,58 @@ export 	function animationHideMenu(){
 		.fromTo('.containerBarra',{
 			opacity:0},{
 				opacity:1
-			},'<')
-	
+			},'<')	
 
 }
 export 	function animationShowMenu(){
-	
+		hidePartida()
 	const timeLine = gsap.timeline({default:{duration:.2}});
 	timeLine
-	.to('.infoItem',{
-		y:-100,opacity:0,duration:.5})
-	.to('.containerTablero',{
-		opacity:0},'<')
-	.to('.containerBarra',{
-		opacity:0},'<')
-	.to('.container',{
-		opacity:0})
+	
 	.to('.menu',{
 		opacity:1,display:'flex'},'<-.2')	
 	.to('.menu_btn_Css',
-		{x:0,opacity:1,stagger:.3})
-	
-
-	
+		{x:0,opacity:1,stagger:.3})	
 
 }
+
+function hidePartida(){
+	const timeLine = gsap.timeline();
+	timeLine
+		.to('.infoItem',{
+			y:-100,opacity:0,duration:.5})
+		.to('.containerTablero',{
+			opacity:0},'<')
+		.to('.containerBarra',{
+			opacity:0},'<')
+		.to('.container',{
+			display:'none',opacity:0})
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export function animationShowPartida(){
 	const timeLine = gsap.timeline();

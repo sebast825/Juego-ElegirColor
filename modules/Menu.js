@@ -37,12 +37,12 @@ animationShowMenu()
 
 		historial.style.display = 'none'
 
-		menuBtn.forEach(elem=>{
+		// menuBtn.forEach(elem=>{
 
-			elem.addEventListener('click',()=>{				
-				elem.style.display = "block"		
-			})
-		})
+		// 	elem.addEventListener('click',()=>{				
+		// 		elem.style.display = "block"		
+		// 	})
+		// })
 	}else{
 		// menu.style.display = 'flex';
 		animationHideMenu();
@@ -50,13 +50,13 @@ animationShowMenu()
 
 		//  container.style.display = 'flex';
 
-		menuBtn.forEach(elem=>{
+		// menuBtn.forEach(elem=>{
 
-			elem.addEventListener('click',()=>{
-				elem.style.display = "none"	;
+		// 	elem.addEventListener('click',()=>{
+		// 		elem.style.display = "none"	;
 	
-			})
-		})
+		// 	})
+		// })
 	}
 	
 }
