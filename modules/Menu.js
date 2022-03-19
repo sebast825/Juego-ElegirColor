@@ -1,5 +1,6 @@
 import { lsAlmacenar } from "./historial.js";
-import {animationShowMenu,animationHideMenu,animationHidePartida,animationShowPartida} from './animations.js'
+import {animationShowMenu,animationHideMenu,		hidePartida,showPartida
+	} from './animations.js'
 
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
@@ -28,38 +29,23 @@ export function hideMenu(){
 	endGame.style.display = 'none';
 console.log(menu.style.display)
 	if(menu.style.display == "none"){
-		// timeLine()
 
-animationShowMenu()
-// animationHidePartida()
-
-
-
+		hidePartida()		
+		animationShowMenu()
 		historial.style.display = 'none'
 
-		// menuBtn.forEach(elem=>{
-
-		// 	elem.addEventListener('click',()=>{				
-		// 		elem.style.display = "block"		
-		// 	})
-		// })
 	}else{
-		// menu.style.display = 'flex';
 		animationHideMenu();
-		// animationShowPartida();
-
-		//  container.style.display = 'flex';
-
-		// menuBtn.forEach(elem=>{
-
-		// 	elem.addEventListener('click',()=>{
-		// 		elem.style.display = "none"	;
-	
-		// 	})
-		// })
+		showPartida()
 	}
 	
 }
+
+
+	 
+	
+
+
 
 
 export function seFinish(puntos,cronometro,respuesta,par){
