@@ -32,7 +32,6 @@ console.log(menu.style.display)
 
 		hidePartida()		
 		animationShowMenu()
-		hideEndGame()
 		// historial.style.display = 'none'
 
 	}else{

@@ -3,31 +3,32 @@ export 	function animationShowMenu(){
 	timeLine
 	
 	 .to('.menu',{
-	 	opacity:1,display:'flex',delay:.1})	
+	 	opacity:1,display:'flex',delay:.3})	
 	 .to('.menu_btn_Css',
-	 	{x:0,opacity:1,stagger:.3})	
+	 	{x:0,opacity:1,stagger:.3},'>')	
 
 }
 export function animationHideMenu(){
-	const timeLine = gsap.timeline({default:{duration:.5}});
+	const timeLine = gsap.timeline();
 	timeLine
 	.to('.menu_btn_Css',
-		{x:200,opacity:0})
+		{x:200,opacity:0,stagger:.2,duration:.8})
 	.to('.menu',{
-		opacity:0,display:'none'})	
+		opacity:0,display:'none'},'<')	
 }
 
 export function hidePartida(){
 	const timeLine = gsap.timeline();
 	timeLine
+		.to('.container',{
+		display:'none',opacity:0,duration:.4})
 		.to('.infoItem',{
-			y:-100,opacity:0,duration:.5})
+			y:-100,opacity:0},'<.1')
 		 .to('.containerTablero',{
 		 	opacity:0},'<')
 		 .to('.containerBarra',{
 		 	opacity:0},'<')
-		.to('.container',{
-		 	display:'none',opacity:0},'<')
+		
 			
 
 }
@@ -35,7 +36,7 @@ export function showPartida(){
 	const timeLine = gsap.timeline();
 	timeLine
 	.to('.container',{
-		opacity:1,display:'flex',duration:.3,},.5)
+		opacity:1,display:'flex',duration:.3,},.7)
 	.to('.infoItem',{
 			y:0,opacity:1
 		})
@@ -51,8 +52,7 @@ export function showPartida(){
 
 export function showEndGame(){
 	const timeLine = gsap.timeline();
-	timeLine
-	
+	timeLine	
 	.to('.endGame', {
 		opacity:1,display:'flex',
 	},.1)
@@ -71,8 +71,8 @@ export function hideEndGame(){
 		y:100,opacity:0
 	})
 	.to('.endGame',{
-		opacity:0,duration:.3
-	},'<')
+		opacity:0,
+	})
 	.to('.endGame',{
 		display:'none'
 	})
