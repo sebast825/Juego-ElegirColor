@@ -29,8 +29,12 @@ export function hideMenu(){
 	endGame.style.display = 'none';
 console.log(menu.style.display)
 	if(menu.style.display == "none"){
+		
+		if(container.style.display != 'none'){
 
-		hidePartida()		
+			hidePartida()
+		}
+
 		animationShowMenu()
 		// historial.style.display = 'none'
 

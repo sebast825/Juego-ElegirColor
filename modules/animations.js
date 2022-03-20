@@ -83,3 +83,25 @@ export function hideEndGame(){
 		display:'none'
 	})
 }
+
+export function showHistorialContent(){
+	const timeLine = gsap.timeline()
+	timeLine
+	.to('.historial_info_titulo',{
+		opacity:1
+	})
+
+	.fromTo('.historial_info_partida',{opacity:0,x:-100},{
+		opacity:1,stagger:.2,x:0,duration:.4,ease:'power2.out'
+	})
+}
+export function hideHistorialContent(){
+	const timeLine = gsap.timeline()
+	timeLine
+	.to('.historial_info_partida',{
+		opacity:0,stagger:.2,x:-100,duration:.4,ease:'power2.out'
+	})
+	.to('.historial_info_titulo',{
+		opacity:0
+	})
+}

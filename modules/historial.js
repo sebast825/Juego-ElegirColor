@@ -1,5 +1,6 @@
 const historial_info = document.querySelector('.historial_info');
 
+import {showHistorialContent,hideHistorialContent} from './animations.js'
 
 let clasico = [];
 let contraReloj = [];
@@ -42,7 +43,7 @@ function lsDeathMode(tiempo,puntos){
 
 
 export function mostrarHistorial(parametro){
-
+	hideHistorialContent()
 	historial_info.innerHTML = 
 	`<div class="historial_info_titulo">
 		<h2>Tiempo</h2>
@@ -93,6 +94,7 @@ export function recupuerar_lsClasico(){
 	partida.forEach(element => {
 		showFe(element)
 	})
+	showHistorialContent()
 };
 
 function recupuerar_lsContraReloj(){
@@ -101,19 +103,21 @@ function recupuerar_lsContraReloj(){
 		partida.forEach(element => {
 			showFe(element)
 		})	
-	
+		showHistorialContent()
 };
 
 function recupuerar_lsDeathMode(){
 	let partida = JSON.parse(localStorage.getItem('DeathMode'))
 	partida.forEach(element => {
+		
 		showFe(element)
 	})
+	showHistorialContent()
 };
 	
 
 function showFe(partida){
-	console.log(partida);
+	
 
 	let contenedor = document.createElement('div');
 	contenedor.classList.add('historial_info_partida')
@@ -126,4 +130,5 @@ function showFe(partida){
 	contenedor.appendChild(tiempo);
 	contenedor.appendChild(puntos)
 	historial_info.appendChild(contenedor)
+	
 }

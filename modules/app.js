@@ -16,6 +16,7 @@ import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
+import {animationShowMenu} from './animations.js'
 const btn = document.querySelectorAll('.btn')
 
 
@@ -112,7 +113,7 @@ function selectGame(cronometro,puntos,bar){
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
-
+			
 			if(cronometro.getGametipe() != 'Clasico'){
 				bar.barFull(cronometro)
 			}
@@ -130,6 +131,7 @@ const historial = document.querySelector('.historial');
 const menu_historial = document.querySelector('.menu_historial');
 const btnHistorial = document.querySelectorAll('.btn_historial');
 const menu = document.querySelector('.menu')
+const infoMenuHistorial = document.querySelector('.infoMenuHistorial')
 
 
 menu_historial.addEventListener('click',()=>{
@@ -146,7 +148,11 @@ menu_historial.addEventListener('click',()=>{
 	})
 })
 
+infoMenuHistorial.addEventListener('click',()=>{
+	historial.style.display = 'none';
+	animationShowMenu()
 
+})
 
 
 
