@@ -70,9 +70,15 @@ export function hideEndGame(){
 	.to('.infoItem',{
 		y:100,opacity:0
 	})
+	.to('.endGame_info',{
+		opacity:0
+	},'<')
+	.to('.endGame_infoRsta',{
+		opacity:0
+	},'<')
 	.to('.endGame',{
 		opacity:0,
-	})
+	},'<')
 	.to('.endGame',{
 		display:'none'
 	})

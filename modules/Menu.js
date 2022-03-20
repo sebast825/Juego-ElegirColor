@@ -82,10 +82,10 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 	if(cronometro.getGametipe() == 'DeathMode'){
 
-		endGame_tiempo.innerHTML = `Tiempo jugado: ${cronometro.getTimeTotal().toFixed(2)} `;
+		endGame_tiempo.innerHTML = ` ${cronometro.getTimeTotal().toFixed(2)} `;
 
 	}else{
-		endGame_tiempo.innerHTML = `Tiempo: ${cronometro.getTime().toFixed(2)} `;
+		endGame_tiempo.innerHTML = `${cronometro.getTime().toFixed(2)} `;
 
 	}
 
