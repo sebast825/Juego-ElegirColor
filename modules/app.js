@@ -16,7 +16,7 @@ import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
-import {animationShowMenu} from './animations.js'
+import {animationShowMenu,hideHistorialContent} from './animations.js'
 const btn = document.querySelectorAll('.btn')
 
 
@@ -150,6 +150,7 @@ menu_historial.addEventListener('click',()=>{
 
 infoMenuHistorial.addEventListener('click',()=>{
 	historial.style.display = 'none';
+	hideHistorialContent()
 	animationShowMenu()
 
 })

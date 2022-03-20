@@ -46,16 +46,9 @@ console.log(menu.style.display)
 }
 
 
-	 
-	
-
-
-
-
 export function seFinish(puntos,cronometro,respuesta,par){
 
 	playFE(cronometro)
-
 
 	cronometro.setTerminar(true);
 	puntos.setTerminar(true);
@@ -66,20 +59,14 @@ export function seFinish(puntos,cronometro,respuesta,par){
 		par.ocultarBotnoes();
 		console.log('asd')
 		hideEndGame()
-		 showPartida()
-		 playFE(cronometro)
-
-		// endGame.style.display = 'none';
-		// container.style.display = 'flex';
-		// barra.style.width = '0%';
+		showPartida()
+		playFE(cronometro)
 
 	})
 
 	lsAlmacenar(cronometro,puntos)
 	hidePartida()	
 	showEndGame()
-		// endGame.style.display = 'flex';
-	
 	
 	endGame_rsta.innerHTML = respuesta; 
 	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;
@@ -94,7 +81,6 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	}
 
 }
-
 
 
 function ocultarPuntos  (){

@@ -21,22 +21,32 @@ export function lsAlmacenar(cronometro,puntos){
 		console.log('error')
 	}
 }
-
+function lsSort(tipeHistorial){
+	
+	tipeHistorial = tipeHistorial.sort(function(a,b){
+		return b[1] - a[1] 
+	})
+	if(tipeHistorial.length >= 7){
+		tipeHistorial.pop()
+	}
+}
 function lsClaisco(tiempo,puntos){
 	clasico.push([tiempo,puntos])
+	lsSort(clasico)
 	localStorage.setItem('clasico',JSON.stringify(clasico))
 	console.log('guardado clasico')
 }
 
 function lsContraReloj(tiempo,puntos){
 	clasico.push( [tiempo,puntos])
+	lsSort(contraReloj)
 	localStorage.setItem('ContraReloj',JSON.stringify(clasico))
 	console.log('guardado')
 }
 
 function lsDeathMode(tiempo,puntos){
 	deathMode.push( [tiempo,puntos])
-	// recupuerar_lsDeathMode()
+	lsSort(deathMode)
 	localStorage.setItem('DeathMode',JSON.stringify(deathMode))
 	console.log('guardado')
 }
