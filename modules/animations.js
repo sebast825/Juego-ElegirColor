@@ -105,3 +105,24 @@ export function hideHistorialContent(){
 		opacity:0
 	})
 }
+
+export function hideHistorial(){
+	const timeLine = gsap.timeline()
+	timeLine
+	.to('.historial',{
+		backgroundColor:'purple',opacity:0,duration:3,ease:'power2.out'
+	})
+	.to('.historial',{
+		display:'none'
+	})
+	
+	animationShowMenu()
+}
+
+export function showHistorial(){
+	const timeLine = gsap.timeline()
+	timeLine
+	.to('.historial',{
+		opacity:1,display:'flex'
+	})
+}
