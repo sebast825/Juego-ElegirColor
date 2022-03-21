@@ -1,0 +1,38 @@
+.instructions{
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+}
+.instruction_menu{
+	display: flex;
+	flex-direction: column;
+}
+
+.instruction_menu p {
+	text-align: center;
+}
+
+.instruction_menu_title{
+	display: flex;
+	flex-direction: row;
+	gap: 3rem;
+}
+
+.instructions_type{
+	display: flex;
+	flex-direction: column;
+	color: white;
+	margin: 1rem;
+}
+
+.instruction_description{
+	margin-left: 3rem;
+}
+
+.instrucion_content{
+	margin: 1rem 3rem;
+}

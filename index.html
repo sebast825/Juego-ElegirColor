@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="./styles/responsive.css">
     <link rel="stylesheet" href="./styles/menu.css">
     <link rel="stylesheet" href="./styles/historial.css">
+    <link rel="stylesheet" href="./styles/instructions.css">
+
    
    <div class="menu">
-       
+       <div class="menu_information">probemos</div>
         <button class="menu_clasico menu_btn menu_btn_Css" value="Clasico">Clasico</button>
         <button class="menu_tiempo menu_btn menu_btn_Css" value="ContraReloj">Contra Reloj</button>
         <button class="menu_siempre menu_btn menu_btn_Css" value="DeathMode">Death Mode</button>
@@ -85,7 +87,33 @@
             <div class="barra"></div>
         </div>
         
-    </div>          
+    </div>      
+    
+    <div class="instructions">
+        <div class="instruction_menu">
+            <div class="instruction_menu_title">
+                <h2>Informacion</h2>
+            <h2 class="infoMenuInstruction"><i class="fas fa-bars"></i></h2>
+            </div>
+            <p>Clickea el boton amarillo</p>
+            
+        </div>
+
+        <div class="instrucion_content">
+            <div class="instructions_type">
+                <h2 class="instruction_name">Clasico</h2>
+                <p class="instruction_description">Hace 11 puntos pára ganar</p>
+            </div>
+            <div class="instructions_type">
+                <h2 class="instruction_name">Contra Reloj</h2>
+                <p class="instruction_description">Tenes 40 segundos apra hacer la mayor cantidad de puntos</p>
+            </div>
+            <div class="instructions_type">
+                <h2 class="instruction_name">Death Mode</h2>
+                <p class="instruction_description">Gana puntos para ganar tiempo, si te equivocas, perdes!</p>
+            </div>
+        </div>
+    </div>
    
 <!-- libreria para animar la barra en death mode     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

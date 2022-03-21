@@ -154,7 +154,20 @@ infoMenuHistorial.addEventListener('click',()=>{
 
 })
 
+const menu_information = document.querySelector('.menu_information');
+const infoMenuInstruction = document.querySelector('.infoMenuInstruction');
+const instructions = document .querySelector('.instructions');
 
+menu_information.addEventListener('click',()=>{
+	instructions.style.display = 'flex';
+	animationHideMenu()
+
+})
+
+infoMenuInstruction.addEventListener('click',()=>{
+	instructions.style.display = 'none';
+	animationShowMenu()
+})
 
 
 	

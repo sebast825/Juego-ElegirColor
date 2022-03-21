@@ -60,6 +60,12 @@ export function showEndGame(){
 		//la la y es por que tienen la misma clase que  los botones de partida, se les aplica el mismo efecto de desplazamiento
 		opacity:1,y:0
 	})
+	.to('.endGame_info',{
+		opacity:1
+	},'<')
+	.to('.endGame_infoRsta',{
+		opacity:1
+	},'<')
 	
 
 }
@@ -95,6 +101,8 @@ export function showHistorialContent(){
 		opacity:1,stagger:.2,x:0,duration:.4,ease:'power2.out'
 	})
 }
+
+
 export function hideHistorialContent(){
 	const timeLine = gsap.timeline()
 	timeLine
@@ -107,24 +115,20 @@ export function hideHistorialContent(){
 }
 
 export function hideHistorial(){
-	const timeLine = gsap.timeline()
+	const timeLine = gsap.timeline();
 	timeLine
 
 	.to('.historial',{
 		display:'none',opacity:0})
-		.to('.historial_btn_div',{
+	.to('.historial_btn_div',{
 			opacity:0},'<.1')
-		 .to('.historial_info',{
+	.to('.historial_info',{
 		 	opacity:0},'<')
-		
-
-
-	
-	animationShowMenu()
+	animationShowMenu();
 }
 
 export function showHistorial(){
-	const timeLine = gsap.timeline()
+	const timeLine = gsap.timeline();
 	timeLine
 	.to('.historial',{
 		opacity:1,display:'flex',duartion:.3
