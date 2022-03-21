@@ -16,7 +16,7 @@ import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
-import {animationShowMenu,hideHistorialContent,showHistorial,hideHistorial} from './animations.js'
+import {animationShowMenu,animationHideMenu,hideHistorialContent,showHistorial,hideHistorial} from './animations.js'
 const btn = document.querySelectorAll('.btn')
 
 
@@ -136,7 +136,7 @@ const infoMenuHistorial = document.querySelector('.infoMenuHistorial')
 
 menu_historial.addEventListener('click',()=>{
 
-	menu.style.display = 'none';
+	animationHideMenu()
 	showHistorial()
 	
 	btnHistorial.forEach(elem=>{
@@ -150,7 +150,7 @@ menu_historial.addEventListener('click',()=>{
 infoMenuHistorial.addEventListener('click',()=>{
 	
 	hideHistorial()
-	animationShowMenu()
+
 
 })
 
