@@ -5,7 +5,7 @@ export 	function animationShowMenu(){
 	 .to('.menu',{
 	 	opacity:1,display:'flex',delay:.4})	
 	 .to('.menu_btn_Css',
-	 	{x:0,opacity:1,stagger:.2},'>')	
+	 	{x:0,opacity:1,stagger:.2},'<')	
 
 }
 export function animationHideMenu(){
@@ -163,14 +163,20 @@ export function hideInstructions(){
 	.to('.instructions_type',{
 		x:200,opacity:0, stagger:.2,ease: "power2.out"})
 	.to('.instructions',{
-		opacity:0
+		opacity:0,duartion:.3
 	},'<')
 	.to('.instructions',{
 		display:'none'
-	},)
+	})
+	.fromTo('.menu',{
+		opacity:0
+	},{
+		display:'flex'
+	},'<')
 	.to('.menu',{
-		opacity:1,display:'flex',ease:"power4.out"},'<-.3')	
+		opacity:1,ease:"power4.out"},'<-.1')
+			
 	.to('.menu_btn_Css',
-		{x:0,opacity:1,stagger:.2})	
+		{x:0,opacity:1,stagger:.2},'<')	
 	
 }
