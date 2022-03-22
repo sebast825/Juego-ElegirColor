@@ -172,9 +172,9 @@ export function hideInstructions(){
 		opacity:0
 	},{
 		display:'flex'
-	},'<')
+	},'<.1')
 	.to('.menu',{
-		opacity:1,ease:"power4.out"},'<-.1')
+		opacity:1,ease:"power4.out"},'<')
 			
 	.to('.menu_btn_Css',
 		{x:0,opacity:1,stagger:.2},'<')	
