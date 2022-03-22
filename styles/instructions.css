@@ -1,6 +1,6 @@
 .instructions{
 	color: white;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	width: 100vw;

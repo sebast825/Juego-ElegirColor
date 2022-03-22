@@ -139,3 +139,38 @@ export function showHistorial(){
 		 opacity:1},'<')
 
 }
+
+
+export function showInstructions(){
+	const timeLine = gsap.timeline();
+	timeLine
+	.to('.instructions',{
+		display:'flex'
+	})
+	.fromTo('.instructions',{
+		opacity:0
+	},{opacity:1})
+	.fromTo('.instruction_menu',{
+		opacity:0
+	},{opacity:1},'<.1')
+	.fromTo('.instructions_type',{
+		x:-200,opacity:0
+	},{x:0,opacity:1,stagger:.2,ease: "power2.out"},'<')
+}
+export function hideInstructions(){
+	const timeLine = gsap.timeline();
+	timeLine
+	.to('.instructions_type',{
+		x:200,opacity:0, stagger:.2,ease: "power2.out"})
+	.to('.instructions',{
+		opacity:0
+	},'<')
+	.to('.instructions',{
+		display:'none'
+	},)
+	.to('.menu',{
+		opacity:1,display:'flex',ease:"power4.out"},'<-.3')	
+	.to('.menu_btn_Css',
+		{x:0,opacity:1,stagger:.2})	
+	
+}

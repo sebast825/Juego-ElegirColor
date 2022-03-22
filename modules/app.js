@@ -16,7 +16,7 @@ import { Global } from "./Global.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
-import {animationShowMenu,animationHideMenu,hideHistorialContent,showHistorial,hideHistorial} from './animations.js'
+import {animationShowMenu,animationHideMenu,hideHistorialContent,showInstructions,showHistorial,hideHistorial,hideInstructions} from './animations.js'
 const btn = document.querySelectorAll('.btn')
 
 
@@ -159,14 +159,14 @@ const infoMenuInstruction = document.querySelector('.infoMenuInstruction');
 const instructions = document .querySelector('.instructions');
 
 menu_information.addEventListener('click',()=>{
-	instructions.style.display = 'flex';
+	showInstructions()
 	animationHideMenu()
 
 })
 
 infoMenuInstruction.addEventListener('click',()=>{
-	instructions.style.display = 'none';
-	animationShowMenu()
+	hideInstructions()
+	
 })
 
 
