@@ -134,7 +134,7 @@ function showFe(partida){
 	let tiempo = document.createElement('h2');
 	let puntos = document.createElement('h2');
 
-	tiempo.innerText = partida[0];
+	tiempo.innerText = partida[0].toFixed(1);
 	puntos.innerText = partida[1];
 
 	contenedor.appendChild(tiempo);

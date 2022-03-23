@@ -33,6 +33,7 @@ export class Partida{
 	ocultarBotnoes(){
 		btn.forEach(elem=>{
 			elem.style.display = 'none';
+			elem.classList.remove('black')
 		})	
 		// barra.style.display = 'none';
 
