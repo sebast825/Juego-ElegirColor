@@ -35,11 +35,9 @@ console.log(menu.style.display)
 			hidePartida()
 		}
 
-		animationShowMenu()
-		// historial.style.display = 'none'
 
 	}else{
-		animationHideMenu();
+		// animationHideMenu();
 		showPartida()
 	}
 	

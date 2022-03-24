@@ -1,9 +1,8 @@
 export 	function animationShowMenu(){
 	const timeLine = gsap.timeline();
-	timeLine
-	
+	timeLine	
 	 .to('.menu',{
-	 	opacity:1,display:'flex',delay:.4})	
+	 	opacity:1})	
 	 .to('.menu_btn_Css',
 	 	{x:0,opacity:1,stagger:.2},'<')	
 
@@ -17,6 +16,7 @@ export function animationHideMenu(){
 		opacity:0,display:'none'},'<')	
 }
 
+//se traba la animacion se se usa la de animationShowMenu
 export function hidePartida(){
 	const timeLine = gsap.timeline();
 	timeLine
@@ -28,15 +28,25 @@ export function hidePartida(){
 		 	opacity:0},'<')
 		 .to('.containerBarra',{
 		 	opacity:0},'<')
-		
-			
-
+		 .to('.menu',{
+				opacity:1,display:'flex'},'<')	
+		.to('.menu_btn_Css',
+				{x:0,opacity:1,stagger:.2},'<')	
 }
+
+//se traba la animacion se se usa la de animationHideMenu
+
 export function showPartida(){
 	const timeLine = gsap.timeline();
 	timeLine
-	.to('.container',{
-		opacity:1,display:'flex',duration:.3,},.7)
+	.to('.menu_btn_Css',
+		{x:200,opacity:0,stagger:.2,duration:.8})
+	.to('.menu',{
+		opacity:0,display:'none'},'<')	
+	.fromTo('.container',{
+		opacity:0
+	},{
+		opacity:1,display:'flex'},'<.5')
 	.to('.infoItem',{
 			y:0,opacity:1
 		})
