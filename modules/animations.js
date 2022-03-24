@@ -59,12 +59,12 @@ export function showPartida(){
 
 }
 
-
 export function showEndGame(){
+	
 	const timeLine = gsap.timeline();
 	timeLine	
 	.to('.endGame', {
-		opacity:1,display:'flex',
+		opacity:1,display:'flex'
 	},.1)
 	.to('.infoItem',{
 		//la la y es por que tienen la misma clase que  los botones de partida, se les aplica el mismo efecto de desplazamiento
@@ -79,10 +79,18 @@ export function showEndGame(){
 	
 
 }
-
+//tiene tambien hide partida, arranco lindo y se hizo choclo :c
 export function hideEndGame(){
 	const timeLine = gsap.timeline()
 	timeLine
+	.to('.container',{
+		display:'none',opacity:0,duration:.4})
+		.to('.infoItem',{
+			y:-100,opacity:0},'<.1')
+		 .to('.containerTablero',{
+		 	opacity:0},'<')
+		 .to('.containerBarra',{
+		 	opacity:0},'<')
 	.to('.infoItem',{
 		y:100,opacity:0
 	})
@@ -149,6 +157,7 @@ export function showHistorial(){
 		opacity:1},'<.2')
 	 .to('.historial_info',{
 		 opacity:1},'<')
+		 
 
 }
 

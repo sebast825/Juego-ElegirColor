@@ -8,7 +8,7 @@ const endGame = document.querySelector('.endGame')
 const container = document.querySelector('.container');
 const puntos = document.querySelector('.puntos');
 const contador = document.querySelector('.contador');
-
+const infoMenu_EndGame = document.querySelector('.infoMenu_EndGame')
 const endGame_rsta = document.querySelector('.endGame_rsta');
  const endGame_puntos = document.querySelector('.endGame_puntos');
  const endGame_tiempo = document.querySelector('.endGame_tiempo');
@@ -61,9 +61,13 @@ export function seFinish(puntos,cronometro,respuesta,par){
 		playFE(cronometro)
 
 	})
-
+	infoMenu_EndGame.addEventListener('click',()=>{
+		hideEndGame()
+		animationShowMenu()
+	})
 	lsAlmacenar(cronometro,puntos)
-	hidePartida()	
+
+	
 	showEndGame()
 	
 	endGame_rsta.innerHTML = respuesta; 
