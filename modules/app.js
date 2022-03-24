@@ -150,6 +150,7 @@ menu_historial.addEventListener('click',()=>{
 infoMenuHistorial.addEventListener('click',()=>{
 	
 	hideHistorial()
+	animationShowMenu()
 
 
 })

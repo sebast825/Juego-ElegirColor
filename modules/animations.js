@@ -2,7 +2,7 @@ export 	function animationShowMenu(){
 	const timeLine = gsap.timeline();
 	timeLine	
 	 .to('.menu',{
-	 	opacity:1})	
+	 	opacity:1,display:'flex',},.3)	
 	 .to('.menu_btn_Css',
 	 	{x:0,opacity:1,stagger:.2},'<')	
 
@@ -134,13 +134,15 @@ export function hideHistorial(){
 			opacity:0},'<.1')
 	.to('.historial_info',{
 		 	opacity:0},'<')
-	animationShowMenu();
+	
 }
 
 export function showHistorial(){
 	const timeLine = gsap.timeline();
 	timeLine
-	.to('.historial',{
+	.fromTo('.historial',{
+		opacity:0
+	},{
 		opacity:1,display:'flex',duartion:.3
 	},.7)
 	.to('.historial_btn_div',{
@@ -184,7 +186,7 @@ export function hideInstructions(){
 		display:'flex'
 	},'<.1')
 	.to('.menu',{
-		opacity:1,ease:"power4.out"},'<')
+		opacity:1,ease:"power1.out"},'<')
 			
 	.to('.menu_btn_Css',
 		{x:0,opacity:1,stagger:.2},'<')	
