@@ -27,10 +27,13 @@
 	flex-direction: column;
 	color: white;
 	margin: 1rem;
+
 }
 
 .instruction_description{
 	margin-left: 3rem;
+	margin-top: -.5rem;
+
 }
 
 .instrucion_content{
