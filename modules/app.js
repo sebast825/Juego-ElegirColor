@@ -112,7 +112,7 @@ function selectGame(cronometro,puntos,bar,par){
 	
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-			console.log(elem.value)
+			
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)

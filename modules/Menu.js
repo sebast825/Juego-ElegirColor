@@ -1,6 +1,5 @@
 import { lsAlmacenar } from "./historial.js";
-// import {animationShowMenu,animationHideMenu,hideEndGame,showEndGame,		hidePartida,showPartida
-// 	} from './animations.js'
+
 
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
@@ -18,7 +17,7 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
 const historial = document.querySelector('.historial');
 
 
- 
+import {showPartida,animationHideMenu,animationShowMenu,hidePartida	} from './animations.js'
 
 export function hideMenu(){
 	barra.style.width = '0%'
@@ -27,20 +26,20 @@ export function hideMenu(){
 	// puntos.innerHTML = null;
 	// contador.innerHTML = null;
 	endGame.style.display = 'none';
-	console.log('extra')
 
 	if(menu.style.display == "none"){
 		
 		if(container.style.display != 'none'){
-			container.style.display = 'none'
-			menu.style.display = 'flex'
+			hidePartida()
+			 animationShowMenu()
+			console.log('asd')
 		}
 
 
 	}else{
+		animationHideMenu()
+		showPartida()
 		
-		container.style.display = 'flex'
-		menu.style.display = 'none'
 	}
 	
 }
@@ -93,7 +92,6 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 
 function ocultarPuntos  (){
-	console.log('limpiar')
 	
 	contador.innerHTML = null;
 		puntos.innerHTML = null;

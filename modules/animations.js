@@ -1,63 +1,71 @@
-// export 	function animationShowMenu(){
-// 	const timeLine = gsap.timeline();
-// 	timeLine	
-// 	 .to('.menu',{
-// 	 	opacity:1,display:'flex',},.3)	
-// 	 .to('.menu_btn_Css',
-// 	 	{x:0,opacity:1,stagger:.2},'<')	
+ export 	function animationShowMenu(){
+ 	const timeLine = gsap.timeline();
+ 	timeLine	
+ 	 .fromTo('.menu',{
+		  x:'-100%'
+	  },{
+ 	 	x:0,display:'flex',})	
+ 	 .to('.menu_btn_Css',
+ 	 	{x:0,opacity:1,stagger:.2},'<')	
 
-// }
-// export function animationHideMenu(){
-// 	const timeLine = gsap.timeline();
-// 	timeLine
-// 	.to('.menu_btn_Css',
-// 		{x:200,opacity:0,stagger:.2,duration:.8})
-// 	.to('.menu',{
-// 		opacity:0,display:'none'},'<')	
-// }
+ }
+export function animationHideMenu(){
+ 	const timeLine = gsap.timeline();
+ 	timeLine
+ 	.to('.menu_btn_Css',
+ 	 	{x:200,opacity:0})
+ 	.fromTo('.menu',{
+		 x:0
+	 },{
+ 		x:'100vw'},'<-.5')
+
+	.to('.menu',{
+		display:'none'
+	})
+ }
 
 // //se traba la animacion se se usa la de animationShowMenu
-// export function hidePartida(){
-// 	const timeLine = gsap.timeline();
-// 	timeLine
-// 		.to('.container',{
-// 		display:'none',opacity:0,duration:.4})
-// 		.to('.infoItem',{
-// 			y:-100,opacity:0},'<.1')
-// 		 .to('.containerTablero',{
-// 		 	opacity:0},'<')
-// 		 .to('.containerBarra',{
-// 		 	opacity:0},'<')
-// 		 .to('.menu',{
-// 				opacity:1,display:'flex'},'<')	
-// 		.to('.menu_btn_Css',
-// 				{x:0,opacity:1,stagger:.2},'<')	
-// }
+ export function hidePartida(){
+ 	const timeLine = gsap.timeline();
+ 	timeLine
+ 		.fromTo('.container',{
+			 x:0
+		 },{
+ 		x:'-100%'})
+ 		// .to('.infoItem',{
+ 		// 	y:-100,opacity:0},'<.1')
+ 		//  .to('.containerTablero',{
+ 		//  	opacity:0},'<')
+ 		//  .to('.containerBarra',{
+ 		//  	opacity:0},'<')
+		
+ }
 
 // //se traba la animacion se se usa la de animationHideMenu
 
-// export function showPartida(){
-// 	const timeLine = gsap.timeline();
-// 	timeLine
-// 	.to('.menu_btn_Css',
-// 		{x:200,opacity:0,stagger:.2,duration:.8})
-// 	.to('.menu',{
-// 		opacity:0,display:'none'},'<')	
-// 	.fromTo('.container',{
-// 		opacity:0
-// 	},{
-// 		opacity:1,display:'flex'},'<.5')
-// 	.to('.infoItem',{
-// 			y:0,opacity:1
-// 		})
-// 	.to('.containerTablero',{
-// 			opacity:1
-// 		},'<.3')
-// 	.to('.containerBarra',{
-// 			opacity:1
-// 		},'<')
+export function showPartida(){
+ 	const timeLine = gsap.timeline();
+ 	timeLine
+ 	// .to('.menu_btn_Css',
+ 	// 	{x:200,opacity:0,stagger:.2,duration:.8})
+ 	// .to('.menu',{
+ 	// 	opacity:0,display:'none'},'<')	
 
-// }
+ 	.fromTo('.container',{
+ 		x:'-100%'
+ 	},{
+ 		x:0,display:'flex'})
+ 	.to('.infoItem',{
+ 			y:0,opacity:1
+ 		})
+ 	.to('.containerTablero',{
+ 			opacity:1
+ 		},'<.3')
+ 	.to('.containerBarra',{
+ 			opacity:1
+ 		},'<')
+
+ }
 
 // export function showEndGame(){
 	
