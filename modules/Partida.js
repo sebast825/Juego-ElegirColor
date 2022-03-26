@@ -8,15 +8,18 @@ const endGame = document.querySelector('.endGame');
 //cambia los botones! malditos nombres de clases!
 export class Partida{
 	terminar = false;
-	
+	tipeGame = undefined
 	array = []
 	
-
+	selecTipeGame(tipeGame){
+		this.tipeGame = tipeGame;
+   }
 	//para btn play-- agregar clase que saque los botones de FE
 	activarTablero(){
 		// this.clickBtn();
 		this.numArray();
 		this.setColor();
+		this.ocultarBotnoes()
 		
 	}
 
@@ -25,6 +28,7 @@ export class Partida{
 
 			btn.forEach(elem=>{
 				elem.style.display = 'flex';
+				
 			})
 			// barra.style.display = 'flex';
 		}
@@ -33,8 +37,10 @@ export class Partida{
 	ocultarBotnoes(){
 		btn.forEach(elem=>{
 			elem.style.display = 'none';
-			elem.classList.remove('black')
-		})	
+			try{
+				elem.classList.remove('black')
+
+			}catch{}		})	
 		// barra.style.display = 'none';
 
 	}
@@ -96,7 +102,9 @@ export class Partida{
 	}
 	iniciarSnowMan(){
 		let interval = setInterval(()=>{
-
+			if(this.tipeGame != 'DeathMode'){
+				console.log('llegando')
+			}
 			if(endGame.style.display == 'none'){
 				clearInterval(interval)
 			}

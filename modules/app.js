@@ -29,7 +29,7 @@ function main(){
 
 	par.activarTablero();
 	 recuperarLocalStoarage()
-	selectGame(puntos,cronometro,bar);
+	selectGame(puntos,cronometro,bar,par);
 	selecTipeBtn(cronometro,puntos,par,bar)
 	
 	
@@ -105,7 +105,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 }
 
 
-function selectGame(cronometro,puntos,bar){
+function selectGame(cronometro,puntos,bar,par){
 	
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
@@ -113,7 +113,7 @@ function selectGame(cronometro,puntos,bar){
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
-			
+			par.selecTipeGame(elem.value)
 			playFE(cronometro)
 			if(cronometro.getGametipe() != 'Clasico'){
 				bar.barFull(cronometro)
