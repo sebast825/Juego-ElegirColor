@@ -19,9 +19,10 @@ export class Partida{
 		// this.clickBtn();
 		this.numArray();
 		this.setColor();
+
 		this.ocultarBotnoes();
-		
-	}
+		}
+
 
 	mostrarBotones(){
 		
@@ -38,12 +39,14 @@ export class Partida{
 		btn.forEach(elem=>{
 			elem.style.display = 'none';
 			try{
+
 				elem.classList.remove('black');
 
 			}catch{};
-		})	
+
 		// barra.style.display = 'none';
 
+	})
 	}
 
 					

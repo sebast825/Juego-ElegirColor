@@ -12,7 +12,7 @@ export class Puntos extends Contador{
 
 	modificarPuntos(clases,callBack){
 		if(this.terminar ) return
-		console.log('puntosClasico')
+		
  		if(clases === this.parametro){
 
  			this.puntos +=1;
