@@ -41,15 +41,16 @@ background-color: white;
 }
 .endGame{
 	display: none;
-	
+	position: absolute;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
 	background-color: red;
 	height: 100vh;
-	transition: 1s all ease-in;
-	/* z-index: 1000; */
+	width: 100vw;
+	
+	 z-index: 1000; 
 	opacity: 1;
 }
 

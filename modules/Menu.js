@@ -17,7 +17,7 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
 const historial = document.querySelector('.historial');
 
 
-import {showPartida,animationHideMenu,animationShowMenu,hidePartida	} from './animations.js'
+import {showPartida,animationHideMenu,animationShowMenu,hidePartida, showEndGame} from './animations.js'
 
 export function hideMenu(){
 	barra.style.width = '0%'
@@ -25,7 +25,7 @@ export function hideMenu(){
 	ocultarPuntos();
 	// puntos.innerHTML = null;
 	// contador.innerHTML = null;
-	endGame.style.display = 'none';
+	// endGame.style.display = 'none';
 
 	if(menu.style.display == "none"){
 		
@@ -48,6 +48,11 @@ export function hideMenu(){
 export function seFinish(puntos,cronometro,respuesta,par){
 
 	playFE(cronometro)
+
+
+	hidePartida()
+	showEndGame()
+
 	par.ocultarBotnoes()
 	cronometro.setTerminar(true);
 	puntos.setTerminar(true);
@@ -72,9 +77,9 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	})
 	lsAlmacenar(cronometro,puntos)
 
-	container.style.display = 'none'
-	endGame.style.display = 'flex'
-	// showEndGame()
+	// container.style.display = 'none'
+	// endGame.style.display = 'flex'
+	
 	
 	endGame_rsta.innerHTML = respuesta; 
 	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;

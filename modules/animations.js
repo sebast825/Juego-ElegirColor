@@ -44,6 +44,8 @@ export function animationHideMenu(){
 // //se traba la animacion se se usa la de animationHideMenu
 
 export function showPartida(){
+
+
  	const timeLine = gsap.timeline();
  	timeLine
  	//dice flex, si no container aparece antes que menu x default :)
@@ -62,26 +64,32 @@ export function showPartida(){
 
  }
 
-// export function showEndGame(){
+
+
+
+export function showEndGame(){
 	
-// 	const timeLine = gsap.timeline();
-// 	timeLine	
-// 	.to('.endGame', {
-// 		opacity:1,display:'flex'
-// 	},.1)
-// 	.to('.infoItem',{
-// 		//la la y es por que tienen la misma clase que  los botones de partida, se les aplica el mismo efecto de desplazamiento
-// 		opacity:1,y:0
-// 	})
-// 	.to('.endGame_info',{
-// 		opacity:1
-// 	},'<')
-// 	.to('.endGame_infoRsta',{
-// 		opacity:1
-// 	},'<')
+ 	const timeLine = gsap.timeline();
+ 	timeLine	
+	 .fromTo('.endGame',{
+		x:'100%',display:'flex',opacity:0
+	},{
+		x:0,opacity:1})	
+
+ 	.to('.endGame_infoRsta',{
+		opacity:1
+	},)
+ 	.fromTo('.endGame_info',{opacity:0,x:200},{
+ 		opacity:1,stagger:.2,x:0
+ 	},'<')
+	 .fromTo('.infoItem',{opacity:0,y:-50},{
+		// la la y es por que tienen la misma clase que  los botones de partida, se les aplica el mismo efecto de desplazamiento
+		opacity:1,y:0,
+	},'<.5')
+ 	
 	
 
-// }
+ }
 // //tiene tambien hide partida, arranco lindo y se hizo choclo :c
 // export function hideEndGame(){
 // 	const timeLine = gsap.timeline()
