@@ -1,6 +1,6 @@
 import { lsAlmacenar } from "./historial.js";
-import {animationShowMenu,animationHideMenu,hideEndGame,showEndGame,		hidePartida,showPartida
-	} from './animations.js'
+// import {animationShowMenu,animationHideMenu,hideEndGame,showEndGame,		hidePartida,showPartida
+// 	} from './animations.js'
 
 const menu = document.querySelector('.menu')
 const menuBtn = document.querySelectorAll('.menuBtn')
@@ -27,18 +27,20 @@ export function hideMenu(){
 	// puntos.innerHTML = null;
 	// contador.innerHTML = null;
 	endGame.style.display = 'none';
-console.log(menu.style.display)
+	console.log('extra')
+
 	if(menu.style.display == "none"){
 		
 		if(container.style.display != 'none'){
-
-			hidePartida()
+			container.style.display = 'none'
+			menu.style.display = 'flex'
 		}
 
 
 	}else{
-		// animationHideMenu();
-		showPartida()
+		
+		container.style.display = 'flex'
+		menu.style.display = 'none'
 	}
 	
 }
@@ -56,21 +58,24 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 		par.ocultarBotnoes();
 		console.log('asd')
-		hideEndGame()
-		showPartida()
+		endGame.style.display = 'none'
+		container.style.display = 'flex'
+	
 		playFE(cronometro)
 
 	})
 	infoMenu_EndGame.addEventListener('click',()=>{
 
 		endGame.style.display = 'none'
+		menu.style.display = 'flex'
 		// hideEndGame()
 		// animationShowMenu()
 	})
 	lsAlmacenar(cronometro,puntos)
 
-	
-	showEndGame()
+	container.style.display = 'none'
+	endGame.style.display = 'flex'
+	// showEndGame()
 	
 	endGame_rsta.innerHTML = respuesta; 
 	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;

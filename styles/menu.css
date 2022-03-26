@@ -47,10 +47,15 @@ background-color: white;
 	height: 100vh;
 	transition: 1s all ease-in;
 	z-index: 1000;
-	opacity: 0;
+	opacity: 1;
+}
+
+.endGame{
+	opacity: 1;
 }
 
 .endGame_text{
+	
 	padding: 30%;
 }
 
