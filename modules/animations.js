@@ -2,9 +2,9 @@
  	const timeLine = gsap.timeline();
  	timeLine	
  	 .fromTo('.menu',{
-		  x:'-100%'
+		  x:'100%',display:'flex',
 	  },{
- 	 	x:0,display:'flex',})	
+ 	 	x:0,})	
  	 .to('.menu_btn_Css',
  	 	{x:0,opacity:1,stagger:.1},'<')	
 
@@ -78,7 +78,7 @@ export function showEndGame(){
 
  	.to('.endGame_infoRsta',{
 		opacity:1
-	},)
+	},'<')
  	.fromTo('.endGame_info',{opacity:0,x:200},{
  		opacity:1,stagger:.2,x:0
  	},'<')
@@ -91,23 +91,44 @@ export function showEndGame(){
 
  }
 
-// //tiene tambien hide partida, arranco lindo y se hizo choclo :c
- export function hideEndGame(){
+//parametro left ahce que se valla para la derecha
+
+ export function hideEndGame(right=false){
  	const timeLine = gsap.timeline()
- 	timeLine
- 	
- 	.to('.endGame_info',{
- 	opacity:0,x:200,stagger:.2
- 	})
- 	.to('.endGame_infoRsta',{
- 		opacity:0
- 	},'<')
- 	.to('.endGame',{
- 		 x:'-100%',opacity:0
- 	},'<')
- 	.to('.endGame',{
- 		display:'none'
- 	})
+
+	if(!right){
+
+		timeLine		
+		.to('.endGame_info',{
+		opacity:0,x:200,stagger:.2
+		})
+		.to('.endGame_infoRsta',{
+			opacity:0
+		},'<')
+		.to('.endGame',{
+			x:'-100%',opacity:0
+		},'<')
+		.to('.endGame',{
+			display:'none'
+		},'<')
+		
+	}else{
+		console.log(right)
+		timeLine		
+		.to('.endGame_info',{
+		opacity:0,x:200,stagger:.2
+		})
+		.to('.endGame_infoRsta',{
+			opacity:0
+		},'<')
+		.to('.endGame',{
+			x:'100%',opacity:0
+		},'<')
+		.to('.endGame',{
+			display:'none'
+		},'<')
+		
+	}
 
  }
 

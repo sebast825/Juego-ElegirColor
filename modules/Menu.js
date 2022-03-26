@@ -31,8 +31,8 @@ export function hideMenu(){
 		
 		if(container.style.display != 'none'){
 			hidePartida()
-			 animationShowMenu()
-			console.log('asd')
+			animationShowMenu()
+			
 		}
 
 
@@ -62,17 +62,19 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 		par.ocultarBotnoes();
 		console.log('asd')
-		endGame.style.display = 'none'
-		container.style.display = 'flex'
-	
+		
+		//parametro true ahce que se valla para la derecha
+		hideEndGame(true)
+		showPartida()
 		playFE(cronometro)
 
 	})
 	infoMenu_EndGame.addEventListener('click',()=>{
 
 	
-		hideEndGame()
+		hideEndGame(false)
 		animationShowMenu()
+		
 	})
 	lsAlmacenar(cronometro,puntos)
 

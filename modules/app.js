@@ -61,7 +61,7 @@ function main(){
 				cronometro.setTerminar(true);
 				puntos.setTerminar(true)
 				hideMenu()
-				
+				console.log('llega aca?')
 				playFE(cronometro)
 				
 			})
