@@ -16,7 +16,7 @@ import { Cronometro } from "./Cronometro.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
-// import {animationShowMenu,animationHideMenu,hideHistorialContent,showInstructions,showHistorial,hideHistorial,hideInstructions} from './animations.js'
+ import {animationShowMenu,animationHideMenu,hideHistorialContent,showInstructions,showHistorial,hideHistorial,hideInstructions} from './animations.js'
 const btn = document.querySelectorAll('.btn')
 
 
@@ -112,7 +112,7 @@ function selectGame(cronometro,puntos,bar,par){
 	
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-			
+
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
@@ -173,6 +173,7 @@ menu_information.addEventListener('click',()=>{
 
 infoMenuInstruction.addEventListener('click',()=>{
 	hideInstructions()
+	animationShowMenu()
 	
 })
 

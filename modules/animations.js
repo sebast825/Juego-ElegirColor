@@ -6,7 +6,7 @@
 	  },{
  	 	x:0,display:'flex',})	
  	 .to('.menu_btn_Css',
- 	 	{x:0,opacity:1,stagger:.2},'<')	
+ 	 	{x:0,opacity:1,stagger:.1},'<')	
 
  }
 export function animationHideMenu(){
@@ -52,18 +52,16 @@ export function showPartida(){
  	// 	opacity:0,display:'none'},'<')	
 
  	.fromTo('.container',{
- 		x:'-100%'
+ 		x:'-100%',opacity:0,display:'flex'
  	},{
- 		x:0,display:'flex'})
- 	.to('.infoItem',{
- 			y:0,opacity:1
- 		})
- 	.to('.containerTablero',{
- 			opacity:1
+ 		x:0,opacity:1})
+
+ 	.fromTo('.containerTablero',{x:-200,opacity:0},{
+ 			opacity:1,x:0
  		},'<.3')
- 	.to('.containerBarra',{
- 			opacity:1
- 		},'<')
+ 	.fromTo('.containerBarra',{x:-200,opacity:0},{
+ 			opacity:1,x:0
+ 		},'<.2')
 
  }
 
@@ -178,8 +176,8 @@ export function showInstructions(){
 		display:'flex'
 	})
 	.fromTo('.instructions',{
-		opacity:0
-	},{opacity:1})
+		opacity:0,x:'-100%'
+	},{opacity:1,x:0},'<')
 	.fromTo('.instruction_menu',{
 		opacity:0
 	},{opacity:1},'<.1')
@@ -187,26 +185,28 @@ export function showInstructions(){
 		x:-200,opacity:0
 	},{x:0,opacity:1,stagger:.2,ease: "power2.out"},'<')
 }
+
 export function hideInstructions(){
 	const timeLine = gsap.timeline();
 	timeLine
 	.to('.instructions_type',{
 		x:200,opacity:0, stagger:.2,ease: "power2.out"})
-	.to('.instructions',{
-		opacity:0,duartion:.3
+	.fromTo('.instructions',{x:0},{
+		opacity:0,duartion:.3,x:'-100%'
 	},'<')
 	.to('.instructions',{
 		display:'none'
 	})
-	.fromTo('.menu',{
-		opacity:0
-	},{
-		display:'flex'
-	},'<.1')
-	.to('.menu',{
-		opacity:1,ease:"power1.out"},'<')
+	// .fromTo('.menu',{
+	// 	opacity:0
+	// },{
+	// 	display:'flex'
+	// },'<.1')
+	// .to('.menu',{
+	// 	opacity:1,ease:"power1.out"},'<')
 			
-	.to('.menu_btn_Css',
-		{x:0,opacity:1,stagger:.2},'<')	
+	// .to('.menu_btn_Css',
+	// 	{x:0,opacity:1,stagger:.2},'<')	
+	
 	
 }
