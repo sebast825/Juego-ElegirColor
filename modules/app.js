@@ -12,7 +12,7 @@ const endGame = document.querySelector('.endGame');
 import { Partida} from "./Partida.js";
 import {hideMenu, seFinish,playFE} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
-import { Global } from "./Global.js";
+
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
@@ -113,6 +113,7 @@ function selectGame(cronometro,puntos,bar){
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
+			
 			playFE(cronometro)
 			if(cronometro.getGametipe() != 'Clasico'){
 				bar.barFull(cronometro)
