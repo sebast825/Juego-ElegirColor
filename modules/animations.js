@@ -57,7 +57,7 @@ export function showPartida(){
 
  	.fromTo('.containerTablero',{x:-200,opacity:0},{
  			opacity:1,x:0
- 		},'<.3')
+ 		},'<.1')
  	.fromTo('.containerBarra',{x:-200,opacity:0},{
  			opacity:1,x:0
  		},'<.2')
@@ -90,35 +90,26 @@ export function showEndGame(){
 	
 
  }
+
 // //tiene tambien hide partida, arranco lindo y se hizo choclo :c
-// export function hideEndGame(){
-// 	const timeLine = gsap.timeline()
-// 	timeLine
-// 	.to('.container',{
-// 		display:'none',opacity:0,duration:.4})
-// 		.to('.infoItem',{
-// 			y:-100,opacity:0},'<.1')
-// 		 .to('.containerTablero',{
-// 		 	opacity:0},'<')
-// 		 .to('.containerBarra',{
-// 		 	opacity:0},'<')
-// 	.to('.infoItem',{
-// 		y:100,opacity:0
-// 	})
-// 	.to('.endGame_info',{
-// 		opacity:0
-// 	},'<')
-// 	.to('.endGame_infoRsta',{
-// 		opacity:0
-// 	},'<')
-// 	.to('.endGame',{
-// 		// opacity:0,
-// 	},'<')
-// 	.to('.endGame',{
-// 		display:'none'
-// 	})
-// 	animationShowMenu()
-// }
+ export function hideEndGame(){
+ 	const timeLine = gsap.timeline()
+ 	timeLine
+ 	
+ 	.to('.endGame_info',{
+ 	opacity:0,x:200,stagger:.2
+ 	})
+ 	.to('.endGame_infoRsta',{
+ 		opacity:0
+ 	},'<')
+ 	.to('.endGame',{
+ 		 x:'-100%',opacity:0
+ 	},'<')
+ 	.to('.endGame',{
+ 		display:'none'
+ 	})
+
+ }
 
 export function showHistorialContent(){
 	const timeLine = gsap.timeline()

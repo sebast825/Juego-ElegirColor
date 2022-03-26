@@ -17,7 +17,7 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
 const historial = document.querySelector('.historial');
 
 
-import {showPartida,animationHideMenu,animationShowMenu,hidePartida, showEndGame} from './animations.js'
+import {showPartida,animationHideMenu,animationShowMenu,hidePartida, showEndGame,hideEndGame} from './animations.js'
 
 export function hideMenu(){
 	barra.style.width = '0%'
@@ -70,10 +70,9 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	})
 	infoMenu_EndGame.addEventListener('click',()=>{
 
-		endGame.style.display = 'none'
-		menu.style.display = 'flex'
-		// hideEndGame()
-		// animationShowMenu()
+	
+		hideEndGame()
+		animationShowMenu()
 	})
 	lsAlmacenar(cronometro,puntos)
 
