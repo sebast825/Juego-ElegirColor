@@ -62,8 +62,10 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 	})
 	infoMenu_EndGame.addEventListener('click',()=>{
-		hideEndGame()
-		animationShowMenu()
+
+		endGame.style.display = 'none'
+		// hideEndGame()
+		// animationShowMenu()
 	})
 	lsAlmacenar(cronometro,puntos)
 

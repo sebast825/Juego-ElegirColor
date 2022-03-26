@@ -29,7 +29,7 @@ function main(){
 
 	par.activarTablero();
 	 recuperarLocalStoarage()
-	selectGame(puntos,cronometro,bar);
+	selectGame(puntos,cronometro,bar,par);
 	selecTipeBtn(cronometro,puntos,par,bar)
 	
 	
@@ -87,7 +87,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 
 				if(puntos.modificarPuntosDeathMode(elem.classList[1])){
 					//le va a sumar tiempo
-					// par.snowMan()
+					par.snowMan()
 					cronometro.tiempo(false)	
 					bar.deathMode(cronometro.getTime())
 
@@ -105,7 +105,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 }
 
 
-function selectGame(cronometro,puntos,bar){
+function selectGame(cronometro,puntos,bar,par){
 	
 	menuBtn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
@@ -113,7 +113,7 @@ function selectGame(cronometro,puntos,bar){
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
-			
+			par.partidaTipeGame(elem.value)
 			if(cronometro.getGametipe() != 'Clasico'){
 				bar.barFull(cronometro)
 			}

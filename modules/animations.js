@@ -106,6 +106,7 @@ export function hideEndGame(){
 	.to('.endGame',{
 		display:'none'
 	})
+	animationShowMenu()
 }
 
 export function showHistorialContent(){
