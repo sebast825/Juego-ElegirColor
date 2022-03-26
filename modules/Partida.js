@@ -101,10 +101,9 @@ export class Partida{
 	}
 	iniciarSnowMan(){
 		let interval = setInterval(()=>{
-			console.log('asd')
-			if(endGame.style.display == 'none' || this.tipeGame != 'DeathMode'){
+			if(endGame.style.display == 'none'){
 				clearInterval(interval)
-				return
+				
 			}
 	   this.numArraySnowMan()
 	   this.setColorSnowMan()
@@ -112,7 +111,10 @@ export class Partida{
 	}
 
 	snowMan(num,elem){
-		elem.classList.remove('black')
+		try{
+			elem.classList.remove('black')
+
+		}catch{}
 		if(this.array[num]==1){
 			elem.classList.add('black')
 		}

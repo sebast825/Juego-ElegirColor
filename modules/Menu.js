@@ -27,18 +27,18 @@ export function hideMenu(){
 	// puntos.innerHTML = null;
 	// contador.innerHTML = null;
 	endGame.style.display = 'none';
-console.log(menu.style.display)
+
 	if(menu.style.display == "none"){
 		
 		if(container.style.display != 'none'){
-
-			hidePartida()
+			container.style.display= 'none'
+			menu.style.display = 'flex'
 		}
 
 
 	}else{
-		// animationHideMenu();
-		showPartida()
+		container.style.display= 'flex'
+			menu.style.display = 'none'
 	}
 	
 }
@@ -56,8 +56,8 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 		par.ocultarBotnoes();
 		console.log('asd')
-		hideEndGame()
-		showPartida()
+		container.style.display= 'flex'
+		endGame.style.display = 'none'
 		playFE(cronometro)
 
 	})
@@ -68,9 +68,11 @@ export function seFinish(puntos,cronometro,respuesta,par){
 		// animationShowMenu()
 	})
 	lsAlmacenar(cronometro,puntos)
+	// container.style.display= 'none'
+	console.log('estamo aca')
+	endGame.style.display = 'flex'
 
-	
-	showEndGame()
+	// showEndGame()
 	
 	endGame_rsta.innerHTML = respuesta; 
 	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;
@@ -88,7 +90,7 @@ export function seFinish(puntos,cronometro,respuesta,par){
 
 
 function ocultarPuntos  (){
-	console.log('limpiar')
+	
 	
 	contador.innerHTML = null;
 		puntos.innerHTML = null;

@@ -149,8 +149,8 @@ menu_historial.addEventListener('click',()=>{
 
 infoMenuHistorial.addEventListener('click',()=>{
 	
-	hideHistorial()
-	animationShowMenu()
+	menu.style.display= 'none'
+	historial.style.display = 'flex'
 
 
 })
@@ -161,7 +161,7 @@ const instructions = document .querySelector('.instructions');
 
 menu_information.addEventListener('click',()=>{
 	showInstructions()
-	animationHideMenu()
+	animationHideMenu()	
 
 })
 

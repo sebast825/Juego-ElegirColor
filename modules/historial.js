@@ -10,7 +10,7 @@ let deathMode = [];
 
 export function lsAlmacenar(cronometro,puntos){
 	let parametro = cronometro.getGametipe()
-	console.log(parametro,'asd')
+
 	if(parametro == 'Clasico'){
 		lsClaisco(cronometro.getTime(),puntos.getPuntos())
 	}else if(parametro == 'ContraReloj'){
@@ -34,7 +34,7 @@ function lsClaisco(tiempo,puntos){
 	clasico.push([tiempo,puntos])
 	lsSort(clasico)
 	localStorage.setItem('clasico',JSON.stringify(clasico))
-	console.log('guardado clasico')
+
 }
 
 function lsContraReloj(tiempo,puntos){
