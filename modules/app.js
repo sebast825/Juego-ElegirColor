@@ -60,7 +60,7 @@ function main(){
 				hideMenu()
 				
 				playFE(cronometro)
-
+				
 			})
 		})
 }
@@ -113,7 +113,7 @@ function selectGame(cronometro,puntos,bar){
 			hideMenu();
 			cronometro.selecTipeGame(elem.value);
 			puntos.selecTipeGame(elem.value)
-			
+			playFE(cronometro)
 			if(cronometro.getGametipe() != 'Clasico'){
 				bar.barFull(cronometro)
 			}
