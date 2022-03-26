@@ -9,7 +9,7 @@ body{
 
 .container{
 	background-color: black;
-	display: flex;
+	display: none;
 	position: absolute;
 	flex-direction: column;
 	justify-content: center;

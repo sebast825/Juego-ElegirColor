@@ -46,10 +46,7 @@ export function animationHideMenu(){
 export function showPartida(){
  	const timeLine = gsap.timeline();
  	timeLine
- 	// .to('.menu_btn_Css',
- 	// 	{x:200,opacity:0,stagger:.2,duration:.8})
- 	// .to('.menu',{
- 	// 	opacity:0,display:'none'},'<')	
+ 	//dice flex, si no container aparece antes que menu x default :)
 
  	.fromTo('.container',{
  		x:'-100%',opacity:0,display:'flex'
