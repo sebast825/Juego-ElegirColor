@@ -42,6 +42,9 @@ function main(){
 				seFinish(puntos,cronometro,respuesta,par)
 			
 		})	
+		if(cronometro.getTerminar() == true){
+			par.ocultarBotnoes()
+		}
 			playFE(cronometro)
 		
 

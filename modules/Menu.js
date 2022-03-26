@@ -47,7 +47,7 @@ console.log(menu.style.display)
 export function seFinish(puntos,cronometro,respuesta,par){
 
 	playFE(cronometro)
-
+	par.ocultarBotnoes()
 	cronometro.setTerminar(true);
 	puntos.setTerminar(true);
 	ocultarPuntos();
@@ -106,6 +106,6 @@ export function playFE(cronometro){
 
 	}else{
 		infoPlay.innerHTML =`<i class="fas fa-pause-circle"></i>`
-
+			
 	}
 }
