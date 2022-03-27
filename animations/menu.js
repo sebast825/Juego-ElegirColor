@@ -4,7 +4,7 @@ export 	function animationShowMenu(){
 	 .fromTo('.menu',{
 		 x:'100%',display:'flex',
 	 },{
-		 x:0,},)	
+		 x:0,})	
 	 .fromTo('.menu_btn_Css',{
 		 x:200
 	 },

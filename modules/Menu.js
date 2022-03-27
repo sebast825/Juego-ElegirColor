@@ -29,9 +29,7 @@ export function hideMenu(){
 	barra.style.width = '0%'
 
 	ocultarPuntos();
-	// puntos.innerHTML = null;
-	// contador.innerHTML = null;
-	// endGame.style.display = 'none';
+
 
 	if(menu.style.display == "none"){
 				
