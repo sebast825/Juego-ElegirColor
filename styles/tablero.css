@@ -9,6 +9,10 @@ body{
 i:hover{
 	color: wheat;
 }
+i{
+	text-shadow: 5px 5px 17px black;
+
+}
 .container{
 	background-color: purple;
 	display: none;
