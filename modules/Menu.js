@@ -33,24 +33,16 @@ export function hideMenu(){
 
 	if(menu.style.display == "none"){
 				
-				hidePartida()
+		hidePartida()
+	 	animationShowMenu()
 			
-			
-			 animationShowMenu()
-			
-		
-
-
 	}else{
-		console.log('esta en partida')
 
 		animationHideMenu()
 		showPartida()
 		
-	}
-	
+	}	
 }
-
 
 export function seFinish(puntos,cronometro,respuesta,par){
 

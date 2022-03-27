@@ -5,18 +5,17 @@ const infoPlay = document.querySelector('.infoPlay');
 
 export class Barra{
 
-	terminar = false
+	terminar = false;
 	
 	selectBar(cronometro){
 		if (cronometro.getGametipe() == 'ContraReloj' && cronometro.getTerminar() != true){			
-			console.log('entra aca', cronometro.getTerminar())
-			this.setTerminar(false)
-			this.barraContrarreloj(cronometro)
+			this.setTerminar(false);
+			this.barraContrarreloj(cronometro);
 			
 		}	else if(cronometro.getGametipe() == 'Clasico'){
-			this.barEmpty()
+			this.barEmpty();
 		}else if(cronometro.getGametipe() == 'DeathMode'){
-			this.deathMode(cronometro.getTime())
+			this.deathMode(cronometro.getTime());
 
 		}
 	}
@@ -27,8 +26,7 @@ export class Barra{
 		let maxBarra = 11;
 		//98 asi le queda el margen de 1 %
 		let actualBarra = (puntos / 11) * 98;
-		barra.style.width = `${actualBarra}%`
-		console.log(puntos)
+		barra.style.width = `${actualBarra}%`;
 	}
 
 	barraContrarreloj(cronometro){
@@ -42,13 +40,13 @@ export class Barra{
 
 			infoPlay.addEventListener('click',()=>{
 				
-				clearInterval(interval)
-				 this.barFull(cronometro)
+				clearInterval(interval);
+				 this.barFull(cronometro);
 
 			})
 
 			if(actualBarra <= 0 || actualBarra == 100){
-				clearInterval(interval)
+				clearInterval(interval);
 				return
 			}
 		},100)
@@ -71,10 +69,10 @@ export class Barra{
 	}
 
 	barFull(cronometro){
-		if(cronometro.getGametipe() == 'Clasico')return
-		barra.style.width = `96%`
+		if(cronometro.getGametipe() == 'Clasico')return;
+		barra.style.width = `96%`;
 	}
 	barEmpty(){
-		barra.style.width = `0%`
+		barra.style.width = `0%`;
 	}
 }

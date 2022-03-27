@@ -65,7 +65,6 @@ function main(){
 				cronometro.setTerminar(true);
 				puntos.setTerminar(true)
 				hideMenu()
-				console.log('llega aca?')
 				playFE(cronometro)
 				
 			})
@@ -76,6 +75,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 	
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
+			
 			if (puntos.tipeGame != 'DeathMode'){
 
 				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
