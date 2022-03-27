@@ -23,7 +23,13 @@ export function lsAlmacenar(cronometro,puntos){
 function lsSort(tipeHistorial){
 	
 	tipeHistorial = tipeHistorial.sort(function(a,b){
-		return b[1] - a[1] 
+		//si son la misma cantidad de puntos
+		//ordena por menor tiempo
+		if(b[1] == a[1] ){
+			return a[0] - b[0]
+		}else{
+			return b[1] - a[1] 
+		} 
 	})
 	if(tipeHistorial.length >= 7){
 		tipeHistorial.pop()
@@ -129,8 +135,13 @@ function showFe(partida){
 	contenedor.classList.add('historial_info_partida')
 	let tiempo = document.createElement('h2');
 	let puntos = document.createElement('h2');
+	try{
+		tiempo.innerText = partida[0].toFixed(1);
 
-	tiempo.innerText = partida[0].toFixed(1);
+	}catch{
+	tiempo.innerText = partida[0]
+
+	}
 	puntos.innerText = partida[1];
 
 	contenedor.appendChild(tiempo);
