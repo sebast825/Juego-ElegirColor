@@ -31,14 +31,14 @@ function main(){
 	let par = new Partida();	
 	let bar = new Barra()
 
-	par.activarTablero();
 	 recuperarLocalStoarage()
 	selectGame(puntos,cronometro,bar,par);
 	selecTipeBtn(cronometro,puntos,par,bar)
 	
 	
 	infoPlay.addEventListener('click',()=>{
-		
+		par.activarTablero();
+
 		par.mostrarBotones()
 		barra.style.width = '0%'
 		cronometro.reiniciarCronometro((callBack)=>{
@@ -46,6 +46,9 @@ function main(){
 				seFinish(puntos,cronometro,respuesta,par)
 			
 		})	
+		if(cronometro.getGametipe() == 'DeathMode' && cronometro.getTerminar() == false){
+			par.iniciarSnowMan(cronometro.getTerminar())
+		}
 		if(cronometro.getTerminar() == true){
 			par.ocultarBotnoes()
 		}
@@ -75,7 +78,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 	
 	btn.forEach(elem=>{
 		elem.addEventListener('click',()=>{
-			
+
 			if (puntos.tipeGame != 'DeathMode'){
 
 				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
@@ -90,11 +93,11 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 				}
 
 			}else{
-				par.iniciarSnowMan()
+				//  par.iniciarSnowMan()
 
 				if(puntos.modificarPuntosDeathMode(elem.classList[1])){
 					//le va a sumar tiempo
-					par.snowMan()
+					// par.snowMan()
 					cronometro.tiempo(false)	
 					bar.deathMode(cronometro.getTime())
 
