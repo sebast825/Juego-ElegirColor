@@ -17,7 +17,13 @@ const endGame_rsta = document.querySelector('.endGame_rsta');
 const historial = document.querySelector('.historial');
 
 
-import {showPartida,animationHideMenu,animationShowMenu,hidePartida, showEndGame,hideEndGame} from './animations.js'
+// import {showPartida,hidePartida, showEndGame,hideEndGame} from './animations.js'
+
+import {animationShowMenu,animationHideMenu} from '../animations/menu.js'
+import {showPartida,hidePartida} from '../animations/partida.js'
+import {showHistorial ,hideHistorial } from '../animations/historial.js'
+import {showEndGame ,hideEndGame } from '../animations/endGame.js'
+
 
 export function hideMenu(){
 	barra.style.width = '0%'

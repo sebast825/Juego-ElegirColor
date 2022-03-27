@@ -16,7 +16,11 @@ import { Cronometro } from "./Cronometro.js";
 import { Puntos } from "./Puntos.js";
 import { Contador } from "./Contador.js";
 import { Barra } from "./Barra.js";
- import {animationShowMenu,animationHideMenu,hideHistorialContent,showInstructions,showHistorial,hideHistorial,hideInstructions} from './animations.js'
+
+//  import {animationShowMenu,animationHideMenu,hideHistorialContent,showInstructions,showHistorial,hideHistorial,hideInstructions} from './animations.js'
+import {showHistorial ,hideHistorial } from '../animations/historial.js'
+ import {animationShowMenu,animationHideMenu} from '../animations/menu.js'
+ import {showInstructions ,hideInstructions } from '../animations/instructions.js'
 const btn = document.querySelectorAll('.btn')
 
 

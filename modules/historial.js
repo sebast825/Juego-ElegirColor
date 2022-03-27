@@ -1,6 +1,6 @@
 const historial_info = document.querySelector('.historial_info');
 
-import {showHistorialContent,hideHistorialContent} from './animations.js'
+import {showHistorialContent,hideHistorialContent} from '../animations/historial.js'
 
 let clasico = [];
 let contraReloj = [];
