@@ -28,15 +28,18 @@ export function hideMenu(){
 	// endGame.style.display = 'none';
 
 	if(menu.style.display == "none"){
-		
-		if(container.style.display != 'none'){
-			hidePartida()
-			animationShowMenu()
+				
+				hidePartida()
 			
-		}
+			
+			 animationShowMenu()
+			
+		
 
 
 	}else{
+		console.log('esta en partida')
+
 		animationHideMenu()
 		showPartida()
 		
