@@ -1,6 +1,6 @@
 .instructions{
 	color: white;
-	background-color: black;
+	background-color: #010;
 	display:none;
 	position: absolute;
 	/* z-index: 1000!important; */
@@ -31,6 +31,16 @@
 	color: white;
 	margin: 1rem;
 
+	border:  ;
+	/* border-top: 3px white solid ; */
+	border-bottom:2px white solid;
+
+}
+.instructions_type p{
+	color: #ccc;
+}
+.instructions_type h2{
+	color: lightblue
 }
 
 .instruction_description{

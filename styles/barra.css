@@ -1,19 +1,19 @@
 .containerBarra{
-	width: 30vw;
-	height: 10vh;
-	background-color: aqua;
+	width: 28vw;
+	height: 7vh;
+	background-color: #fff;
 opacity: 1;
 	display: flex;
 	align-content: center;
 }
 
 .barra{
-	height: 70%;
+	height: 85%;
 	align-self: center;
 	margin-left: 2%;
 	/* width: 100%; */
 	transition: all 0.2s linear;
 	
 	position: relative;
-	background-color: red;
+	background-color:	#040 ;
 }

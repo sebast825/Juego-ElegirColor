@@ -6,9 +6,11 @@ body{
 	overflow: hidden;
 }
 
-
+i:hover{
+	color: wheat;
+}
 .container{
-	background-color: black;
+	background-color: purple;
 	display: none;
 	position: absolute;
 	flex-direction: column;
@@ -26,7 +28,7 @@ body{
 }
 
 .infoItem{
-	color: aqua;
+	color: #FFf;
 	opacity: 1;
 	
 }
@@ -40,7 +42,7 @@ body{
 	grid-template-rows: repeat(2,45%);
 	justify-content: space-evenly;
 	align-content: space-evenly;
-	background-color: #060;
+	background-color: #070;
 	opacity: 1;
 	
 }
