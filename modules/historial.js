@@ -3,8 +3,10 @@ const historial_info = document.querySelector('.historial_info');
 import {showHistorialContent,hideHistorialContent} from '../animations/historial.js'
 
 let clasico = [];
-let contraReloj = [];
+
 let deathMode = [];
+
+let atr = [];
 
 
 
@@ -13,7 +15,7 @@ export function lsAlmacenar(cronometro,puntos){
 	if(parametro == 'Clasico'){
 		lsClaisco(cronometro.getTime(),puntos.getPuntos())
 	}else if(parametro == 'ContraReloj'){
-		lsContraReloj('40',puntos.getPuntos())
+		lsContraReloj('a',puntos.getPuntos())
 	}else if(parametro == 'DeathMode'){
 		lsDeathMode(cronometro.getTimeTotal(),puntos.getPuntos())
 	}else{
@@ -21,7 +23,6 @@ export function lsAlmacenar(cronometro,puntos){
 	}
 }
 function lsSort(tipeHistorial){
-	
 	tipeHistorial = tipeHistorial.sort(function(a,b){
 		//si son la misma cantidad de puntos
 		//ordena por menor tiempo
@@ -36,15 +37,20 @@ function lsSort(tipeHistorial){
 	}
 }
 function lsClaisco(tiempo,puntos){
+	
 	clasico.push([tiempo,puntos])
 	lsSort(clasico)
 	localStorage.setItem('clasico',JSON.stringify(clasico))
 }
 
 function lsContraReloj(tiempo,puntos){
-	clasico.push( [tiempo,puntos])
-	lsSort(contraReloj)
-	localStorage.setItem('ContraReloj',JSON.stringify(clasico))
+	let a = [tiempo,puntos]
+	console.log('atr')
+	console.log(a)
+
+	atr.push(a)
+	lsSort(atr)
+	localStorage.setItem('ContraReloj',JSON.stringify(atr))
 }
 
 function lsDeathMode(tiempo,puntos){
@@ -74,7 +80,7 @@ export function mostrarHistorial(parametro){
 
 export function recuperarLocalStoarage(){
 	 let clas = JSON.parse(localStorage.getItem('clasico'))
-	 let contra = contraReloj = JSON.parse(localStorage.getItem('ContraReloj'))
+	//  let contra = contraReloj = JSON.parse(localStorage.getItem('ContraReloj'))
 	let death = JSON.parse(localStorage.getItem('DeathMode'))
 	//si no hay nada almacenado se rompe todo
 	//si no se trae  cada vez que se carga la pagina se le guarda arriba

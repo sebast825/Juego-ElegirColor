@@ -69,7 +69,7 @@ import { hideMenu } from "./Menu.js";
 	}
 
 	cronometroContraReloj(callBack){
-		this.time = 40;
+		this.time = 3;
 		let interval = setInterval(()=>{			
 	
 			if(this.terminar ){
@@ -83,6 +83,7 @@ import { hideMenu } from "./Menu.js";
 			 this.terminar = true;
 			this.respuesta = 'Te Quedaste sin tiempo! '
 			callBack()
+			
 			}			
 
 		},100)
