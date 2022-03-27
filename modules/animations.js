@@ -5,7 +5,9 @@
 		  x:'100%',display:'flex',
 	  },{
  	 	x:0,},)	
- 	 .to('.menu_btn_Css',
+ 	 .fromTo('.menu_btn_Css',{
+		  x:200
+	  },
  	 	{x:0,opacity:1,stagger:.1},'<')	
 
  }
