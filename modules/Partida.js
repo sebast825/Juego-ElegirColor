@@ -109,8 +109,7 @@ export class Partida{
 	}
 	iniciarSnowMan(finalizar){
 		let interval = setInterval(()=>{
-			console.log(finalizar)
-			// if(this.tipeGame !='DeathMode' ){
+			
 				if(container.style.opacity == 0){
 				clearInterval(interval)
 			}
