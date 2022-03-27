@@ -23,21 +23,7 @@ export function hideInstructions(){
 	.to('.instructions_type',{
 		x:200,opacity:0, stagger:.2,ease: "power2.out"})
 	.fromTo('.instructions',{x:0},{
-		opacity:0,duartion:.3,x:'-100%'
+		duartion:.3,x:'-100%',display:'none'
 	},'<')
-	.to('.instructions',{
-		display:'none'
-	})
-	// .fromTo('.menu',{
-	// 	opacity:0
-	// },{
-	// 	display:'flex'
-	// },'<.1')
-	// .to('.menu',{
-	// 	opacity:1,ease:"power1.out"},'<')
-			
-	// .to('.menu_btn_Css',
-	// 	{x:0,opacity:1,stagger:.2},'<')	
-	
 	
 }
