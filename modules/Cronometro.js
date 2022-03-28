@@ -70,7 +70,7 @@ import { hideMenu } from "./Menu.js";
 	}
 
 	cronometroContraReloj(callBack){
-		this.time = 3;
+		this.time = 40;
 		let interval = setInterval(()=>{			
 	
 			if(this.terminar ){

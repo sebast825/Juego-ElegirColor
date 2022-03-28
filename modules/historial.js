@@ -18,7 +18,7 @@ export function lsAlmacenar(cronometro,puntos){
 	if(parametro == 'Clasico'){
 		lsClaisco(cronometro.getTime(),puntos.getPuntos())
 	}else if(parametro == 'ContraReloj'){
-		lsContraReloj('a',puntos.getPuntos())
+		lsContraReloj(40,puntos.getPuntos())
 	}else if(parametro == 'DeathMode'){
 		lsDeathMode(cronometro.getTimeTotal(),puntos.getPuntos())
 	}else{

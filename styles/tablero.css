@@ -7,8 +7,9 @@ body{
 }
 
 i:hover{
-	color: wheat;
+	color: #080;
 }
+
 i{
 	text-shadow: 5px 5px 17px black;
 
@@ -25,6 +26,8 @@ i{
 
 	 gap: 4vh; 
 }
+
+
 .containerInfo{
 	display: flex;
 	flex-direction: row;

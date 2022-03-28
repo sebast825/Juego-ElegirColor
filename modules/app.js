@@ -49,7 +49,7 @@ function main(){
 			if(variableBug){
 				variableBug = false
 				let respuesta = cronometro.getRespuesta()
-				console.log('entra poir acaa')
+			
 					seFinish(puntos,cronometro,respuesta,par)
 				setTimeout(()=>{
 					variableBug = true
@@ -114,7 +114,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 					bar.deathMode(cronometro.getTime())
 
 				}else{
-					console.log('else')
+			
 					let respuesta = puntos.getRespuesta()
 					seFinish(puntos,cronometro,respuesta,par)
 				}
