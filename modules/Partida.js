@@ -6,6 +6,7 @@ const tablero = document.querySelector('.containerTablero');
 const endGame = document.querySelector('.endGame');
 const container = document.querySelector('.container');
 
+import {showTablero,hideTablero} from '../animations/partida.js'
 //cambia los botones! malditos nombres de clases!
 export class Partida{
 	terminar = false;
@@ -20,7 +21,7 @@ export class Partida{
 		// this.clickBtn();
 		this.numArray();
 		this.setColor();
-
+	
 		this.ocultarBotnoes();
 		
 		
@@ -29,7 +30,6 @@ export class Partida{
 
 	mostrarBotones(){
 		
-
 			btn.forEach(elem=>{
 				elem.style.display = 'flex';
 				
@@ -39,8 +39,10 @@ export class Partida{
 			
 //asdsad
 	ocultarBotnoes(){
+		
 		btn.forEach(elem=>{
-			elem.style.display = 'none';
+			// elem.style.display = 'none';
+			
 			try{
 
 				elem.classList.remove('black');

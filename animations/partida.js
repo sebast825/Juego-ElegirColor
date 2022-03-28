@@ -58,10 +58,28 @@ export function showPartida(){
 		 .fromTo('.infoItem',{opacity:0,x:0,y:0},{
 			y:0,opacity:1,stagger:.05	
 		},'<.1')
-
-	
-	
-
-
 		 
+ }
+
+
+ export function hideTablero(){
+	const timeLine = gsap.timeline();
+
+	timeLine
+
+	.to('.btn',{
+		opacity:0,duartion:.05
+	})
+	
+ }
+
+ export function showTablero(){
+	const timeLine = gsap.timeline();
+	timeLine
+
+	.fromTo('.btn',{
+		opacity:0,x:0
+	},{
+		opacity:1,duration:.1
+	})
  }

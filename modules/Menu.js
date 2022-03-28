@@ -20,7 +20,7 @@ const historial = document.querySelector('.historial');
 // import {showPartida,hidePartida, showEndGame,hideEndGame} from './animations.js'
 
 import {animationShowMenu,animationHideMenu} from '../animations/menu.js'
-import {showPartida,hidePartida} from '../animations/partida.js'
+import {showPartida,hidePartida, showTablero} from '../animations/partida.js'
 import {showHistorial ,hideHistorial } from '../animations/historial.js'
 import {showEndGame ,hideEndGame } from '../animations/endGame.js'
 
@@ -107,13 +107,15 @@ function ocultarPuntos  (){
 		puntos.innerHTML = null;
 	},200)
 }
-
+import {	hideTablero,} from '../animations/partida.js'
 export function playFE(cronometro){
 	if(cronometro.getTerminar() == true){
 		infoPlay.innerHTML = (`<i class="fas fa-play-circle"></i>`)
+		hideTablero()
 
 	}else{
 		infoPlay.innerHTML =`<i class="fas fa-pause-circle"></i>`
+		showTablero()
 			
 	}
 }
