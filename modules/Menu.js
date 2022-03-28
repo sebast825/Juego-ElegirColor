@@ -56,11 +56,11 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	cronometro.setTerminar(true);
 	puntos.setTerminar(true);
 	ocultarPuntos();
-
+	console.log('asd')
 	endGame_again.addEventListener('click',()=>{
 
 		par.ocultarBotnoes();
-		console.log('asd')
+
 		
 		//parametro true ahce que se valla para la derecha
 		hideEndGame(true)

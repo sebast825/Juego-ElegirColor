@@ -41,9 +41,21 @@ function main(){
 
 		par.mostrarBotones()
 		barra.style.width = '0%'
-		cronometro.reiniciarCronometro((callBack)=>{
-			let respuesta = cronometro.getRespuesta()
-				seFinish(puntos,cronometro,respuesta,par)
+
+//entra dos veces la callback y guarda 2 veces la misma repeticion en contraReloj
+
+		let variableBug = true
+		cronometro.reiniciarCronometro(callBack=>{
+			if(variableBug){
+				variableBug = false
+				let respuesta = cronometro.getRespuesta()
+				console.log('entra poir acaa')
+					seFinish(puntos,cronometro,respuesta,par)
+				setTimeout(()=>{
+					variableBug = true
+				},500)
+			}
+			
 			
 		})	
 		if(cronometro.getGametipe() == 'DeathMode' && cronometro.getTerminar() == false){
@@ -83,7 +95,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 
 				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
 					let respuesta = puntos.getRespuesta()
-		
+		console.log('desde acaS')
 					seFinish(puntos,cronometro,respuesta,par)
 				});	
 
@@ -102,6 +114,7 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 					bar.deathMode(cronometro.getTime())
 
 				}else{
+					console.log('else')
 					let respuesta = puntos.getRespuesta()
 					seFinish(puntos,cronometro,respuesta,par)
 				}

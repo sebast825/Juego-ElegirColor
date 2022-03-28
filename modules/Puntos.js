@@ -17,6 +17,7 @@ export class Puntos extends Contador{
 
  			this.puntos +=1;
 			puntos.innerHTML = this.puntos;
+			
 			if(this.tipeGame == 'Clasico' && this.puntos == 2){
 				// this.terminar = true;
 				this.respuesta = 'Has terminado!'

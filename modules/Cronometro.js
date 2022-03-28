@@ -38,6 +38,7 @@ import { hideMenu } from "./Menu.js";
 	
  	
 	 delay(callBack){
+		 
 		if(!this.terminar){
 			setTimeout(()=>{
 				this.selectFunction(callBack)
@@ -142,7 +143,7 @@ import { hideMenu } from "./Menu.js";
 
 
 	reiniciarCronometro(callBack){
-		
+		console.log('cronom')
 			this.time = 0;
 			
 			if(this.terminar){

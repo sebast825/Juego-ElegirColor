@@ -11,6 +11,9 @@ let atr = [];
 
 
 export function lsAlmacenar(cronometro,puntos){
+	let anular = puntos.getPuntos()
+	if(anular == 0 || anular == null) return 
+
 	let parametro = cronometro.getGametipe()
 	if(parametro == 'Clasico'){
 		lsClaisco(cronometro.getTime(),puntos.getPuntos())
@@ -45,7 +48,6 @@ function lsClaisco(tiempo,puntos){
 
 function lsContraReloj(tiempo,puntos){
 	let a = [tiempo,puntos]
-	console.log('atr')
 	console.log(a)
 
 	atr.push(a)
