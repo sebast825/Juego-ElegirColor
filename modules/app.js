@@ -1,6 +1,6 @@
 const infoPlay = document.querySelector('.infoPlay')
 const menuBtn = document.querySelectorAll('.menu_btn')
-const infoMenu = document.querySelectorAll('.infoMenu')
+const infoMenu = document.querySelector('.infoMenu')
 const endGame = document.querySelector('.endGame');
 
  const container = document.querySelector('.container')
@@ -10,7 +10,7 @@ const endGame = document.querySelector('.endGame');
  
  import { mostrarHistorial,recuperarLocalStoarage} from './historial.js'
 import { Partida} from "./Partida.js";
-import {hideMenu, seFinish,playFE} from './Menu.js'
+import {hideMenu, seFinish,playFE,showMenu} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
 
 import { Puntos } from "./Puntos.js";
@@ -72,19 +72,19 @@ function main(){
 
 	})
 	
-	infoMenu.forEach(elem=>{
-
-			elem.addEventListener('click',()=>{
+	//
+	infoMenu.addEventListener('click',()=>{
+				console.log('asd')
 				bar.setTerminar(true)
 				par.ocultarBotnoes()
 				cronometro.setTerminar(true);
 				puntos.setTerminar(true)
-				hideMenu()
+				showMenu()
 				playFE(cronometro)
 				
 			})
-		})
-}
+		}
+
 
 function selecTipeBtn(cronometro,puntos,par,bar){
 	
