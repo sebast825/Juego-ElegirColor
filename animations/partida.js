@@ -17,16 +17,18 @@ import {animationShowMenu} from '../animations/menu.js'
 		},'<.1')
 	
 	   .fromTo('.container',{x:0
-		},{x:'-100%',opacity:0},'<')
+		},{x:'-100%',},'<')
 
-	//si se clickea muy rapido cunado esta en partida activa hideMenu y se temrina sin mostrar nada, es una atajadita :)
+//ya se corrigio pero por las dudas de alguiene xepcionalmente rapido de clicks, este codigo hace que no se buguee :)
+
+//si se clickea muy rapido cunado esta en partida activa hideMenu y se temrina sin mostrar nada, es una atajadita :)
 		let menu = document.querySelector('.menu')
 
 	setTimeout(()=>{
 	
 		if(menu.style.display=='none'){
 			console.log('jejje')
-
+			// menu.style.display == 'flex'
 			animationShowMenu()
 			
 		}
@@ -49,11 +51,11 @@ export function showPartida(){
 		x:0,opacity:1})
 		.fromTo('.containerBarra',{x:-200,opacity:0},{
 			opacity:1,x:0
-		},'<')
+		},'<.2')
 	
  	.fromTo('.containerTablero',{x:-200,opacity:0},{
  			opacity:1,x:0
- 		},'<')
+ 		},'<.1')
  	
 		 .fromTo('.infoItem',{opacity:0,x:0,y:0},{
 			y:0,opacity:1,stagger:.05	

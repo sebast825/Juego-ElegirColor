@@ -22,7 +22,7 @@ export function animationHideMenu(){
 		x:'100vw'},'<.2')
    .to('.menu',{
 	   display:'none'
-   })
+   },'<')
    // document.querySelector('.menu').style.display = 'none'
    
 }
