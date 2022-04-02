@@ -35,7 +35,7 @@ export function hideHistorial(){
 	.to('.historial_info',{
 		 	opacity:0},'<')
 	.fromTo('.historial',{},{
-		x:'-100%',opacity:0,},'<')
+		x:'-100%',},'<')
 	.to('.historial',{
 		display:'none'
 	})
