@@ -66,8 +66,8 @@ export function mostrarHistorial(parametro){
 	hideHistorialContent()
 	historial_info.innerHTML = 
 	`<div class="historial_info_titulo">
-		<h2>Tiempo</h2>
-		<h2>Puntos</h2>
+		<h2>Time</h2>
+		<h2>Points</h2>
 	</div>`;
 	if(parametro == 'Clasico'){
 		recupuerar_lsClasico()

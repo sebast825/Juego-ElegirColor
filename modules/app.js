@@ -10,7 +10,7 @@ const endGame = document.querySelector('.endGame');
  
  import { mostrarHistorial,recuperarLocalStoarage} from './historial.js'
 import { Partida} from "./Partida.js";
-import {hideMenu, seFinish,playFE,showMenu} from './Menu.js'
+import {hideMenu, seFinish,playFE,} from './Menu.js'
 import { Cronometro } from "./Cronometro.js";
 
 import { Puntos } from "./Puntos.js";
@@ -79,7 +79,7 @@ function main(){
 				par.ocultarBotnoes()
 				cronometro.setTerminar(true);
 				puntos.setTerminar(true)
-				showMenu()
+				hideMenu()
 				playFE(cronometro)
 				
 			})
