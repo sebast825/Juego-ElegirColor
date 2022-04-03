@@ -28,7 +28,8 @@ background-color: white;
 	font-size: 1rem;
 	font-weight: 500;
 	padding: 0.5rem;
-	width: 15vw;
+	min-width: 15vw;
+	
 	box-shadow: none;
 }
 .menu_btn_Css:hover{
