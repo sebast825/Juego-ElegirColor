@@ -83,7 +83,7 @@ export function seFinish(puntos,cronometro,respuesta,par){
 	
 	
 	endGame_rsta.innerHTML = respuesta; 
-	endGame_puntos.innerHTML = `Puntos: ${puntos.getPuntos()}!`;
+	endGame_puntos.innerHTML = `Points: ${puntos.getPuntos()}!`;
 
 	if(cronometro.getGametipe() == 'DeathMode'){
 

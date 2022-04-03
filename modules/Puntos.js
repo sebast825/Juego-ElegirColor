@@ -20,7 +20,7 @@ export class Puntos extends Contador{
 			
 			if(this.tipeGame == 'Clasico' && this.puntos == 11){
 				// this.terminar = true;
-				this.respuesta = 'Has terminado!'
+				this.respuesta = 'You Win!'
 				callBack()
 			}
 		
@@ -45,7 +45,7 @@ export class Puntos extends Contador{
 			return true	
 			
 		}else{				
-			this.respuesta = `Te equivocaste!`	
+			this.respuesta = `You miss!`	
 			return false
 		}	 				
  	}
