@@ -27,12 +27,14 @@ import {showEndGame ,hideEndGame } from '../animations/endGame.js'
 
 export function hideMenu(){
 
-
-
+	
+	barra.style.width = '0%'
+	ocultarPuntos();
 
 	if(menu.style.display == "none"){
 				
-		
+		animationShowMenu()
+		hidePartida()
 			
 	}else{
 
@@ -41,15 +43,7 @@ export function hideMenu(){
 		
 	}	
 }
-export function showMenu(){
 
-	barra.style.width = '0%'
-
-	ocultarPuntos();
-	animationShowMenu()
-
-	hidePartida()
-}
 
 export function seFinish(puntos,cronometro,respuesta,par){
 
