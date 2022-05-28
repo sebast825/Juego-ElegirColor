@@ -39,7 +39,7 @@ background-color: white;
 	background-color: #a00;
 	border-color: #fff;
 	color: #fff;
-	transition: all .5s ease-in;
+	transition: all .1s ease-in;
 
 }
 @keyframes menu_btn {
