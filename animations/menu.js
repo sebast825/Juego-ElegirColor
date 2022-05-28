@@ -26,3 +26,43 @@ export function animationHideMenu(){
    // document.querySelector('.menu').style.display = 'none'
    
 }
+
+///////////////////////////
+//eventos over
+const menuBtn = document.querySelectorAll('.menu_btn');
+const customText = document.querySelector(".menu_customText");
+const menu_info = document.querySelector(".menu_info");
+
+export function eventMenu(){
+	menuBtn.forEach(element => {
+		element.addEventListener("mouseover",()=>{
+			let value = element.value;
+			derivarAnimacion(value);
+	})
+}); 
+
+	menuBtn.forEach(element => {
+		element.addEventListener("mouseout",()=>{
+			let value = element.value;
+			customText.innerHTML = "Click yellow button";
+
+	})
+	}); 
+}
+
+function derivarAnimacion(value){
+	let text = document.createElement("h2");
+	if(value=="Clasico"){
+		customText.innerHTML = "Do 11 points to Win!";
+	
+	}else if(value=="ContraReloj"){
+		customText.innerHTML = "You have 40 seconds to do all the points you can!";
+	}else if(value=="DeathMode"){
+		customText.innerHTML = "Win Points to win time, Be Carefull! If you miss, will lose!";
+	}else{
+		customText.innerHTML = "Click yellow button";
+		}
+
+
+
+}

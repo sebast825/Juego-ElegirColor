@@ -19,13 +19,13 @@ import { Barra } from "./Barra.js";
 
 //  import {animationShowMenu,animationHideMenu,hideHistorialContent,showInstructions,showHistorial,hideHistorial,hideInstructions} from './animations.js'
 import {showHistorial ,hideHistorial } from '../animations/historial.js'
- import {animationShowMenu,animationHideMenu} from '../animations/menu.js'
+ import {animationShowMenu,animationHideMenu,eventMenu} from '../animations/menu.js'
  import {showInstructions ,hideInstructions } from '../animations/instructions.js'
 const btn = document.querySelectorAll('.btn')
 
 
 function main(){
-
+	eventMenu()
 	let cronometro = new Cronometro();
 	let puntos = new Puntos();
 	let par = new Partida();	
@@ -199,4 +199,6 @@ infoMenuInstruction.addEventListener('click',()=>{
 
 
 	
+
+
 
