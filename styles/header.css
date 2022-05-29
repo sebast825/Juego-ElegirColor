@@ -22,7 +22,7 @@ header{
 }
 .header__element:hover{
 	color: #ff0000;
-	transform: scale(1.1);
+	transform: scale(1.03);
 }
 .header__data{
 	display: flex;
