@@ -20,6 +20,9 @@ header{
 	
 
 }
+.menu_info{
+	align-items: center;
+}
 .header__element:hover{
 	color: #ff0000;
 	transform: scale(1.03);
