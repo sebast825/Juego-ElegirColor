@@ -59,7 +59,7 @@ function main(){
 			
 		})	
 		if(cronometro.getGametipe() == 'DeathMode' && cronometro.getTerminar() == false){
-			par.iniciarSnowMan(cronometro.getTerminar())
+			par.iniciarSnowMan(cronometro)
 		}
 		if(cronometro.getTerminar() == true){
 			par.ocultarBotnoes()

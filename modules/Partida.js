@@ -109,10 +109,10 @@ export class Partida{
 			console.log('error')
 		}
 	}
-	iniciarSnowMan(finalizar){
+	iniciarSnowMan(cronometro){
 		let interval = setInterval(()=>{
-			
-				if(container.style.opacity == 0){
+				
+				if(container.style.opacity == 0 || cronometro.getTerminar()==true){
 				clearInterval(interval)
 			}
 	   this.numArraySnowMan()
