@@ -12,7 +12,7 @@ i:hover{
 
 i{
 	text-shadow: 5px 5px 17px black;
-
+	font-size: 3rem;
 }
 .container{
 	background-color: rgb(80, 2, 100);

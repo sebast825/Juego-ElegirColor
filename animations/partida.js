@@ -70,7 +70,7 @@ export function showPartida(){
 	timeLine
 
 	.to('.btn',{
-		opacity:0,duartion:.05
+		display:'none'
 	})
 	
  }
@@ -80,8 +80,8 @@ export function showPartida(){
 	timeLine
 
 	.fromTo('.btn',{
-		opacity:0,x:0
+		x:0,display:'none'
 	},{
-		opacity:1,duration:.1
+		display:'flex'
 	})
  }
