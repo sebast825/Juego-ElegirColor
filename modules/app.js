@@ -95,7 +95,6 @@ function selecTipeBtn(cronometro,puntos,par,bar){
 
 				puntos.modificarPuntos(elem.classList[1],(callBack)=>{
 					let respuesta = puntos.getRespuesta()
-		console.log('desde acaS')
 					seFinish(puntos,cronometro,respuesta,par)
 				});	
 

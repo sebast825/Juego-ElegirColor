@@ -27,7 +27,6 @@ import {animationShowMenu} from '../animations/menu.js'
 	setTimeout(()=>{
 	
 		if(menu.style.display=='none'){
-			console.log('jejje')
 			// menu.style.display == 'flex'
 			animationShowMenu()
 			
